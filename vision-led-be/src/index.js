@@ -7,8 +7,8 @@ const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const compressionMiddleware = require('./MiddleWare/ApplyCompression');
 const compression = require('compression'); // Thêm dòng này
-const { session } = require("passport");
-const passport = require("passport");
+//const { session } = require("passport");
+//const passport = require("passport");
 
 dotenv.config();
 
@@ -20,15 +20,15 @@ app.use(cors({
 }))
 app.use(bodyParser.json({ limit: '50mb' }))
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
-app.use(session({
-  secret: process.env.GOOGLE_CLIENT_SECRET,
-  resave: false,
-  saveUninitialized: true
-}))
+// app.use(session({
+//  secret: process.env.GOOGLE_CLIENT_SECRET,
+//  resave: false,
+//  saveUninitialized: true
+//}))
 app.use(cookieParser())
 app.use(compression());
 app.use(compressionMiddleware);
-app.use(passport.initialize());
+//app.use(passport.initialize());
 app.use(function (req, res, next) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST');
