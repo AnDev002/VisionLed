@@ -1,0 +1,37 @@
+body {
+    /* Firefox */
+    /* scrollbar-width: 2px;  */
+    /* Internet Explorer and Microsoft Edge */
+    /* -ms-overflow-style: inherit;  */
+    scrollbar-color: Gray;
+    background-color: #F7F7F7;
+}
+
+*::-webkit-scrollbar {
+    width: 5px;
+    /* Width of the scrollbar */
+    background-color: #555555;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #acacac;
+    /* Color of the scrollbar thumb */
+    border-radius: 5px;
+    /* Rounded corners of the scrollbar thumb */
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background-color: #b4b4b4;
+    /* Color on hover */
+}
+
+/* Tạo scrollbar overlay trên nội dung */
+*::-webkit-scrollbar-thumb:vertical {
+    width: 10px;
+    /* Đảm bảo scrollbar vertical hoạt động đúng */
+    height: auto;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+}

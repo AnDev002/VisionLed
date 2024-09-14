@@ -1,0 +1,14 @@
+.fp {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* scroll-snap-align: start; */
+    background-color: #F7F7F7;
+}
+
+.container {
+    /* scroll-snap-type: y mandatory; */
+    /* overflow-y: scroll; */
+    height: 100vh;
+}

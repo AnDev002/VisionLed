@@ -1,0 +1,15 @@
+.continue-to-payment {
+    background-color: white;
+    padding: 22px;
+    border-radius: 5px;
+}
+
+.tam-tinh {
+    display: flex;
+    justify-content: space-between;
+}
+
+.total {
+    display: flex;
+    justify-content: space-between;
+}
