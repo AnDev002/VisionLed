@@ -51,9 +51,7 @@ export default function LoginForm({ userNameValue, handleUserNameChange, passwor
             });
 
             const data = await res.json();
-            const dataText = await res.text();
             if(res.ok) {
-                console.log("data + " + dataText);
                 if(data.redirectTo) {
                     window.location.href = data.redirectTo;
                 }
