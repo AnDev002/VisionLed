@@ -103,7 +103,7 @@ const loginWithGoogle = (res, userLogin) => {
                     secure: true,
                     maxAge: 24 * 60 * 60 * 1000, 
                     sameSite: "strict"
-                }).json(rest);
+                }).json({ redirectTo: `${process.env.URL_CLIENT}/login-success/google/${emailId}` });
             } else {
                 const generatedPassword = 
                   Math.random().toString(36).slice(-8) + 
@@ -129,7 +129,7 @@ const loginWithGoogle = (res, userLogin) => {
                     secure: true,
                     maxAge: 24 * 60 * 60 * 1000, 
                     sameSite: "strict"
-                }).json(rest);
+                }).json({ redirectTo: `${process.env.URL_CLIENT}/login-success/google/${emailId}` });
                 //     res.redirect(`${process.env.URL_CLIENT}/login-success/${req.user?.provider}/${req.user?.id}`)
             }
         } catch (error) {
