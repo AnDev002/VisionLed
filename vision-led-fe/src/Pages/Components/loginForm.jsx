@@ -97,14 +97,9 @@ export default function LoginForm({ userNameValue, handleUserNameChange, passwor
     const handleMouseDownPassword = (event) => {
         event.preventDefault();
     };
+
     return (
         <>
-            {userSelector.inOrder === false ?
-                (isLoggedIn || isSuccess) && <Navigate to={'/'} replace={true} />
-                :
-                (isLoggedIn || isSuccess) && <Navigate to={`/payment/form/${orderSelector.orderId}`} replace={true} />
-
-            }
             <div className='right-nav' style={{ position: 'relative' }}>
                 <Box sx={{ display: { xs: 'none', md: 'block' } }}>
                     <Box className={`login-form ${(toggleLoginForm === true) ? "login-form-active" : ""}`}>
