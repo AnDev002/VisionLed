@@ -97,8 +97,9 @@ const loginWithGoogle = (res, userLogin) => {
             if (user) {
                 const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
                 const { password, ...rest } = user._doc;
-
-                res.status(200).cookie("access_token", token, {
+                const response = await UserService.loginSuccess(userId, provider);
+                const { refresh_token, ...newResponse } = response;
+                res.status(200).cookie("refresh_token", refresh_token, {
                     httpOnly: true,
                     secure: true,
                     maxAge: 24 * 60 * 60 * 1000, 
@@ -125,7 +126,9 @@ const loginWithGoogle = (res, userLogin) => {
                 }, process.env.JWT_SECRET);
 
                 const { password, ...rest } = newUser._doc;
-                res.status(200).cookie("access_token", token, {
+                const response = await UserService.loginSuccess(userId, provider);
+                const { refresh_token, ...newResponse } = response;
+                res.status(200).cookie("refresh_token", refresh_token, {
                     httpOnly: true,
                     secure: true,
                     maxAge: 24 * 60 * 60 * 1000, 
