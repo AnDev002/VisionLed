@@ -8,24 +8,34 @@ export default defineConfig({
         open: true
     },
     build: {
-rollupOptions: {
-      output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom']
-        }
-      }
-    },
-        chunkSizeWarningLimit: 8600 // Đặt giới hạn cảnh báo kích thước chunk lớn hơn, ví dụ 1000 kB
-
-    },
-resolve: {
-    alias: [
-        {
-            find: /^~(.*)$/,
-            replacement: 'node_modules/$1',
+        minify: 'esbuild', 
+        target: 'es2015',
+        rollupOptions: {
+            output: {
+                manualChunks: {
+                    vendor: ['react', 'react-dom', 'react-router-dom', 'lodash'],
+                    mui: ['@mui/material', '@mui/icons-material', '@mui/system', '@mui/x-data-grid'],
+                    redux: ['@reduxjs/toolkit', 'react-redux', 'redux-persist'],
+                    query: ['@tanstack/react-query', '@tanstack/react-query-devtools', 'axios'],
+                    ui: ['browser-image-compression', 'jwt-decode', 'prop-types', 'lovedicons', 'rc-footer', 'react-image-gallery', 'react-parallax', 'react-sticky-box', 'styled-components', 'swiper']
+                }
+            }
         },
-    ],
-},
+        terserOptions: {
+            compress: {
+              drop_console: true,
+            },
+          },      
+        chunkSizeWarningLimit: 5000 
+    },
+    resolve: {
+        alias: [
+            {
+                find: /^~(.*)$/,
+                replacement: 'node_modules/$1',
+            },
+        ],
+    },
 
 });
 
