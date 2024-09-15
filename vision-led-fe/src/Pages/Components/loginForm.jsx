@@ -5,15 +5,8 @@ import { Visibility, VisibilityOff } from '@mui/icons-material';
 import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
 // import firebase from 'firebase/app';
 import { app } from '../../firebase'
-import { useDispatch, useSelector } from 'react-redux';
-import * as UserServices from './../../Services/UserServices';
-import { updateUser } from '../../Redux/Slides/userSlide';
-import { UseMutationHooks } from '../../Hooks/UseMutationHook';
-import { Navigate } from 'react-router-dom';
-import jwt_decode from "jwt-decode";
 
 export default function LoginForm({ userNameValue, handleUserNameChange, passwordValue, handlePasswordChange, handleSignIn, data, toggleLoginForm, handleToggleLogin }) {
-    const dispatch = useDispatch();
     // const authFromFirebase = getAuth(app);
     // const [auth, setAuth] = useState(false);
     // const [token, setToken] = useState('');
@@ -24,11 +17,6 @@ export default function LoginForm({ userNameValue, handleUserNameChange, passwor
     // }, []);
 
 
- 
-    const mutation = UseMutationHooks(data => UserServices.LoginWithGoogle(data))
-
-    const userSelector = useSelector(state => state.user);
-    const orderSelector = useSelector(state => state.order);
 
     const auth = getAuth(app);
     const handleGoogleLogin = async () => {
@@ -55,21 +43,7 @@ export default function LoginForm({ userNameValue, handleUserNameChange, passwor
 
             const data = await res.json();
             if(res.ok) {
-                const res = await fetch(`https://api.visionled.vn/api/user/login-success/google/${resultFromGoogle.user.uid}`, {
-                    method: "GET",
-                    headers: {
-                        "Content-Type": "application/json",
-                    }
-                });
-                if (res?.access_token !== undefined) {
-                    localStorage.setItem('access_token', res?.access_token);
-                    if (res?.access_token) {
-                        const decoded = jwt_decode(res?.access_token);
-                        if (decoded?.id) {
-                            handleGetDetailsUser(decoded?.id, res?.access_token);
-                        }
-                    }
-                }
+                
             }
 
         } catch (error) {
