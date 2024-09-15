@@ -2,22 +2,22 @@ import axios from "axios"
 export const axiosJwt = axios.create();
 
 export const LoginUser = async (data) => {
-    const res = await axios.post(`${process.env.REACT_APP_API_KEY}/user/sign-in`, data)
+    const res = await axios.post(`https://api.visionled.vn/api/user/sign-in`, data)
     return res.data
 }
 
 export const LoginSuccess = async (provider, userId) => {
-    const res = await axios.post(`${process.env.REACT_APP_API_KEY}/user/login-success/${provider}/${userId}`)
+    const res = await axios.post(`https://api.visionled.vn/api/user/login-success/${provider}/${userId}`)
     return res.data
 }
 
 export const LogOutUser = async () => {
-    const res = await axios.post(`${process.env.REACT_APP_API_KEY}/user/sign-out`)
+    const res = await axios.post(`https://api.visionled.vn/api/user/sign-out`)
     return res.data
 }
 
 export const GetDetailsUser = async (id, access_token) => {
-    const res = await axiosJwt.get(`${process.env.REACT_APP_API_KEY}/user/get-details/${id}`, {
+    const res = await axiosJwt.get(`https://api.visionled.vn/api/user/get-details/${id}`, {
         headers: {
             token: `Bearer ${access_token}`,
         }
@@ -26,7 +26,7 @@ export const GetDetailsUser = async (id, access_token) => {
 }
 
 export const UpdateUser = async ({id, access_token, data}) => {
-    const res = await axiosJwt.put(`${process.env.REACT_APP_API_KEY}/user/update-user/${id}`, data, {
+    const res = await axiosJwt.put(`https://api.visionled.vn/api/user/update-user/${id}`, data, {
         headers: {
             token: `Bearer ${access_token}`,
         }
@@ -35,7 +35,7 @@ export const UpdateUser = async ({id, access_token, data}) => {
 }
 
 export const GetAllUser = async (access_token) => {
-    const res = await axiosJwt.get(`${process.env.REACT_APP_API_KEY}/user/get-all`, {
+    const res = await axiosJwt.get(`https://api.visionled.vn/api/user/get-all`, {
         headers: {
             token: `Bearer ${access_token}`,
         }
@@ -44,7 +44,7 @@ export const GetAllUser = async (access_token) => {
 }
 
 export const GetUserWithProvider = async (token, provider) => {
-    const res = await axiosJwt.get(`${process.env.REACT_APP_API_KEY}/user/get-user-with-provider/${provider}`, {
+    const res = await axiosJwt.get(`https://api.visionled.vn/api/user/get-user-with-provider/${provider}`, {
         headers: {
             authentication: token,
         }
@@ -53,7 +53,7 @@ export const GetUserWithProvider = async (token, provider) => {
 }
 
 export const RefreshToken = async () => {
-    const res = await axios.post(`${process.env.REACT_APP_API_KEY}/user/refresh-token`, {
+    const res = await axios.post(`https://api.visionled.vn/api/user/refresh-token`, {
         withCredentials: true,
     });
     return res.data;

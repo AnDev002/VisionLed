@@ -2,7 +2,7 @@ import axios from "axios"
 
 export const GetAllProduct = async (search, collectionId, typeId, minPrice, maxPrice, powerId, colorId, sort, page, rowsPerPage) => {
     let res = {}
-    let queryString = `${process.env.REACT_APP_API_KEY}/product/get-all?page=${page}&limit=${rowsPerPage}`
+    let queryString = `https://api.visionled.vn/api/product/get-all?page=${page}&limit=${rowsPerPage}`
     if (sort) {
         if (sort === "min_price") {
             queryString += `&sort=asc&sort=min_price`
@@ -35,35 +35,35 @@ export const GetAllProduct = async (search, collectionId, typeId, minPrice, maxP
 }
 
 export const GetProduct = async (id) => {
-    const res = await axios.get(`${process.env.REACT_APP_API_KEY}/product/get-product/${id}`)
+    const res = await axios.get(`https://api.visionled.vn/api/product/get-product/${id}`)
     return res.data;
 }
 
 export const getAllProductType = async () => {
-    const res = await axios.get(`${process.env.REACT_APP_API_KEY}/product/get-all-product-type`)
+    const res = await axios.get(`https://api.visionled.vn/api/product/get-all-product-type`)
     return res.data;
 }
 
 export const GetProductRefProps = async () => {
-    const res = await axios.get(`${process.env.REACT_APP_API_KEY}/product/get-product-ref-props`)
+    const res = await axios.get(`https://api.visionled.vn/api/product/get-product-ref-props`)
     return res.data;
 }
 export const GetProductDetails = async (id) => {
     let res = {};
     if (id !== null && id !== "null") {
-        res = await axios.get(`${process.env.REACT_APP_API_KEY}/product/get-product-details/${id}`)
+        res = await axios.get(`https://api.visionled.vn/api/product/get-product-details/${id}`)
     }
     return res.data;
 }
 export const GetProductsByType = async (id) => {
     let res = {};
     if (id !== null && id !== "null") {
-        res = await axios.get(`${process.env.REACT_APP_API_KEY}/product/get-products-by-type/${id}`)
+        res = await axios.get(`https://api.visionled.vn/api/product/get-products-by-type/${id}`)
     }
     return res.data;
 }
 export const GetRandomProducts = async () => {
-    const res = await axios.get(`${process.env.REACT_APP_API_KEY}/product/get-random-products`)
+    const res = await axios.get(`https://api.visionled.vn/api/product/get-random-products`)
     return res.data
 }
 
@@ -75,32 +75,32 @@ export const GetRandomProducts = async () => {
 // router.post('/create-product-type', productController.createProductType)
 
 export const CreateProductType = async (data) => {
-    const res = await axios.post(`${process.env.REACT_APP_API_KEY}/product/create-product-type`, data)
+    const res = await axios.post(`https://api.visionled.vn/api/product/create-product-type`, data)
     return res.data
 }
 
 export const CreateProductColor = async (data) => {
-    const res = await axios.post(`${process.env.REACT_APP_API_KEY}/product/create-color`, data)
+    const res = await axios.post(`https://api.visionled.vn/api/product/create-color`, data)
     return res.data
 }
 
 export const CreateProductPower = async (data) => {
-    const res = await axios.post(`${process.env.REACT_APP_API_KEY}/product/create-power`, data)
+    const res = await axios.post(`https://api.visionled.vn/api/product/create-power`, data)
     return res.data
 }
 
 export const CreateProduct = async (data) => {
-    const res = await axios.post(`${process.env.REACT_APP_API_KEY}/product/create-product`, data)
+    const res = await axios.post(`https://api.visionled.vn/api/product/create-product`, data)
     return res.data
 }
 
 export const CreateProductDetails = async (data) => {
-    const res = await axios.post(`${process.env.REACT_APP_API_KEY}/product/create-product-details`, data)
+    const res = await axios.post(`https://api.visionled.vn/api/product/create-product-details`, data)
     return res.data
 }
 
 export const UpdateProduct = async ({ id, access_token, data }) => {
-    const res = await axios.put(`${process.env.REACT_APP_API_KEY}/product/update-product/${id}`, data, {
+    const res = await axios.put(`https://api.visionled.vn/api/product/update-product/${id}`, data, {
         headers: {
             token: `Bearer ${access_token}`
         }
@@ -110,7 +110,7 @@ export const UpdateProduct = async ({ id, access_token, data }) => {
 
 export const UpdateProductDetails = async (dataDetails) => {
     const { id, access_token, ...data } = dataDetails
-    const res = await axios.put(`${process.env.REACT_APP_API_KEY}/product/update-product-details/${id}`, data.data, {
+    const res = await axios.put(`https://api.visionled.vn/api/product/update-product-details/${id}`, data.data, {
         headers: {
             token: `Bearer ${access_token}`
         }
@@ -119,7 +119,7 @@ export const UpdateProductDetails = async (dataDetails) => {
 }
 
 export const DeleteProduct = async ({ id, access_token }) => {
-    const res = await axios.delete(`${process.env.REACT_APP_API_KEY}/product/delete-product/${id}`, {
+    const res = await axios.delete(`https://api.visionled.vn/api/product/delete-product/${id}`, {
         headers: {
             token: `Bearer ${access_token}`
         }
