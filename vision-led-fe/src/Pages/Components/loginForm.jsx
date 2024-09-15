@@ -5,10 +5,12 @@ import { Visibility, VisibilityOff } from '@mui/icons-material';
 import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
 // import firebase from 'firebase/app';
 import { app } from '../../firebase'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import * as UserServices from './../../Services/UserServices';
 import { updateUser } from '../../Redux/Slides/userSlide';
 import { UseMutationHooks } from '../../Hooks/UseMutationHook';
+import { Navigate } from 'react-router-dom';
+import jwt_decode from "jwt-decode";
 
 export default function LoginForm({ userNameValue, handleUserNameChange, passwordValue, handlePasswordChange, handleSignIn, data, toggleLoginForm, handleToggleLogin }) {
     const dispatch = useDispatch();
@@ -25,7 +27,8 @@ export default function LoginForm({ userNameValue, handleUserNameChange, passwor
  
     const mutation = UseMutationHooks(data => UserServices.LoginWithGoogle(data))
 
-
+    const userSelector = useSelector(state => state.user);
+    const orderSelector = useSelector(state => state.order);
 
     const auth = getAuth(app);
     const handleGoogleLogin = async () => {
@@ -52,8 +55,20 @@ export default function LoginForm({ userNameValue, handleUserNameChange, passwor
 
             const data = await res.json();
             if(res.ok) {
-                if(data.redirectTo) {
-                    window.location.href = data.redirectTo;
+                const res = await fetch(`https://api.visionled.vn/api/user/login-success/google/${resultFromGoogle.user.uid}`, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    }
+                });
+                if (res?.access_token !== undefined) {
+                    localStorage.setItem('access_token', res?.access_token);
+                    if (res?.access_token) {
+                        const decoded = jwt_decode(res?.access_token);
+                        if (decoded?.id) {
+                            handleGetDetailsUser(decoded?.id, res?.access_token);
+                        }
+                    }
                 }
             }
 
@@ -61,6 +76,18 @@ export default function LoginForm({ userNameValue, handleUserNameChange, passwor
             console.error(error);
         }
     }
+
+    const handleGetDetailsUser = async (id, token) => {
+        const res = await UserServices.GetDetailsUser(id, token);
+        dispatch(updateUser({ ...res?.data, access_token: token }))
+    }
+    const { isLoggedIn } = useSelector(state => state.user)
+    // const loginSuccess = async () => {
+    //     const res = await UserServices.LoginSuccess("google", userId);
+    //     return res;
+    // }
+
+    // const { isLoading, data, isSuccess } = useQuery(['userLoggedIn', provider, userId], loginSuccess);
 
     //const handleGetDetailsUser = async (id, token) => {
        // const res = await UserServices.GetDetailsUser(id, token);
@@ -77,6 +104,12 @@ export default function LoginForm({ userNameValue, handleUserNameChange, passwor
     };
     return (
         <>
+            {userSelector.inOrder === false ?
+                (isLoggedIn || isSuccess) && <Navigate to={'/'} replace={true} />
+                :
+                (isLoggedIn || isSuccess) && <Navigate to={`/payment/form/${orderSelector.orderId}`} replace={true} />
+
+            }
             <div className='right-nav' style={{ position: 'relative' }}>
                 <Box sx={{ display: { xs: 'none', md: 'block' } }}>
                     <Box className={`login-form ${(toggleLoginForm === true) ? "login-form-active" : ""}`}>
