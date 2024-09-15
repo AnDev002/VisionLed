@@ -54,7 +54,7 @@ export default function LoginForm({ userNameValue, handleUserNameChange, passwor
             if(res.ok) {
                 console.log("data + " + data);
                 if(data.redirectTo) {
-                    window.location.href = result.redirectTo;
+                    window.location.href = data.redirectTo;
                 }
             }
 
