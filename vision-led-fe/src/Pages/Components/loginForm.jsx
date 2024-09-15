@@ -43,6 +43,7 @@ export default function LoginForm({ userNameValue, handleUserNameChange, passwor
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
+                    emailId: resultFromGoogle.user.uid,
                     name: resultFromGoogle.user.displayName,
                     email: resultFromGoogle.user.email,
                     googlePhotoUrl: resultFromGoogle.user.photoURL,
@@ -51,7 +52,7 @@ export default function LoginForm({ userNameValue, handleUserNameChange, passwor
 
             const data = await res.json();
             if(res.ok) {
-                //console.log("data + " + data);
+                console.log("data + " + data);
             }
 
         } catch (error) {

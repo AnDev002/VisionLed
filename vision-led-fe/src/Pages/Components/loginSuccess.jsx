@@ -34,13 +34,6 @@ export default function LoginSuccess() {
             }
         }
     }, [isSuccess])
-    const handleLink = (link) => {
-        if (link !== "") {
-            navigate(`/${link}`);
-        } else {
-            navigate(`/`);
-        }
-    }
     const handleGetDetailsUser = async (id, token) => {
         const res = await UserServices.GetDetailsUser(id, token);
         dispatch(updateUser({ ...res?.data, access_token: token }))
