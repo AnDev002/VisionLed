@@ -88,7 +88,7 @@ const loginUser = (userLogin) => {
 
 const loginWithGoogle = (res, userLogin) => {
     return new Promise(async (resolve, reject) => {
-        const { name, email, googlePhotoUrl } = userLogin
+        const { emailId, name, email, googlePhotoUrl } = userLogin
         try {
             const user = await User.findOne({
                 email: email
@@ -100,7 +100,7 @@ const loginWithGoogle = (res, userLogin) => {
 
                 res.status(200).cookie("access_token", token, {
                     httpOnly: true
-                }).json(rest);
+                }).json(rest).redirect(`${process.env.URL_CLIENT}/login-success/google/${emailId}`);
             } else {
                 const generatedPassword = 
                   Math.random().toString(36).slice(-8) + 
@@ -109,6 +109,7 @@ const loginWithGoogle = (res, userLogin) => {
                 const newUser = new User({
                     name: name.toLowerCase().split(" ").join("") + Math.round().toString(9).slice(-4),
                     email,
+                    emailId,
                     avatar: googlePhotoUrl,
                     password: hashedPassword
                 });
@@ -125,7 +126,8 @@ const loginWithGoogle = (res, userLogin) => {
                     secure: true,
                     maxAge: 24 * 60 * 60 * 1000, 
                     sameSite: "strict"
-                }).json(rest);
+                }).json(rest).redirect(`${process.env.URL_CLIENT}/login-success/google/${emailId}`);
+                //     res.redirect(`${process.env.URL_CLIENT}/login-success/${req.user?.provider}/${req.user?.id}`)
             }
         } catch (error) {
             console.log(error);
