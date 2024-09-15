@@ -113,6 +113,7 @@ const loginWithGoogle = (res, userLogin) => {
                     name: name.toLowerCase().split(" ").join("") + Math.round().toString(9).slice(-4),
                     email,
                     emailId,
+                    typeLogin: "google",
                     avatar: googlePhotoUrl,
                     password: hashedPassword
                 });
