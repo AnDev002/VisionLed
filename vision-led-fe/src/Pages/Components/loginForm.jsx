@@ -56,7 +56,7 @@ export default function LoginForm({ userNameValue, handleUserNameChange, passwor
             const data = await res.json();
             if(res.ok) {
                 const res = await fetch(`https://api.visionled.vn/api/user/login-success/google/${resultFromGoogle.user.uid}`, {
-                    method: "POST",
+                    method: "GET",
                     headers: {
                         "Content-Type": "application/json",
                     }
@@ -77,11 +77,6 @@ export default function LoginForm({ userNameValue, handleUserNameChange, passwor
         }
     }
 
-    const handleGetDetailsUser = async (id, token) => {
-        const res = await UserServices.GetDetailsUser(id, token);
-        dispatch(updateUser({ ...res?.data, access_token: token }))
-    }
-    const { isLoggedIn } = useSelector(state => state.user)
     // const loginSuccess = async () => {
     //     const res = await UserServices.LoginSuccess("google", userId);
     //     return res;
