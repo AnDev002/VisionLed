@@ -1,11 +1,9 @@
 import React from 'react'
-import FullpageScroll from '../fullpageScroll'
 import { Box, Button, Card, CardContent, CardMedia, Grid, Typography } from '@mui/material'
 
 import { useNavigate, useParams } from 'react-router-dom'
 import * as ProjectServices from "../../../../Services/ProjectServices"
 import { useQuery } from '@tanstack/react-query'
-import BtnSeeMore from '../../../Components/btnSeeMore'
 
 
 
@@ -115,7 +113,6 @@ const ProjectCard = ({ onClickEvent, title, image, description, projectId }) => 
 );
   return (
     <>
-        {/* <FullpageScroll />*/}
         <div className="layer" style={{background: '#373737', position: 'fixed', top: '0', left: '0', right: '0', bottom: '0'}}></div>
         <Box sx={{
                     marginTop: {

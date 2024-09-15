@@ -1,12 +1,6 @@
 import * as React from 'react';
 import { styled } from '@mui/system';
-import RemoveIcon from '@mui/icons-material/Remove';
-import AddIcon from '@mui/icons-material/Add';
-import { useDispatch } from 'react-redux';
-import { useEffect } from 'react';
-import { changeQuantity } from '../../Redux/Slides/orderSlide';
-import { useState } from 'react';
-import { Box, Typography } from '@mui/material';
+import { Box } from '@mui/material';
 
       
 

@@ -5,7 +5,6 @@ import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import InputInForm from './InputInForm';
 import { UseMutationHooks } from '../../../Hooks/UseMutationHook';
 import * as CollectionServices from '../../../Services/CollectionServices'
-import { useQuery } from '@tanstack/react-query';
 import imageCompression from 'browser-image-compression';
 import { convertToBase64 } from '../../../Ults';
 

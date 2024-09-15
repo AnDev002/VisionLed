@@ -1,7 +1,4 @@
-import { Box } from '@mui/material'
 import React, { useEffect, useState } from 'react'
-import RemoveIcon from '@mui/icons-material/Remove';
-import AddIcon from '@mui/icons-material/Add';
 import { useDispatch } from 'react-redux';
 import { changeQuantity, getTotalPrice } from '../../Redux/Slides/orderSlide';
 export default function QuantityCustom({ value, id }) {

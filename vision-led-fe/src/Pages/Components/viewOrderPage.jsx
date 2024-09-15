@@ -1,11 +1,6 @@
-import { Navigate, useParams } from 'react-router-dom';
-import * as UserServices from '../../Services/UserServices'
 import { useQuery } from '@tanstack/react-query'
-import { useDispatch, useSelector } from 'react-redux';
-import { setUser } from '../../Redux/Slides/userSlide';
-import { useEffect, useState } from 'react';
-import jwt_decode from "jwt-decode";
-import { updateUser } from '../../Redux/Slides/userSlide';
+import { useSelector } from 'react-redux';
+import { useState } from 'react';
 import StickyNav from './stickyNav';
 import GlobalFooter from './footer';
 import { Box, Typography } from '@mui/material';

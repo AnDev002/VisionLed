@@ -2,7 +2,6 @@ import { Navigate, useNavigate, useParams } from 'react-router-dom';
 import * as UserServices from '../../Services/UserServices'
 import { useQuery } from '@tanstack/react-query'
 import { useDispatch, useSelector } from 'react-redux';
-import { setUser } from '../../Redux/Slides/userSlide';
 import { useEffect } from 'react';
 import jwt_decode from "jwt-decode";
 import { updateUser } from '../../Redux/Slides/userSlide';

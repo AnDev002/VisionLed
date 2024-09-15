@@ -1,16 +1,10 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import SpeedDial from '@mui/material/SpeedDial';
-import SpeedDialIcon from '@mui/material/SpeedDialIcon';
 import SpeedDialAction from '@mui/material/SpeedDialAction';
-import FileCopyIcon from '@mui/icons-material/FileCopyOutlined';
-import SaveIcon from '@mui/icons-material/Save';
-import PrintIcon from '@mui/icons-material/Print';
-import ShareIcon from '@mui/icons-material/Share';
 import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import { FaTiktok } from "react-icons/fa";
-import MessageIcon from '@mui/icons-material/Message';
 import { FcContacts } from "react-icons/fc";
 
 const actions = [

@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react'
 import { useNavigate } from "react-router-dom";
 import './globalComponents.css';
-import { IconButton, Toolbar, AppBar, Stack, Button, styled, Badge, Typography, Box, CardMedia } from '@mui/material';
-import SearchIcon from '@mui/icons-material/Search';
+import { IconButton, Toolbar, AppBar, Button, styled, Badge, Typography, Box, CardMedia } from '@mui/material';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import ToggleSideBar from './toggleSidebar';
 import { useState } from 'react';
@@ -13,9 +12,8 @@ import { UseMutationHooks } from '../../Hooks/UseMutationHook';
 import jwt_decode from "jwt-decode";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { useDispatch, useSelector } from 'react-redux';
-import { resetUser, updateSetUser, updateUser } from '../../Redux/Slides/userSlide';
+import { resetUser, updateUser } from '../../Redux/Slides/userSlide';
 import { removeProduct } from '../../Redux/Slides/orderSlide';
-import { useQuery } from '@tanstack/react-query';
 import CloseIcon from '@mui/icons-material/Close';
 
 const StyledBadge = styled(Badge)(({ theme }) => ({

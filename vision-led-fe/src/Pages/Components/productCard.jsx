@@ -1,9 +1,8 @@
 import React from 'react'
 // import { Link } from "react-router-dom";
 import './globalComponents.css';
-import { GridMaximize2O } from "lovedicons/dist/gridO";
-import { Box, Card, CardContent, CardMedia, Typography, Modal, Skeleton } from '@mui/material';
-import { Link, useNavigate } from 'react-router-dom';
+import { Card, CardContent, CardMedia, Typography } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 import { formatPrice } from '../../Ults';
 
 export default function ProductCard(props) {
