@@ -6,7 +6,7 @@ const cors = require('cors')
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const compressionMiddleware = require('./MiddleWare/ApplyCompression');
-const compression = require('compression'); // Thêm dòng này
+const compression = require('compression'); 
 //const { session } = require("passport");
 //const passport = require("passport");
 
@@ -26,7 +26,7 @@ app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 //  saveUninitialized: true
 //}))
 app.use(cookieParser())
-app.use(compression());
+app.use(compression({ threshold: 1024 }));
 app.use(compressionMiddleware);
 //app.use(passport.initialize());
 app.use(function (req, res, next) {

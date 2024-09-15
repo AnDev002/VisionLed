@@ -63,6 +63,16 @@ const loginUser = async (req, res) => {
     }
 }
 
+const loginWithGoogle = async(req, res) => {
+   // const { name, email, googlePhotoUrl } = req.body;
+    try {
+       const response = await UserService.loginWithGoogle(res, req.body);
+       return res.status(200).json(response)
+    } catch (error) {
+        next(error);
+    }
+}
+
 const updateUser = async (req, res) => {
     try {
         const userID = req.params.id
@@ -220,5 +230,6 @@ module.exports = {
     refreshToken,
     signOutUser,
     loginSuccess,
-    getUserWithProvider
+    getUserWithProvider,
+    loginWithGoogle
 }

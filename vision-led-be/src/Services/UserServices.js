@@ -61,7 +61,6 @@ const loginUser = (userLogin) => {
                 } catch (error) {
                     console.log("error ", error);
                 }
-
                 const access_token = await generalAccessToken({
                     id: checkUser.id,
                     isAdmin: checkUser.isAdmin
@@ -81,6 +80,53 @@ const loginUser = (userLogin) => {
             }
 
 
+        } catch (error) {
+            console.log(error);
+        }
+    })
+}
+
+const loginWithGoogle = (res, userLogin) => {
+    return new Promise(async (resolve, reject) => {
+        const { name, email, googlePhotoUrl } = userLogin
+        try {
+            const user = await User.findOne({
+                email: email
+            })
+            console.log("user name: ", name)
+            if (user) {
+                const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
+                const { password, ...rest } = user._doc;
+
+                res.status(200).cookie("access_token", token, {
+                    httpOnly: true
+                }).json(rest);
+            } else {
+                const generatedPassword = 
+                  Math.random().toString(36).slice(-8) + 
+                  Math.random().toString(36).slice(-8);
+                const hashedPassword = bcrypt.hashSync(generatedPassword, 10);
+                const newUser = new User({
+                    name: name.toLowerCase().split(" ").join("") + Math.round().toString(9).slice(-4),
+                    email,
+                    avatar: googlePhotoUrl,
+                    password: hashedPassword
+                });
+                await newUser.save();
+
+                const token = jwt.sign({
+                    id: newUser._id,
+
+                }, process.env.JWT_SECRET);
+
+                const { password, ...rest } = newUser._doc;
+                res.status(200).cookie("access_token", token, {
+                    httpOnly: true,
+                    secure: true,
+                    maxAge: 24 * 60 * 60 * 1000, 
+                    sameSite: "strict"
+                }).json(rest);
+            }
         } catch (error) {
             console.log(error);
         }
@@ -257,5 +303,6 @@ module.exports = {
     getAllUser,
     getDetailsUser,
     loginSuccess,
-    getUserWithProvider
+    getUserWithProvider,
+    loginWithGoogle
 }
