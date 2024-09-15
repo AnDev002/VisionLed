@@ -6,6 +6,11 @@ export const LoginUser = async (data) => {
     return res.data
 }
 
+export const LoginWithGoogle = async (data) => {
+    const res = await axios.post(`https://api.visionled.vn/api/user/login-with-google`, data)
+    return res.data
+}
+
 export const LoginSuccess = async (provider, userId) => {
     const res = await axios.post(`https://api.visionled.vn/api/user/login-success/${provider}/${userId}`)
     return res.data

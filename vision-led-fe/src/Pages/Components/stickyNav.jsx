@@ -122,7 +122,6 @@ export default function StickyNav() {
             email: userNameValue,
             password: passwordValue
         })
-
     }
 
     const { data, isLoading, isSuccess } = mutation

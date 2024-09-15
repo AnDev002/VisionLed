@@ -2,25 +2,68 @@ import { Box, Button, FormControl, IconButton, Input, InputAdornment, InputLabel
 import React, { useEffect, useState } from 'react'
 import CloseIcon from '@mui/icons-material/Close';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
-// import { getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithPopup } from 'firebase/auth'
+import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
 // import firebase from 'firebase/app';
-// import { app } from '../../firebase'
+import { app } from '../../firebase'
+import { useDispatch } from 'react-redux';
+import * as UserServices from './../../Services/UserServices';
+import { updateUser } from '../../Redux/Slides/userSlide';
+import { UseMutationHooks } from '../../Hooks/UseMutationHook';
 
 export default function LoginForm({ userNameValue, handleUserNameChange, passwordValue, handlePasswordChange, handleSignIn, data, toggleLoginForm, handleToggleLogin }) {
+    const dispatch = useDispatch();
     // const authFromFirebase = getAuth(app);
-    const [auth, setAuth] = useState(false);
-    const [token, setToken] = useState('');
-    useEffect(() => {
-        // firebase.auth().onAuthStateChanged((userCred) => {
-        //    console.log(userCred);
-        // })
-    }, []);
+    // const [auth, setAuth] = useState(false);
+    // const [token, setToken] = useState('');
+    // useEffect(() => {
+    //     // firebase.auth().onAuthStateChanged((userCred) => {
+    //     //    console.log(userCred);
+    //     // })
+    // }, []);
 
+
+ 
+    const mutation = UseMutationHooks(data => UserServices.LoginWithGoogle(data))
+
+
+
+    const auth = getAuth(app);
     const handleGoogleLogin = async () => {
         // authFromFirebase.signInWithPopup(new GoogleAuthProvider()).then((userCred)=> {
         //     console.log(userCred);
         // })
+        const provider = new GoogleAuthProvider();
+        provider.setCustomParameters({prompt: "select_account"});
+        try {
+            const resultFromGoogle = await signInWithPopup(auth, provider);
+            console.log(resultFromGoogle);
+            const res = await fetch("https://api.visionled.vn/api/auth/login-with-google", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    name: resultFromGoogle.user.displayName,
+                    email: resultFromGoogle.user.email,
+                    googlePhotoUrl: resultFromGoogle.user.photoURL,
+                })
+            });
+
+            const data = await res.json();
+            if(res.ok) {
+                //console.log("data + " + data);
+            }
+
+        } catch (error) {
+            console.error(error);
+        }
     }
+
+    //const handleGetDetailsUser = async (id, token) => {
+       // const res = await UserServices.GetDetailsUser(id, token);
+       // dispatch(updateUser({ ...res?.data, access_token: token }))
+   // }
+
     const handleFacebookLogin = () => {
         // window.open("https://visionled.online/api/auth/facebook", "_self")
     }
