@@ -10,7 +10,7 @@ import 'swiper/css/navigation';
 // import required modules
 import { Pagination, Navigation } from 'swiper/modules';
 import { Box } from '@mui/material';
-import ProductCard from './productCard';
+import ProductCardHome from './productCardHomepage';
 
 
 
@@ -31,7 +31,7 @@ export default function ProductSlideShow(props) {
                     slidesPerView={props.products?.length || 5}
                     breakpoints={{ 1536: { slidesPerView: 4, }, 900: { slidesPerView: 3, }, 600: { slidesPerView: 3, }, 0: { slidesPerView: 1, } }}
                     centeredSlides={true}
-                    spaceBetween={30}
+                    spaceBetween={10}
                     pagination={{ type: 'fraction', }}
                     initialSlide={2}
                     navigation={true}
@@ -41,8 +41,8 @@ export default function ProductSlideShow(props) {
                         props.products?.map((item, index) => {
                             
                             return <>
-                                <SwiperSlide key={index}><Box>
-                                    <ProductCard index={item._id} saleRate={item.sale_rate} minPrice={item.min_price} maxPrice={item.max_price} productName={item.name} productImg={item.image[0]} />
+                                <SwiperSlide key={index}><Box sx={{border: '1px solid rgb(228 228 228)', overflow: 'hidden'}}>
+                                    <ProductCardHome index={item._id} saleRate={item.sale_rate} minPrice={item.min_price} maxPrice={item.max_price} productName={item.name} productImg={item.image[0]} />
                                 </Box></SwiperSlide>
                             </>
                         })

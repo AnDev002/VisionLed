@@ -185,23 +185,23 @@ export default function StickyNav() {
 
                             <Button onClick={() => handleLink("products/0")}
                                 color='inherit' sx={{
-                                    display: { xs: 'none', md: 'flex' }, textTransform: 'none', fontFamily: "'Times New Roman', Times, serif", fontWeight: 'bold', "&.hover": {
+                                    display: { xs: 'none', md: 'flex' }, textTransform: 'none', fontFamily: "'Cormorant Garamond', serif", fontWeight: 'bold', "&.hover": {
                                         border: 'none',
                                         boxShadow: 'none'
                                     }
                                 }}>
                                 <Typography variant="body2" sx={{
                                     color: "#ffff99", 
-                                    fontFamily: "'Times New Roman', Times, serif", "&:hover": {
+                                    fontFamily: "'Cormorant Garamond', serif", "&:hover": {
                                         color: "#ffff99",
                                     },
                                     fontSize: "0.8rem"
                                 }}>SẢN PHẨM</Typography>
                             </Button>
-                            <Button color='inherit' sx={{ display: { xs: 'none', md: 'flex' }, textTransform: 'none', fontFamily: "'Times New Roman', Times, serif", fontWeight: 'bold' }}>
+                            <Button color='inherit' sx={{ display: { xs: 'none', md: 'flex' }, textTransform: 'none', fontFamily: "'Cormorant Garamond', serif", fontWeight: 'bold' }}>
                                 <Typography onClick={() => handleLink("collections")} sx={{
                                     color: "#ffff99", 
-                                    fontFamily: "'Times New Roman', Times, serif", "&:hover": {
+                                    fontFamily: "'Cormorant Garamond', serif", "&:hover": {
                                         color: "#ffff99",
                                     },
                                     fontSize: "0.8rem"
@@ -211,20 +211,20 @@ export default function StickyNav() {
                                 display: {
                                     xs: 'none',
                                     md: 'flex'
-                                }, textTransform: 'none', fontFamily: "'Times New Roman', Times, serif", fontWeight: 'bold'
+                                }, textTransform: 'none', fontFamily: "'Cormorant Garamond', serif", fontWeight: 'bold'
                             }}>
                                 <Typography onClick={() => handleLink("projects")} sx={{
                                     color: "#ffff99", 
-                                    fontFamily: "'Times New Roman', Times, serif", "&:hover": {
+                                    fontFamily: "'Cormorant Garamond', serif", "&:hover": {
                                         color: "#ffff99",
                                     },
                                     fontSize: "0.8rem"
                                 }}>DỰ ÁN</Typography>
                             </Button>
-                            <Button color='inherit' sx={{ display: { xs: 'none', md: 'flex' }, textTransform: 'none', fontFamily: "'Times New Roman', Times, serif", fontWeight: 'bold' }}>
+                            <Button color='inherit' sx={{ display: { xs: 'none', md: 'flex' }, textTransform: 'none', fontFamily: "'Cormorant Garamond', serif", fontWeight: 'bold' }}>
                                 <Typography onClick={() => handleLink("about-us")} sx={{
                                     color: "#ffff99", 
-                                    fontFamily: "'Times New Roman', Times, serif", "&:hover": {
+                                    fontFamily: "'Cormorant Garamond', serif", "&:hover": {
                                         color: "#ffff99",
                                     },
                                     fontSize: "0.8rem"

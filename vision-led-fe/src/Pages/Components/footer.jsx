@@ -7,10 +7,11 @@ export default function GlobalFooter() {
         <>
             <Box sx={{
                 backgroundColor: '#F7F7F7',
+                fontFamily: "Roboto"
             }}>
                 <Footer
                     maxColumnsPerRow={3}
-                    style={{ fontSize: "1.5rem !important" }}
+                    style={{ fontSize: "1.5rem !important", fontFamily: "Roboto !important" }}
                     columns={
                         [
                             {

@@ -50,15 +50,19 @@ export default function ProductCollection() {
                             padding: {
                                 xs: "0 20px",
                                 sm: "0 20px",
-                                md: "0 30px",
-                                lg: "0 30px",
-                                xl: "0 30px"
+                                md: "0 50px",
+                                lg: "0 50px",
+                                xl: "0 50px"
                             }
                         }}>
                             <Grid item xs={12} sm={12} md={6} lg={6} xl={6} sx={{
                                 padding: {
                                     xs: "5px",
-                                    md: "50px"
+                                    md: "80px"
+                                },
+                                paddingRight: {
+                                    xs: "5px",
+                                    md: "50px",
                                 }
                             }}>
                                 {
@@ -71,17 +75,20 @@ export default function ProductCollection() {
                                             backgroundColor: '#ffffff'
                                         }} className="crd crd-collection">
                                             <CardMedia alt='unsplash image' component="img" sx={{ height: randomNums1[index] }} image={item.image} />
-                                            <Typography variant='h4' sx={{ textAlign: 'center', margin: '10px 0', fontFamily: "'Times New Roman', Times, serif", textTransform: "uppercase", fontSize: "1.5rem" }}>{item.name}</Typography>
+                                            <Typography variant='h4' sx={{ textAlign: 'center', margin: '10px 0', fontFamily: "'Cormorant Garamond', serif", fontWeight: '400', textTransform: "uppercase", fontSize: "1.5rem" }}>{item.name}</Typography>
                                             <BtnSeeMore collectionId={item._id} mgLeft={'50%'} transform='translateX(-50%)' />
                                         </Card>
                                     })
                                 }
                             </Grid>
-
                             <Grid item xs={12} sm={12} md={6} lg={6} xl={6} sx={{
                                 padding: {
                                     xs: "5px",
-                                    md: "50px"
+                                    md: "80px",
+                                },
+                                paddingLeft: {
+                                    xs: "5px",
+                                    md: "50px",
                                 }
                             }}>
                                 {
@@ -93,7 +100,7 @@ export default function ProductCollection() {
                                             backgroundColor: '#ffffff'
                                         }} className="crd crd-collection">
                                             <CardMedia alt='unsplash image' sx={{ height: randomNums2[index] }} component="img" image={item.image} />
-                                            <Typography variant='h4' sx={{ textAlign: 'center', margin: '10px 0', fontFamily: "'Times New Roman', Times, serif", textTransform: "uppercase", fontSize: "1.5rem" }}>{item.name}</Typography>
+                                            <Typography variant='h4' sx={{ textAlign: 'center', margin: '10px 0', fontFamily: "'Cormorant Garamond', serif", textTransform: "uppercase", fontSize: "1.3rem" }}>{item.name}</Typography>
                                             <BtnSeeMore collectionId={item._id} mgLeft={'50%'} transform='translateX(-50%)' />
                                         </Card>
                                     })

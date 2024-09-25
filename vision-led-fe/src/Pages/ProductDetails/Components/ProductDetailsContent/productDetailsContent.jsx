@@ -83,7 +83,7 @@ export default function ProductDetailsContent() {
             component="span"
             variant="h3"
             sx={{
-              fontFamily: "'Times New Roman', Times, serif",
+              fontFamily: "Roboto",
               userSelect: 'none',
               fontSize: '1rem',
               fontWeight: 'bold',
@@ -245,7 +245,7 @@ export default function ProductDetailsContent() {
 
   return (
     <>
-      <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }} sx={{ marginTop: '100px', padding: "5px", fontFamily: "'Times New Roman', Times, serif" }}>
+      <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }} sx={{ marginTop: '100px', padding: "5px", fontFamily: "Roboto" }}>
         {
           isLoadingDetails === false && isLoadingDetails !== null ?
             <>
@@ -263,7 +263,7 @@ export default function ProductDetailsContent() {
                         sx={{
                           userSelect: "none",
                           fontSize: "2rem",
-                          fontFamily: "'Times New Roman', Times, serif"
+                          fontFamily: "Roboto"
                         }}
                       >
                         {productDetail?.product.name}
@@ -276,7 +276,7 @@ export default function ProductDetailsContent() {
                           userSelect: "none",
                           fontSize: "1.8rem",
                           marginTop: '10px',
-                          fontFamily: "'Times New Roman', Times, serif"
+                          fontFamily: "Roboto"
                         }}
                       >
                         Mã sản phẩm - {productDetail?.idProduct ? productDetail?.idProduct : ""}
@@ -295,7 +295,7 @@ export default function ProductDetailsContent() {
                                 fontSize: "1rem",
                                 textDecoration: 'line-through',
                                 alignItems: 'center',
-                                fontFamily: "'Times New Roman', Times, serif"
+                                fontFamily: "Roboto"
                               }}
                             >
                               {formatPrice(productDetail?.unit_price)}
@@ -309,7 +309,7 @@ export default function ProductDetailsContent() {
                                 display: 'flex',
                                 alignItems: 'center',
                                 gap: '20px',
-                                fontFamily: "'Times New Roman', Times, serif"
+                                fontFamily: "Roboto"
                               }}
                             >
                               {" " + formatPrice(productDetail?.sale_price)}
@@ -323,7 +323,7 @@ export default function ProductDetailsContent() {
                               fontSize: "1rem",
                               textDecoration: 'line-through',
                               alignItems: 'center',
-                              fontFamily: "'Times New Roman', Times, serif"
+                              fontFamily: "Roboto"
                             }}
                           >
                             {formatPrice(productDetail?.unit_price)}
@@ -336,10 +336,10 @@ export default function ProductDetailsContent() {
                           style={{
                             userSelect: "none",
                             fontSize: '1rem',
-                            fontFamily: "'Times New Roman', Times, serif"
+                            fontFamily: "Roboto"
                           }}
                         >
-                          <Typography sx={{fontFamily: "'Times New Roman', Times, serif"}}>
+                          <Typography sx={{fontFamily: "Roboto"}}>
                             Model
                           </Typography>
                         </span>
@@ -366,10 +366,10 @@ export default function ProductDetailsContent() {
                           userSelect: "none",
                           fontSize: '1rem',
                           marginTop: "15px",
-                          fontFamily: "'Times New Roman', Times, serif"
+                          fontFamily: "Roboto"
                         }}
                       >
-                        <Typography sx={{fontFamily: "'Times New Roman', Times, serif"}}>
+                        <Typography sx={{fontFamily: "Roboto"}}>
                           Số Lượng
                         </Typography>
                       </span>
@@ -422,11 +422,11 @@ export default function ProductDetailsContent() {
                               color: "black",
                               transition: ".3s",
                             },
-                            fontFamily: "'Times New Roman', Times, serif"
+                            fontFamily: "Roboto"
                           }}
                         >
                           <Box sx={{ display: "flex", alignItems: "center", textTransform: 'none', color: 'black' }}>
-                            <Typography variant="h6"  sx={{fontFamily: "'Times New Roman', Times, serif"}}>Mua Ngay</Typography>
+                            <Typography variant="h6"  sx={{fontFamily: "Roboto"}}>Mua Ngay</Typography>
                           </Box>
                         </Button>
                         <button
@@ -449,7 +449,7 @@ export default function ProductDetailsContent() {
                       <div style={{ width: "100%" }}>
                         <div style={{}}>
                           <Typography variant="h5" sx={{ marginBottom: "10px",
-                          fontFamily: "'Times New Roman', Times, serif" }}>
+                          fontFamily: "Roboto" }}>
                             THÔNG SỐ KĨ THUẬT
                           </Typography>
                         </div>
@@ -464,7 +464,7 @@ export default function ProductDetailsContent() {
                                   sx={{
                                     userSelect: "none",
                                     fontSize: "1rem",
-                                    fontFamily: "'Times New Roman', Times, serif",
+                                    fontFamily: "Roboto",
                                     fontWeight: 'bold',
                                   }}
                                 >
@@ -480,7 +480,7 @@ export default function ProductDetailsContent() {
                                 sx={{
                                   userSelect: "none",
                                   fontSize: "1rem",
-                                  fontFamily: "'Times New Roman', Times, serif",
+                                  fontFamily: "Roboto",
                                   fontWeight: 'bold',
                                 }}
                               >
@@ -498,7 +498,7 @@ export default function ProductDetailsContent() {
                                       userSelect: "none",
                                       fontSize: "1rem",
                                       fontWeight: 'bold',
-                                      fontFamily: "'Times New Roman', Times, serif"
+                                      fontFamily: "Roboto"
                                     }}
                                   >
                                     Quang thông - {productDetail?.luminous_flux}
@@ -516,7 +516,7 @@ export default function ProductDetailsContent() {
                                       userSelect: "none",
                                       fontSize: "1rem",
                                       fontWeight: 'bold',
-                                      fontFamily: "'Times New Roman', Times, serif"
+                                      fontFamily: "Roboto"
                                     }}
                                   >
                                     Tiêu chuẩn - {productDetail?.standard}
@@ -534,7 +534,7 @@ export default function ProductDetailsContent() {
                                       userSelect: "none",
                                       fontSize: "1rem",
                                       fontWeight: 'bold',
-                                      fontFamily: "'Times New Roman', Times, serif"
+                                      fontFamily: "Roboto"
                                     }}
                                   >
                                     Lớp bảo vệ - {productDetail?.secureLv}
@@ -552,7 +552,7 @@ export default function ProductDetailsContent() {
                                       userSelect: "none",
                                       fontSize: "1rem",
                                       fontWeight: 'bold',
-                                      fontFamily: "'Times New Roman', Times, serif"
+                                      fontFamily: "Roboto"
                                     }}
                                   >
                                     Vật liệu - {productDetail?.texture}
@@ -570,7 +570,7 @@ export default function ProductDetailsContent() {
                                       userSelect: "none",
                                       fontSize: "1rem",
                                       fontWeight: 'bold',
-                                      fontFamily: "'Times New Roman', Times, serif"
+                                      fontFamily: "Roboto"
                                     }}
                                   >
                                     Nhiệt độ màu - {productDetail?.lumens_color_temperature}
@@ -589,7 +589,7 @@ export default function ProductDetailsContent() {
                                       userSelect: "none",
                                       fontSize: "1rem",
                                       fontWeight: 'bold',
-                                      fontFamily: "'Times New Roman', Times, serif"
+                                      fontFamily: "Roboto"
                                     }}
                                   >
                                     Chỉ số hoàn màu (CRI) - {productDetail?.CRI}
@@ -607,7 +607,7 @@ export default function ProductDetailsContent() {
                                       userSelect: "none",
                                       fontSize: "1rem",
                                       fontWeight: 'bold',
-                                      fontFamily: "'Times New Roman', Times, serif"
+                                      fontFamily: "Roboto"
                                     }}
                                   >
                                     Chip led - {productDetail?.chip_led}
@@ -625,7 +625,7 @@ export default function ProductDetailsContent() {
                                       userSelect: "none",
                                       fontSize: "1rem",
                                       fontWeight: 'bold',
-                                      fontFamily: "'Times New Roman', Times, serif"
+                                      fontFamily: "Roboto"
                                     }}
                                   >
                                     Kích thước - {productDetail?.dimension}
@@ -643,7 +643,7 @@ export default function ProductDetailsContent() {
                                       userSelect: "none",
                                       fontSize: "1rem",
                                       fontWeight: 'bold',
-                                      fontFamily: "'Times New Roman', Times, serif"
+                                      fontFamily: "Roboto"
                                     }}
                                   >
                                     Kích thước lỗ khoét - {productDetail?.hole_dimension}
@@ -662,7 +662,7 @@ export default function ProductDetailsContent() {
                                       fontSize: "1rem",
 
                                       fontWeight: 'bold',
-                                      fontFamily: "'Times New Roman', Times, serif"
+                                      fontFamily: "Roboto"
                                     }}
                                   >
                                     Góc chiếu - {productDetail?.projection_angle}
@@ -680,7 +680,7 @@ export default function ProductDetailsContent() {
                                       userSelect: "none",
                                       fontSize: "1rem",
                                       fontWeight: 'bold',
-                                      fontFamily: "'Times New Roman', Times, serif"
+                                      fontFamily: "Roboto"
                                     }}
                                   >
                                     Bảo hành - {productDetail?.warranty}

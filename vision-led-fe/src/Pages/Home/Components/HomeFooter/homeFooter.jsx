@@ -12,6 +12,7 @@ export default function HomeFooter() {
            
             <GlobalFooter style={{
                 backgroundColor: '#ffffff',
+                fontFamily: "Roboto"
             }} />
         </>
     )

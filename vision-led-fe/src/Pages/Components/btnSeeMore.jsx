@@ -14,9 +14,6 @@ export default function BtnSeeMore(props) {
             {
                 props.collectionId ?
                     <div className='btn-dir2'>
-                        <div className="arrow-container2">
-                            <div className="arrow2"></div>
-                        </div>
                         <Button onClick={() => handleNavLink(props.collectionId)} color='primary' {...props} sx={{
                             display: 'flex',
                             justifyContent: 'center',
@@ -44,9 +41,6 @@ export default function BtnSeeMore(props) {
                     </div>
                     :
                     <div className='btn-dir2'>
-                        <div className="arrow-container2">
-                            <div className="arrow2"></div>
-                        </div>
                         <Button color='primary' {...props} sx={{
                             display: 'flex',
                             justifyContent: 'center',
@@ -67,7 +61,6 @@ export default function BtnSeeMore(props) {
                                 borderColor: 'black',
                                 transition: '.3s',
                             },
-
                         }}>Xem Thêm</Button>
                     </div>
             }

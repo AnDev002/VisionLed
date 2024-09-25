@@ -5,7 +5,7 @@ import { Card, CardContent, CardMedia, Typography } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { formatPrice } from '../../Ults';
 
-export default function ProductCard(props) {
+export default function ProductCardHome(props) {
     const navigate = useNavigate();
     const handleLink = () => {
         navigate(`/product-details/${props.index}`)
@@ -15,19 +15,21 @@ export default function ProductCard(props) {
     return (
         <>
             <Card sx={{
-                // cursor: 'pointer', border: '1px solid #f3f3f3',
+                cursor: 'pointer',
                 // display: 'flex',
                 // flexDirection: 'column',
-                // height: '100%'
             }} className='card'>
-                <span onClick={handleLink}>
+                <span onClick={handleLink} >
                     <CardMedia alt='unsplash image' component="img" image={props.productImg ? props.productImg : ""} />
-                    <CardContent sx={{ position: 'absolute', bottom: 0, left: 0, minHeight: "150px", justifyContent: 'end', textAlign: 'left', display: 'flex', flexDirection: 'column', borderRadius: "0 !important" }}>
-                        <Typography gutterBottom variant='h5' sx={{ fontFamily: "'Cormorant Garamond', serif", color: 'black', fontSize: '1rem', flex: 'left' }}>{props.productName}</Typography>
-                        <Typography variant='body1' sx={{ fontFamily: "Roboto", color: 'black', fontWeight: 'bold', fontSize: '1rem' }}>{priceDisplay}</Typography>
-                    </CardContent>
+                    
                 </span>
             </Card >
+            <div>
+                <CardContent sx={{ minHeight: "50px", justifyContent: 'end', textAlign: 'left', display: 'flex', flexDirection: 'column', borderRadius: "0 !important" }}>
+                    <Typography gutterBottom variant='h5' sx={{ fontFamily: "'Cormorant Garamond', serif", color: 'black', fontSize: '1rem', flex: 'left' }}>{props.productName}</Typography>
+                    <Typography variant='body1' sx={{ fontFamily: "Roboto", color: 'black', fontWeight: 'bold', fontSize: '1rem' }}>{priceDisplay}</Typography>
+                </CardContent>
+            </div>
         </>
     )
 }
