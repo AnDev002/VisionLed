@@ -27,7 +27,7 @@ export default function ToggleSideBar() {
                     <span className='close-side-bar' onClick={toggleSidebar}><AiOutlineClose /></span>
                     {SidebarData.map((item, index) => {
                         return <>
-                            <li key={index} className={item.cName} style={{ display: "flex", alignItems: "center", cursor: "pointer" }}>
+                            <li key={index} className={item.cName} style={{ display: "flex", alignItems: "center", cursor: "pointer", fontFamily: "'Times New Roman', Times, serif" }}>
                                 <div style={{ display: "flex", justifyContent: "center", textAlign: 'center' }}>
                                     <Link to={item.path} className='nav-link' sx={{ justifyContent: "center", textAlign: 'center' }}><Typography sx={{ fontSize: "1.2rem" }}>{item.title}</Typography></Link>
                                 </div>

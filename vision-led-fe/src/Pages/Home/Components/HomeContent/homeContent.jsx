@@ -190,7 +190,7 @@ export default function HomeContent() {
               }, borderRadius: '12px', overflow: 'hidden'
               }}>
                 <Box sx={{width: {xs: "100%", md: '75vw'}, height: 'auto', overflow: 'hidden'}}>
-                    <Box sx={{padding: { xs: "5px", sm: '15px', md: '50px', alignItems: 'center'}}}>
+                    <Box sx={{padding: { xs: "20px", sm: '25px', md: '50px', alignItems: 'center'}}}>
                         <Typography sx={{fontSize: '2.6rem',fontFamily: "'Cormorant Garamond', serif", fontWeight: '600'}}>Về Chúng Tôi</Typography>
                         <Typography sx={{fontFamily: "'Cormorant Garamond', serif", fontWeight: '500', fontSize: '1.5rem'}}>Với 20 năm kinh nghiệm, chúng tôi là công ty hàng đầu chuyên sản xuất và thiết kế các giải pháp chiếu sáng cho các công trình lớn. Thành công của chúng tôi trong ngành là nhờ vào khả năng hiểu và đáp ứng mong đợi và nguyện vọng của khách hàng. Bằng cách hợp tác với các đối tác từ khắp nơi trên thế giới, chúng tôi cung cấp cho khách hàng những vật liệu chất lượng hàng đầu và những lợi ích lớn nhất khi sử dụng.</Typography>
                     

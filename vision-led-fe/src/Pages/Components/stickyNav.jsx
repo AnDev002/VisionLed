@@ -166,7 +166,7 @@ export default function StickyNav() {
                 <AppBar position='static' sx={{ bgcolor: "#0000008a", boxShadow: 'none' }}>
                     <Toolbar className="nav-wrapper" style={{ display: "flex", justifyContent: "space-between" }}>
                         <Box onClick={() => handleLink("")} sx={{ color: 'black !important' }}>
-                            <Typography variant="h4" sx={{color: opac ? "white" : "#FFFF99"}}>VISION LED</Typography>
+                            <Typography variant="h4" sx={{color: "white"}}>VISION LED</Typography>
                             {/* <CardMedia alt='unsplash image' component="img" sx={{
                                 maxWidth: {
                                     xs: "120px",
@@ -185,14 +185,14 @@ export default function StickyNav() {
 
                             <Button onClick={() => handleLink("products/0")}
                                 color='inherit' sx={{
-                                    display: { xs: 'none', md: 'flex' }, textTransform: 'none', fontFamily: "'Cormorant Garamond', serif", fontWeight: 'bold', "&.hover": {
+                                    display: { xs: 'none', md: 'flex' }, textTransform: 'none', fontFamily: "'Times New Roman', Times, serif", fontWeight: 'bold', "&.hover": {
                                         border: 'none',
                                         boxShadow: 'none'
                                     }
                                 }}>
                                 <Typography variant="body2" sx={{
                                     color: "#ffff99", 
-                                    fontFamily: "'Cormorant Garamond', serif", "&:hover": {
+                                    fontFamily: "'Times New Roman', Times, serif", "&:hover": {
                                         color: "#ffff99",
                                     },
                                     fontSize: "0.8rem"
@@ -201,7 +201,7 @@ export default function StickyNav() {
                             <Button color='inherit' sx={{ display: { xs: 'none', md: 'flex' }, textTransform: 'none', fontFamily: "'Cormorant Garamond', serif", fontWeight: 'bold' }}>
                                 <Typography onClick={() => handleLink("collections")} sx={{
                                     color: "#ffff99", 
-                                    fontFamily: "'Cormorant Garamond', serif", "&:hover": {
+                                    fontFamily: "'Times New Roman', Times, serif", "&:hover": {
                                         color: "#ffff99",
                                     },
                                     fontSize: "0.8rem"
@@ -211,20 +211,20 @@ export default function StickyNav() {
                                 display: {
                                     xs: 'none',
                                     md: 'flex'
-                                }, textTransform: 'none', fontFamily: "'Cormorant Garamond', serif", fontWeight: 'bold'
+                                }, textTransform: 'none', fontFamily: "'Times New Roman', Times, serif"
                             }}>
                                 <Typography onClick={() => handleLink("projects")} sx={{
                                     color: "#ffff99", 
-                                    fontFamily: "'Cormorant Garamond', serif", "&:hover": {
+                                    fontFamily: "'Times New Roman', Times, serif", "&:hover": {
                                         color: "#ffff99",
                                     },
                                     fontSize: "0.8rem"
                                 }}>DỰ ÁN</Typography>
                             </Button>
-                            <Button color='inherit' sx={{ display: { xs: 'none', md: 'flex' }, textTransform: 'none', fontFamily: "'Cormorant Garamond', serif", fontWeight: 'bold' }}>
+                            <Button color='inherit' sx={{ display: { xs: 'none', md: 'flex' }, textTransform: 'none', fontFamily: "'Cormorant Garamond', serif" }}>
                                 <Typography onClick={() => handleLink("about-us")} sx={{
                                     color: "#ffff99", 
-                                    fontFamily: "'Cormorant Garamond', serif", "&:hover": {
+                                    fontFamily: "'Times New Roman', Times, serif", "&:hover": {
                                         color: "#ffff99",
                                     },
                                     fontSize: "0.8rem"
