@@ -29,7 +29,6 @@ export default function BtnSeeMore(props) {
                             border: '1px solid white',
                             backgroundColor: 'rgba(50, 50, 50, 100%)',
                             fontFamily:  "'Afacad Flux', sans-serif",
-                            fontSize: "1.1rem",
                             borderRadius: '0',
                             '&:hover': {
                                 backgroundColor: 'rgba(256, 256, 256, 100%)',
@@ -55,6 +54,7 @@ export default function BtnSeeMore(props) {
                             padding: '8px 20px',
                             border: '1px solid white',
                             backgroundColor: 'rgba(50, 50, 50, 100%)',
+                            fontFamily:  "'Afacad Flux', sans-serif",
                             borderRadius: '0',
                             '&:hover': {
                                 backgroundColor: 'rgba(256, 256, 256, 100%)',
