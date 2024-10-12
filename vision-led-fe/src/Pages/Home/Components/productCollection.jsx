@@ -75,7 +75,7 @@ export default function ProductCollection() {
                                             backgroundColor: '#ffffff'
                                         }} className="crd crd-collection">
                                             <CardMedia alt='unsplash image' component="img" sx={{ height: randomNums1[index] }} image={item.image} />
-                                            <Typography variant='h4' sx={{ textAlign: 'center', margin: '10px 0', fontFamily: "'Cormorant Garamond', serif", fontWeight: '400', textTransform: "uppercase", fontSize: "1.5rem" }}>{item.name}</Typography>
+                                            <Typography variant='h4' sx={{ textAlign: 'center', margin: '10px 0', fontWeight: "400", fontFamily: "'Afacad Flux', sans-serif", textTransform: "uppercase", fontSize: "1.5rem" }}>{item.name}</Typography>
                                             <BtnSeeMore collectionId={item._id} mgLeft={'50%'} transform='translateX(-50%)' />
                                         </Card>
                                     })
@@ -100,7 +100,7 @@ export default function ProductCollection() {
                                             backgroundColor: '#ffffff'
                                         }} className="crd crd-collection">
                                             <CardMedia alt='unsplash image' sx={{ height: randomNums2[index] }} component="img" image={item.image} />
-                                            <Typography variant='h4' sx={{ textAlign: 'center', margin: '10px 0', fontFamily: "'Cormorant Garamond', serif", textTransform: "uppercase", fontSize: "1.3rem" }}>{item.name}</Typography>
+                                            <Typography variant='h4' sx={{ textAlign: 'center', margin: '10px 0', fontWeight: "400", fontFamily: "'Afacad Flux', sans-serif", textTransform: "uppercase", fontSize: "1.3rem" }}>{item.name}</Typography>
                                             <BtnSeeMore collectionId={item._id} mgLeft={'50%'} transform='translateX(-50%)' />
                                         </Card>
                                     })

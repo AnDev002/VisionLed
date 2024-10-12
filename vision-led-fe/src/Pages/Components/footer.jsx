@@ -7,11 +7,11 @@ export default function GlobalFooter() {
         <>
             <Box sx={{
                 backgroundColor: '#F7F7F7',
-                fontFamily: "Roboto"
+                fontWeight: "300", fontFamily: "'Afacad Flux', sans-serif"
             }}>
                 <Footer
                     maxColumnsPerRow={3}
-                    style={{ fontSize: "1.5rem !important", fontFamily: "Roboto !important" }}
+                    style={{ fontSize: "1.5rem !important", fontWeight: "300", fontFamily: "'Afacad Flux', sans-serif" }}
                     columns={
                         [
                             {
@@ -27,6 +27,9 @@ export default function GlobalFooter() {
                                 items: [
                                     {
                                         title: '0913.201920 – 0978.116688'
+                                    },
+                                    {
+                                        title: 'tamanhlighting@gmail.com'
                                     }
                                 ]
                             },

@@ -37,17 +37,17 @@ export default function HomeContent() {
             <Box className="full-height-img">
                 <Box sx={{ display: 'flex', justifyContent: 'center', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', zIndex: '100', flexWrap: 'wrap' }}>
                     <Box className="home-content-s" sx={{
-                        width: '100vw', padding: '0 20px', color: "white", fontFamily: "'Times New Roman', Times, serif",
+                        width: '100vw', padding: '0 20px', color: "white",
                         display: 'flex', justifyContent: 'center'
                     }}>
-                        <Typography variant="h3" sx={{
+                        <Typography variant="h2" sx={{
                             fontSize: {
-                                xs: '1.3rem',
-                                sm: '2rem',
-                                md: '3rem'
+                                xs: '1.8rem',
+                                sm: '2.5rem',
+                                md: '3.5rem'
                             },
-                            fontFamily: "'Times New Roman', Times, serif"
-                        }}>BETTER LIGHT FOR BETTER LIFE</Typography>
+                            fontFamily: "'Sacramento', cursive"
+                        }}>Better Light For Better Life</Typography>
                         <br />
                     </Box>
                     <Link className='btn-dir' to='/collections' style={{ textDecoration: 'none' }}>
@@ -73,8 +73,7 @@ export default function HomeContent() {
                                 color: 'white',
                                 transition: '.3s',
                             },
-                            marginTop: '20px',
-                            fontFamily: "'Times New Roman', Times, serif"
+                            marginTop: '20px', fontWeight: "300", fontFamily: "'Afacad Flux', sans-serif"
                         }}>
                             bộ sưu tập
                         </Button>
@@ -91,7 +90,7 @@ export default function HomeContent() {
                         md: "0 50px",
                         lg: "0 150px",
                         xl: "0 250px"
-                    }, userSelect: 'none', marginBottom: "10px", fontFamily: "'Times New Roman', Times, serif", fontSize: '1.5rem'
+                    }, userSelect: 'none', marginBottom: "10px", fontWeight: '400', fontFamily: "'Noto Serif Display', serif", fontSize: '1.5rem'
                 }}>Mua sắm với chúng tôi</Typography>
 
                 <Box sx={{
@@ -107,7 +106,7 @@ export default function HomeContent() {
                             md: "0 50px",
                             lg: "0 150px",
                             xl: "0 250px"
-                        }, userSelect: 'none', bgColor: "#ffffff !important", color: 'black', fontFamily: "'Cormorant Garamond', serif", fontSize: '1.0rem'
+                        }, userSelect: 'none', bgColor: "#ffffff !important", color: 'black', fontWeight: "300", fontFamily: "'Afacad Flux', sans-serif", fontSize: '1.0rem'
                     }}>
                         Vision Led là một trong những đối tác hàng đầu trong việc thiết kế các giải pháp chiếu sáng cho mọi nhà. Chúng tôi tự hào về việc mang đến sự sáng tạo độc đáo và ưu tiên hàng đầu là sự hài lòng của khách hàng trong mọi dự án chúng tôi thực hiện</Typography>
                 </Box>
@@ -126,8 +125,7 @@ export default function HomeContent() {
                 <Link to='/products/0' style={{ textDecoration: 'none' }}>
                     <Button color='primary' sx={{
                         display: 'flex',
-                        justifyContent: 'center',
-                        fontFamily: "'Cormorant Garamond', serif",
+                        justifyContent: 'center', fontWeight: "300", fontFamily: "'Afacad Flux', sans-serif",
                         alignItems: 'center',
                         color: 'white',
                         padding: '8px 20px',
@@ -153,7 +151,7 @@ export default function HomeContent() {
                         md: "0 50px",
                         lg: "0 150px",
                         xl: "0 250px"
-                    }, userSelect: 'none', marginBottom: "10px", fontFamily: "'Cormorant Garamond', serif", fontSize: '1.5rem'
+                    }, userSelect: 'none', marginBottom: "10px", fontWeight: '400', fontFamily: "'Noto Serif Display', serif", fontSize: '1.5rem'
                 }}>Khám phá bộ sưu tập của chúng tôi</Typography>
 
                 <Box sx={{
@@ -169,7 +167,7 @@ export default function HomeContent() {
                             md: "0 50px",
                             lg: "0 150px",
                             xl: "0 250px"
-                        }, userSelect: 'none', color: 'black', fontFamily: "'Cormorant Garamond', serif", fontWeight: '600', fontSize: '1.0rem'
+                        }, userSelect: 'none', color: 'black', fontWeight: "300", fontFamily: "'Afacad Flux', sans-serif", fontSize: '1.0rem'
                     }}>Chúng tôi đã tuyển chọn các thiết bị chiếu sáng tốt nhất từ ​​các nhà thiết kế và nhà sản xuất nổi tiếng trên khắp thế giới. Bộ sưu tập của chúng tôi có nhiều mẫu mã, từ kiểu dáng đẹp và hiện đại đến cổ điển và trang trí tinh tế, tất cả đều được chế tác từ những vật liệu chất lượng cao nhất và hoàn thiện đến từng chi tiết nhỏ nhất.
                     </Typography>
                 </Box>
@@ -183,16 +181,16 @@ export default function HomeContent() {
                 </Box>
             </Box>
             <ProductCollection />
-            <Box sx={{backgroundColor: '#333333', padding: {xs: '15px', sm: '20px', md: '30px'}}}>
+            <Box sx={{backgroundColor: '#333333', padding: {xs: '7px 5px', sm: '8px 6px', md: '10px 8px'}}}>
               <Box sx={{backgroundColor: 'white', display: {
                 xs: "block",
                 md: "flex"
               }, borderRadius: '12px', overflow: 'hidden'
               }}>
                 <Box sx={{width: {xs: "100%", md: '75vw'}, height: 'auto', overflow: 'hidden'}}>
-                    <Box sx={{padding: { xs: "20px", sm: '25px', md: '50px', alignItems: 'center'}}}>
-                        <Typography sx={{fontSize: '2.6rem',fontFamily: "'Cormorant Garamond', serif", fontWeight: '600'}}>Về Chúng Tôi</Typography>
-                        <Typography sx={{fontFamily: "'Cormorant Garamond', serif", fontWeight: '500', fontSize: '1.5rem'}}>Với 20 năm kinh nghiệm, chúng tôi là công ty hàng đầu chuyên sản xuất và thiết kế các giải pháp chiếu sáng cho các công trình lớn. Thành công của chúng tôi trong ngành là nhờ vào khả năng hiểu và đáp ứng mong đợi và nguyện vọng của khách hàng. Bằng cách hợp tác với các đối tác từ khắp nơi trên thế giới, chúng tôi cung cấp cho khách hàng những vật liệu chất lượng hàng đầu và những lợi ích lớn nhất khi sử dụng.</Typography>
+                    <Box sx={{padding: { xs: "15px", sm: '18px', md: '30px', alignItems: 'center'}}}>
+                        <Typography sx={{fontSize: '2.6rem', fontWeight: '400', fontFamily: "'Noto Serif Display', serif"}}>Về Chúng Tôi</Typography>
+                        <Typography sx={{fontWeight: "300", fontFamily: "'Afacad Flux', sans-serif", fontSize: '1.5rem'}}>Với 20 năm kinh nghiệm, chúng tôi là công ty hàng đầu chuyên sản xuất và thiết kế các giải pháp chiếu sáng cho các công trình lớn. Thành công của chúng tôi trong ngành là nhờ vào khả năng hiểu và đáp ứng mong đợi và nguyện vọng của khách hàng. Bằng cách hợp tác với các đối tác từ khắp nơi trên thế giới, chúng tôi cung cấp cho khách hàng những vật liệu chất lượng hàng đầu và những lợi ích lớn nhất khi sử dụng.</Typography>
                     
                     <Button color='primary' sx={{
                     display: 'flex',
