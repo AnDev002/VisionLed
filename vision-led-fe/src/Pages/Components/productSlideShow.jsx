@@ -12,10 +12,7 @@ import { Pagination, Navigation } from 'swiper/modules';
 import { Box } from '@mui/material';
 import ProductCardHome from './productCardHomepage';
 
-
-
 export default function ProductSlideShow(props) {
-    console.log();
     return (
         <>
             <Box sx={{
