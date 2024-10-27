@@ -1,2 +1,4 @@
 /vision-led-fe/.env
 /vision-led-be/.env
+/vision-led-fe/node_modules
+/vision-led-be/node_modules

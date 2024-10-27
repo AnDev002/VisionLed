@@ -13,11 +13,11 @@ export default defineConfig({
         rollupOptions: {
             output: {
                 manualChunks: {
-                    vendor: ['react', 'react-dom', 'react-router-dom', 'lodash'],
+                    vendor: ['react', 'react-dom', 'react-router-dom'],
                     mui: ['@mui/material', '@mui/icons-material', '@mui/system', '@mui/x-data-grid'],
                     redux: ['@reduxjs/toolkit', 'react-redux', 'redux-persist'],
                     query: ['@tanstack/react-query', '@tanstack/react-query-devtools', 'axios'],
-                    ui: ['browser-image-compression', 'jwt-decode', 'prop-types', 'lovedicons', 'rc-footer', 'react-image-gallery', 'react-parallax', 'react-sticky-box', 'styled-components', 'swiper']
+                    ui: ['browser-image-compression', 'jwt-decode', 'prop-types', 'rc-footer', 'react-image-gallery', 'react-parallax', 'react-sticky-box', 'styled-components', 'swiper']
                 }
             }
         },

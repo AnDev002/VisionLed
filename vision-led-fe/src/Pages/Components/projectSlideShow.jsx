@@ -28,7 +28,11 @@ export default function ProjectSlideShow(props) {
                         </>
                     })
                 }
+                <SwiperSlide key={65}><Box sx={{height: '300px', overflow: 'hidden'}}>
+                         <img style={{width: '100%', height: '100%', objectFit: 'cover' }} src={props?.project[0].image} alt="dendownlight.jpg" />
+                     </Box></SwiperSlide>
             </Swiper>
+                         
         </>
     )
 }
