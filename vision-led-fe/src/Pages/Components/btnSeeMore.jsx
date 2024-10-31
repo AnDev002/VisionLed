@@ -36,7 +36,7 @@ export default function BtnSeeMore(props) {
                                 color: 'black',
                                 borderColor: 'black',
                                 transition: '.3s',
-                            },
+                            }, fontSize: '.68rem'
 
                         }}>Xem Thêm</Button>
                     </div>

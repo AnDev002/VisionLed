@@ -21,7 +21,7 @@ export default function ToggleSideBar() {
             {
                 open === false ? <Overlay func={toggleSidebar} /> : ""
             }
-            <Box color='inherit' onClick={toggleSidebar} sx={{ display: { xs: 'block', md: 'none', color: 'white', fontSize: '1.5rem' }, textAlign: "center" }}><TbAlignJustified /></Box>
+            <Box color='inherit' onClick={toggleSidebar} sx={{ display: { xs: 'block', md: 'none', color: 'white', fontSize: '2.3rem' }, textAlign: "center" }}><TbAlignJustified /></Box>
             <div className="sidebar-container">
                 <ul className={open ? "sidebar active" : "sidebar"}>
                     <span className='close-side-bar' onClick={toggleSidebar}><AiOutlineClose /></span>

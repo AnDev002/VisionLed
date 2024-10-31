@@ -125,7 +125,7 @@ export default function HomeContent() {
                 <Link to='/products/0' style={{ textDecoration: 'none' }}>
                     <Button color='primary' sx={{
                         display: 'flex',
-                        justifyContent: 'center', fontWeight: "300", fontFamily: "'Afacad Flux', sans-serif",
+                        justifyContent: 'center', fontFamily: "'Afacad Flux', sans-serif",
                         alignItems: 'center',
                         color: 'white',
                         padding: '8px 20px',
@@ -212,6 +212,7 @@ export default function HomeContent() {
                         borderColor: 'black',
                         transition: '.3s',
                     },
+                    fontFamily: "'Afacad Flux', sans-serif"
                     }}>Xem Thêm</Button>
                     </Box>
                 </Box>
