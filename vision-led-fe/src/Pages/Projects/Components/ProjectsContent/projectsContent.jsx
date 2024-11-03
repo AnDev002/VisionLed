@@ -5,8 +5,6 @@ import { useNavigate, useParams } from 'react-router-dom'
 import * as ProjectServices from "../../../../Services/ProjectServices"
 import { useQuery } from '@tanstack/react-query'
 
-
-
 export default function ProjectsContent() {
 
   const navigate = useNavigate();
@@ -16,10 +14,10 @@ export default function ProjectsContent() {
   }
   const { isLoading, data } = useQuery({ queryKey: ['projects'], queryFn: getAllProject })
   const handleNavLink = (projectId) => {
+    
       navigate(`/project-details/${projectId}`);
   }
 
-  
 const ProjectCard = ({ onClickEvent, title, image, description, projectId }) => (
   <Card 
   sx={{
@@ -141,10 +139,9 @@ const ProjectCard = ({ onClickEvent, title, image, description, projectId }) => 
                           <Grid item key={index} xs={12} sm={12} md={12}>
                             <ProjectCard projectId={item._id} style={{ mgLeft: '0', transform: 'none' }} title={item.name} image={item.image} description={item.description} />
                           </Grid>
-                        ))}
-                      </Grid> 
-
-
+                        ))
+                      }
+                      </Grid>
                     </Box>
 
         {/*Content Here */}

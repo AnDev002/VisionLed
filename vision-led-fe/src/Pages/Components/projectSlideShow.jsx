@@ -10,7 +10,7 @@ export default function ProjectSlideShow(props) {
     return (
         <>
             <Swiper
-                slidesPerView={props.project?.length || 2}
+                slidesPerView={props.project?.length || 1}
                 breakpoints={{ 1536: { slidesPerView: 4, }, 900: { slidesPerView: 3, }, 600: { slidesPerView: 3, }, 0: { slidesPerView: 1, } }}
                 centeredSlides={true}
                 spaceBetween={10}
@@ -23,14 +23,35 @@ export default function ProjectSlideShow(props) {
                     props?.project?.map((item, index) => {
                         return <>
                             <SwiperSlide key={index}><Box sx={{height: '300px', overflow: 'hidden'}}>
-                                <img style={{width: '100%', height: '100%', objectFit: 'cover' }} src={item?.image} alt="dendownlight.jpg" />
+                                <img style={{width: '100%', height: '100%', objectFit: 'cover' }} src={item?.image ? item?.image : ""} alt="dendownlight.jpg" />
+                            </Box></SwiperSlide>
+                        </>
+                    })
+                    && props?.project?.map((item, index) => {
+                        return <>
+                            <SwiperSlide key={index}><Box sx={{height: '300px', overflow: 'hidden'}}>
+                                <img style={{width: '100%', height: '100%', objectFit: 'cover' }} src={item?.image ? item?.image : ""} alt="dendownlight.jpg" />
+                            </Box></SwiperSlide>
+                        </>
+                    })
+                    && props?.project?.map((item, index) => {
+                        return <>
+                            <SwiperSlide key={index}><Box sx={{height: '300px', overflow: 'hidden'}}>
+                                <img style={{width: '100%', height: '100%', objectFit: 'cover' }} src={item?.image ? item?.image : ""} alt="dendownlight.jpg" />
+                            </Box></SwiperSlide>
+                        </>
+                    })
+                    && props?.project?.map((item, index) => {
+                        return <>
+                            <SwiperSlide key={index}><Box sx={{height: '300px', overflow: 'hidden'}}>
+                                <img style={{width: '100%', height: '100%', objectFit: 'cover' }} src={item?.image ? item?.image : ""} alt="dendownlight.jpg" />
                             </Box></SwiperSlide>
                         </>
                     })
                 }
-                <SwiperSlide key={65}><Box sx={{height: '300px', overflow: 'hidden'}}>
-                         <img style={{width: '100%', height: '100%', objectFit: 'cover' }} src={props?.project[0].image} alt="dendownlight.jpg" />
-                     </Box></SwiperSlide>
+                {/* <SwiperSlide key={65}><Box sx={{height: '300px', overflow: 'hidden'}}>
+                         <img style={{width: '100%', height: '100%', objectFit: 'cover' }} src={props?.project[0].image ? props?.project[0].image : ""} alt="dendownlight.jpg" />
+                     </Box></SwiperSlide> */}
             </Swiper>
                          
         </>

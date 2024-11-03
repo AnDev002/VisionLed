@@ -28,7 +28,7 @@ export default function ProjectDetailsContent() {
             </Box>
             <Box sx={{ marginTop: '20px', textAlign: 'left', marginLeft: {xs: '10px', md: '80px'} }}>
                 <Typography variant='h5' sx={{ 
-                                      fontWeight: '400', fontFamily: "'Noto Serif Display', serif" }}>
+                                      fontWeight: '400' }}>
                     {
                         dataDetails ? (dataDetails?.data[0]?.project?.name).toUpperCase() : ""
                     }
@@ -46,7 +46,7 @@ export default function ProjectDetailsContent() {
                 <Grid item xs={12} sm={12} md={8} lg={8} xl={8}>
                     <Box sx={{ margin: '10px 0', textAlign: 'left' }}>
                         <Typography variant='body2' sx={{ 
-                                            fontWeight: '700', fontFamily: "'Noto Serif Display', sans-serif" }}>
+                                             }}>
                             Thông tin chi tiết
                         </Typography>
                     </Box>
@@ -57,7 +57,7 @@ export default function ProjectDetailsContent() {
                                     dataDetails?.data?.map((item, index) => {
                                         return <>
                                             <Typography variant='body3' sx={{   
-                                                fontWeight: "300", fontFamily: "'Afacad Flux', sans-serif"}}>
+                                                fontWeight: "300"}}>
                                                         {item.description}
                                             </Typography>
                                         </>
@@ -70,13 +70,13 @@ export default function ProjectDetailsContent() {
                 <Grid item xs={12} sm={12} md={4} lg={4} xl={4}>
                         <Box sx={{ margin: {md:'30px 20px'}, marginBottom: {md: '5px'} }}>
                             <Typography variant='body2' sx={{ 
-                                                fontWeight: '700', fontFamily: "'Noto Serif Display', sans-serif" }}>
+                                                fontWeight: '700'}}>
                                 Thông tin dự án
                             </Typography>
                         </Box>
                         <Box>
                         <Typography variant='body3' sx={{ margin: {md:'30px 20px'}, 
-                                                fontWeight: "300", fontFamily: "'Afacad Flux', sans-serif" }}>
+                                                fontWeight: "300" }}>
                                 Đơn vị cung cấp: Tam Anh Lighting
                             </Typography>
                         </Box>
