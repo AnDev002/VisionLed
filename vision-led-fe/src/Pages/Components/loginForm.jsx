@@ -27,25 +27,29 @@ export default function LoginForm({ userNameValue, handleUserNameChange, passwor
         provider.setCustomParameters({prompt: "select_account"});
         try {
             const resultFromGoogle = await signInWithPopup(auth, provider);
-            console.log(resultFromGoogle);
-            const res = await fetch("https://api.visionled.vn/api/auth/login-with-google", {
-                method: "POST",
+            // Lấy ID Token và Access Token từ Firebase
+            const idToken = await resultFromGoogle.user.getIdToken();
+            const accessToken = resultFromGoogle.user.accessToken;
+
+            console.log("ID Token: ", idToken);
+            console.log("Access Token: ", accessToken);
+
+            // Gửi ID Token lên backend để xác thực và lấy JWT
+            const response = await fetch(`https://api.visionled.vn/auth/firebase/google`, {
+                method: 'POST',
                 headers: {
-                    "Content-Type": "application/json",
+                    'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({
-                    emailId: resultFromGoogle.user.uid,
-                    name: resultFromGoogle.user.displayName,
-                    email: resultFromGoogle.user.email,
-                    googlePhotoUrl: resultFromGoogle.user.photoURL,
-                })
+                body: JSON.stringify({ idToken })
             });
 
-            const data = await res.json();
-            if(res.ok) {
-                
+            const data = await response.json();
+            if (data && data.token) {
+                // Lưu token từ backend vào localStorage/sessionStorage hoặc cookie
+                localStorage.setItem('jwt_token', data.token);
+                // Redirect tới trang success
+                window.location.href = `localhost:3000/login-success/google`;
             }
-
         } catch (error) {
             console.error(error);
         }

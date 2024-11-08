@@ -8,7 +8,8 @@ const initialState = {
     product_type: "",
     totalPrice: 0,
     paymentMethod: "COD",
-    orderId: 0
+    orderId: 0,
+    isActive: false
 }
 
 export const orderSlide = createSlice({
@@ -18,6 +19,7 @@ export const orderSlide = createSlice({
         addProduct: (state, action) => {
             const { orderItem } = action.payload
             const itemOrder = state?.orderItems.find((item) => item?.productDetails === orderItem.productDetails)
+            state.isActive = true;
             if (itemOrder) {
                 itemOrder.quantity += orderItem.quantity
             } else {
@@ -26,10 +28,12 @@ export const orderSlide = createSlice({
         },
         removeProduct: (state, action) => {
             const { productId } = action.payload
+            state.isActive = false;
             return { ...state, orderItems: state?.orderItems?.filter((item) => item?.productDetails !== productId) };
         },
         changeQuantity: (state, action) => {
             const { quantity, productId } = action.payload
+            state.isActive = true;
             const itemOrder = state?.orderItems.find((item) => item?.productDetails === productId)
             if (itemOrder) {
                 itemOrder.quantity = quantity
@@ -52,6 +56,7 @@ export const orderSlide = createSlice({
             state.totalPrice = 0
             state.paymentMethod = "COD"
             state.orderId = 0
+            state.isActive = false
         }
     }
 })

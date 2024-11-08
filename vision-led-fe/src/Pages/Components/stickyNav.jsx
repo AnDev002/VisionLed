@@ -30,7 +30,7 @@ export default function StickyNav() {
     const [prevScrollPos, setPrevScrollPos] = useState(0);
     const [visible, setVisible] = useState(true);
     const [opac, setOpac] = useState(true);
-
+    
     useEffect(() => {
         const handleScroll = () => {
             const currentScrollPos = window.pageYOffset;
@@ -76,7 +76,7 @@ export default function StickyNav() {
     const dispatch = useDispatch();
     const userSelector = useSelector((state) => state.user)
     const orderSelector = useSelector((state) => state.order)
-
+    
     // State
     let [toggleCart, setToggleCart] = useState(false);
     const handleToggleCart = () => setToggleCart(!toggleCart);
@@ -160,6 +160,7 @@ export default function StickyNav() {
         if (toggleAccountOption === true)
             handleToggleAccountOption()
     }, [isLoggedIn])
+
     return (
         <>
             <div className="nav-container" style={headerStyle}>
@@ -171,12 +172,10 @@ export default function StickyNav() {
                         <Box sx={{
                             display: 'flex', gap: {
                                 xs: "0px",
-                                md: "80px",
-                                lg: "100px"
+                                md: "50px",
+                                lg: "80px"
                             }
                         }}>
-
-
                             <Button onClick={() => handleLink("products/0")}
                                 color='inherit' sx={{
                                     display: { xs: 'none', md: 'flex' }, textTransform: 'none', fontFamily: "'Noto Serif Display', serif", fontWeight: 'bold', "&.hover": {
@@ -189,7 +188,7 @@ export default function StickyNav() {
                                     fontFamily: "'Noto Serif Display', serif", "&:hover": {
                                         color: "white",
                                     },
-                                    fontSize: "0.8rem"
+                                    fontSize: {md: "0.5rem", lg: "0.6rem"}
                                 }}>SẢN PHẨM</Typography>
                             </Button>
                             <Button color='inherit' sx={{ display: { xs: 'none', md: 'flex' }, textTransform: 'none', fontFamily: "'Cormorant Garamond', serif", fontWeight: 'bold' }}>
@@ -198,7 +197,7 @@ export default function StickyNav() {
                                     fontFamily: "'Times New Roman', Times, serif", "&:hover": {
                                         color: "white",
                                     },
-                                    fontSize: "0.8rem"
+                                    fontSize: {md: "0.5rem", lg: "0.6rem"}
                                 }}>BỘ SƯU TẬP</Typography>
                             </Button>
                             <Button color='inherit' sx={{
@@ -212,7 +211,7 @@ export default function StickyNav() {
                                     fontFamily: "'Times New Roman', Times, serif", "&:hover": {
                                         color: "white",
                                     },
-                                    fontSize: "0.8rem"
+                                    fontSize: {md: "0.5rem", lg: "0.6rem"}
                                 }}>DỰ ÁN</Typography>
                             </Button>
                             <Button color='inherit' sx={{ display: { xs: 'none', md: 'flex' }, textTransform: 'none', fontFamily: "'Cormorant Garamond', serif" }}>
@@ -221,7 +220,16 @@ export default function StickyNav() {
                                     fontFamily: "'Times New Roman', Times, serif", "&:hover": {
                                         color: "white",
                                     },
-                                    fontSize: "0.8rem"
+                                    fontSize: {md: "0.5rem", lg: "0.6rem"}
+                                }}>TIN TỨC</Typography>
+                            </Button>
+                            <Button color='inherit' sx={{ display: { xs: 'none', md: 'flex' }, textTransform: 'none', fontFamily: "'Cormorant Garamond', serif" }}>
+                                <Typography onClick={() => handleLink("about-us")} sx={{
+                                    color: "white", 
+                                    fontFamily: "'Times New Roman', Times, serif", "&:hover": {
+                                        color: "white",
+                                    },
+                                    fontSize: {md: "0.5rem", lg: "0.6rem"}
                                 }}>VỀ CHÚNG TÔI</Typography>
                             </Button>
                         </Box>
@@ -245,7 +253,7 @@ export default function StickyNav() {
                                         </IconButton>
                                         : <IconButton aria-label="cart" onClick={() => handleToggleAccountOption()}>
                                             <AccountCircleIcon style={{ fontSize: '10px !important', width: '17px' }} />
-                                        </IconButton>
+                                        </IconButton> 
                                     }
 
                                     {

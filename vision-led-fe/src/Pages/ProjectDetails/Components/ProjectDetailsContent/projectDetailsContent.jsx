@@ -12,7 +12,7 @@ export default function ProjectDetailsContent() {
     //     return res;
     // }
     // const { isLoading, data } = useQuery({ queryKey: ['projects'], queryFn: getAllProject })
-
+    
     const GetProjectDetails = async (projectId) => {
         if (projectId) {
             const res = await ProjectServices.GetProjectDetails(projectId);

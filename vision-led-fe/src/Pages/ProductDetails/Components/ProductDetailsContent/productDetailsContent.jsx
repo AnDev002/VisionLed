@@ -35,6 +35,7 @@ import { FcShipped } from "react-icons/fc";
 import { FcHeadset } from "react-icons/fc";
 import { FcApproval } from "react-icons/fc";
 import { FcShop } from "react-icons/fc";
+import ProductDetailsSlideShow from "../../../Components/productDetailsSlideShow";
 
 
 
@@ -251,7 +252,8 @@ export default function ProductDetailsContent() {
             <>
               <Grid item xs={12} sm={12} md={6} >
                 <Box sx={{marginLeft: "10px"}}>
-                  <ProductSwiper image={productDetail?.product?.image} />
+                  {/* <ProductSwiper image={productDetail?.product?.image} /> */}
+                  <ProductDetailsSlideShow productDetails={productDetail?.product?.image}/>
                 </Box>
               </Grid>
               <Grid item xs={12} sm={12} md={6}>
