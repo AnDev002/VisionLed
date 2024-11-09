@@ -41,12 +41,13 @@ const loginUser = async (req, res) => {
                 status: 'ERR',
                 message: 'The input is required'
             })
-        } else if (!isCheckEmail) {
-            return res.status(200).json({
-                status: 'ERR',
-                message: 'The input is email'
-            })
-        }
+        } 
+        // else if (!isCheckEmail) {
+        //     return res.status(200).json({
+        //         status: 'ERR',
+        //         message: 'The input is email'
+        //     })
+        // }
 
         const response = await UserService.loginUser(req.body);
         const { refresh_token, ...newResponse } = response;
