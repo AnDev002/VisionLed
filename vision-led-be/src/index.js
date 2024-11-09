@@ -30,42 +30,43 @@ app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 //  resave: false,
 //  saveUninitialized: true
 //}))
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount)
-});
-app.post('/auth/firebase/google', async (req, res) => {
-  const { idToken } = req.body;
+
+// admin.initializeApp({
+//   credential: admin.credential.cert(serviceAccount)
+// });
+// app.post('/auth/firebase/google', async (req, res) => {
+//   const { idToken } = req.body;
   
-  try {
-      // Xác thực ID Token với Firebase Admin SDK
-      const decodedToken = await admin.auth().verifyIdToken(idToken);
-      const uid = decodedToken.uid;
+//   try {
+//       // Xác thực ID Token với Firebase Admin SDK
+//       const decodedToken = await admin.auth().verifyIdToken(idToken);
+//       const uid = decodedToken.uid;
       
-      // Kiểm tra nếu người dùng đã có trong cơ sở dữ liệu (MongoDB)
-      let user = await User.findOne({ email: decodedToken.email });
+//       // Kiểm tra nếu người dùng đã có trong cơ sở dữ liệu (MongoDB)
+//       let user = await User.findOne({ email: decodedToken.email });
       
-      if (!user) {
-          // Nếu người dùng chưa có, bạn có thể tạo mới người dùng
-          user = new User({
-              name: decodedToken.name,
-              email: decodedToken.email,
-              avatar: decodedToken.picture,
-              typeLogin: 'google'
-          });
-          await user.save();
-      }
+//       if (!user) {
+//           // Nếu người dùng chưa có, bạn có thể tạo mới người dùng
+//           user = new User({
+//               name: decodedToken.name,
+//               email: decodedToken.email,
+//               avatar: decodedToken.picture,
+//               typeLogin: 'google'
+//           });
+//           await user.save();
+//       }
 
-      // Tạo JWT cho người dùng (JWT này sẽ được sử dụng trong ứng dụng của bạn)
-      const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '1d' });
+//       // Tạo JWT cho người dùng (JWT này sẽ được sử dụng trong ứng dụng của bạn)
+//       const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '1d' });
 
-      // Gửi lại token cho frontend để sử dụng
-      res.status(200).json({ token });
+//       // Gửi lại token cho frontend để sử dụng
+//       res.status(200).json({ token });
 
-  } catch (error) {
-      console.error("Error verifying Firebase ID token:", error);
-      res.status(401).json({ message: 'Invalid Firebase token' });
-  }
-});
+//   } catch (error) {
+//       console.error("Error verifying Firebase ID token:", error);
+//       res.status(401).json({ message: 'Invalid Firebase token' });
+//   }
+// });
 
 app.use(cookieParser())
 app.use(compression({ threshold: 1024 }));

@@ -28,28 +28,28 @@ export default function LoginForm({ userNameValue, handleUserNameChange, passwor
         try {
             const resultFromGoogle = await signInWithPopup(auth, provider);
             // Lấy ID Token và Access Token từ Firebase
-            const idToken = await resultFromGoogle.user.getIdToken();
-            const accessToken = resultFromGoogle.user.accessToken;
+          //  const idToken = await resultFromGoogle.user.getIdToken();
+          //  const accessToken = resultFromGoogle.user.accessToken;
 
-            console.log("ID Token: ", idToken);
-            console.log("Access Token: ", accessToken);
+            // console.log("ID Token: ", idToken);
+            // console.log("Access Token: ", accessToken);
 
-            // Gửi ID Token lên backend để xác thực và lấy JWT
-            const response = await fetch(`https://api.visionled.vn/auth/firebase/google`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ idToken })
-            });
+            // // Gửi ID Token lên backend để xác thực và lấy JWT
+            // const response = await fetch(`https://api.visionled.vn/auth/firebase/google`, {
+            //     method: 'POST',
+            //     headers: {
+            //         'Content-Type': 'application/json',
+            //     },
+            //     body: JSON.stringify({ idToken })
+            // });
 
-            const data = await response.json();
-            if (data && data.token) {
-                // Lưu token từ backend vào localStorage/sessionStorage hoặc cookie
-                localStorage.setItem('jwt_token', data.token);
-                // Redirect tới trang success
-                window.location.href = `localhost:3000/login-success/google`;
-            }
+            // const data = await response.json();
+            // if (data && data.token) {
+            //     // Lưu token từ backend vào localStorage/sessionStorage hoặc cookie
+            //     localStorage.setItem('jwt_token', data.token);
+            //     // Redirect tới trang success
+            //     window.location.href = `localhost:3000/login-success/google`;
+            // }
         } catch (error) {
             console.error(error);
         }
@@ -66,7 +66,9 @@ export default function LoginForm({ userNameValue, handleUserNameChange, passwor
        // const res = await UserServices.GetDetailsUser(id, token);
        // dispatch(updateUser({ ...res?.data, access_token: token }))
    // }
-
+    const handleLogin = () => {
+        
+    }
     const handleFacebookLogin = () => {
         // window.open("https://visionled.online/api/auth/facebook", "_self")
     }
