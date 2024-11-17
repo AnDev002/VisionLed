@@ -82,7 +82,7 @@ export default function LoginForm({ userNameValue, handleUserNameChange, passwor
         <>
             <div className='right-nav' style={{ position: 'relative' }}>
                 <Box sx={{ display: { xs: 'none', md: 'block' } }}>
-                    <Box className={`login-form ${(toggleLoginForm === true) ? "login-form-active" : ""}`}>
+                    <Box className={`login-form ${(toggleLoginForm === true) ? "login-form-active" : ""}`} sx={{bgColor: "rgba(0, 0, 0, 0.15) !important"}}>
                         <IconButton aria-label="cart" sx={{
                             position: 'absolute', top: '0', right: '0', color: '#00000017'
                         }} onClick={() => handleToggleLogin()}>

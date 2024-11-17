@@ -261,11 +261,11 @@ export default function ProductDetailsContent() {
                   <div className="product-inf-container">
                     <div className="name">
                       <Typography
-                        variant="h2"
+                        variant="h3"
                         sx={{
                           userSelect: "none",
                           fontSize: "2rem",
-                          fontFamily: "Roboto"
+                          fontFamily: '"Noto Serif Display", serif !important'
                         }}
                       >
                         {productDetail?.product.name}
@@ -278,7 +278,7 @@ export default function ProductDetailsContent() {
                           userSelect: "none",
                           fontSize: "1.8rem",
                           marginTop: '10px',
-                          fontFamily: "Roboto"
+                          fontFamily: '"Noto Serif Display", serif'
                         }}
                       >
                         Mã sản phẩm - {productDetail?.idProduct ? productDetail?.idProduct : ""}
@@ -297,7 +297,7 @@ export default function ProductDetailsContent() {
                                 fontSize: "1rem",
                                 textDecoration: 'line-through',
                                 alignItems: 'center',
-                                fontFamily: "Roboto"
+                                fontFamily: "Roboto", fontWeight: "bold"
                               }}
                             >
                               {formatPrice(productDetail?.unit_price)}
@@ -311,7 +311,7 @@ export default function ProductDetailsContent() {
                                 display: 'flex',
                                 alignItems: 'center',
                                 gap: '20px',
-                                fontFamily: "Roboto"
+                                fontFamily: "Roboto", fontWeight: "bold"
                               }}
                             >
                               {" " + formatPrice(productDetail?.sale_price)}
@@ -341,7 +341,7 @@ export default function ProductDetailsContent() {
                             fontFamily: "Roboto"
                           }}
                         >
-                          <Typography sx={{fontFamily: "Roboto"}}>
+                          <Typography sx={{fontFamily: '"Noto Serif Display", serif !important'}}>
                             Model
                           </Typography>
                         </span>
@@ -371,7 +371,7 @@ export default function ProductDetailsContent() {
                           fontFamily: "Roboto"
                         }}
                       >
-                        <Typography sx={{fontFamily: "Roboto"}}>
+                        <Typography sx={{fontFamily: '"Noto Serif Display", serif !important'}}>
                           Số Lượng
                         </Typography>
                       </span>
@@ -428,7 +428,7 @@ export default function ProductDetailsContent() {
                           }}
                         >
                           <Box sx={{ display: "flex", alignItems: "center", textTransform: 'none', color: 'black' }}>
-                            <Typography variant="h6"  sx={{fontFamily: "Roboto"}}>Mua Ngay</Typography>
+                            <Typography variant="h6"  sx={{fontFamily: "Roboto", fontWeight: "bold"}}>Mua Ngay</Typography>
                           </Box>
                         </Button>
                         <button
@@ -451,7 +451,7 @@ export default function ProductDetailsContent() {
                       <div style={{ width: "100%" }}>
                         <div style={{}}>
                           <Typography variant="h5" sx={{ marginBottom: "10px",
-                          fontFamily: "Roboto" }}>
+                          fontFamily: '"Noto Serif Display", serif !important' }}>
                             THÔNG SỐ KĨ THUẬT
                           </Typography>
                         </div>
