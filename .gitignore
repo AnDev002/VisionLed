@@ -1,4 +1,5 @@
 /vision-led-fe/.env
 /vision-led-be/.env
+/vision-led-be/src/Config
 /vision-led-fe/node_modules
 /vision-led-be/node_modules
