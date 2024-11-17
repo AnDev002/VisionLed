@@ -48,21 +48,21 @@ export default function ProductCollection() {
                     <Box>
                         <Grid container sx={{
                             padding: {
-                                xs: "0 20px",
-                                sm: "0 20px",
-                                md: "0 50px",
-                                lg: "0 50px",
-                                xl: "0 50px"
+                                xs: "0 0px",
+                                sm: "0 0px",
+                                md: "0 0px",
+                                lg: "0 0px",
+                                xl: "0 0px"
                             }
                         }}>
                             <Grid item xs={12} sm={12} md={6} lg={6} xl={6} sx={{
                                 padding: {
                                     xs: "5px",
-                                    md: "80px"
+                                    md: "16px"
                                 },
                                 paddingRight: {
                                     xs: "5px",
-                                    md: "50px",
+                                    md: "10px",
                                 }
                             }}>
                                 {
@@ -84,11 +84,11 @@ export default function ProductCollection() {
                             <Grid item xs={12} sm={12} md={6} lg={6} xl={6} sx={{
                                 padding: {
                                     xs: "5px",
-                                    md: "80px",
+                                    md: "10px"
                                 },
-                                paddingLeft: {
+                                paddingRight: {
                                     xs: "5px",
-                                    md: "50px",
+                                    md: "16px",
                                 }
                             }}>
                                 {

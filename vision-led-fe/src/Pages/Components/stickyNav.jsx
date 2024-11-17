@@ -130,6 +130,7 @@ export default function StickyNav() {
                 localStorage.setItem('access_token', data?.access_token);
                 if (data?.access_token) {
                     const decoded = jwt_decode(data?.access_token);
+                    console.log("decoded : " + decoded);
                     if (decoded?.id) {
                         handleGetDetailsUser(decoded?.id, data?.access_token);
                     }
@@ -167,7 +168,7 @@ export default function StickyNav() {
                 <AppBar position='static' sx={{ bgcolor: {xs: "rgb(30, 30, 30)", md: "#292929d9"}, boxShadow: 'none' }}>
                     <Toolbar className="nav-wrapper" style={{ display: "flex", justifyContent: "space-between" }}>
                         <Box onClick={() => handleLink("")} sx={{ color: 'black !important' }}>
-                            <Typography variant="h5" sx={{color: "white", fontFamily: "'Playfair Display', serif"}}>TamAnh Lighting</Typography>
+                            <Typography variant="h5" sx={{color: "white", fontFamily: "'Playfair Display', serif"}}>Tam Anh Lighting</Typography>
                         </Box>
                         <Box sx={{
                             display: 'flex', gap: {

@@ -19,14 +19,14 @@ export default function ProductSlideShow(props) {
                 padding: {
                     xs: "0 5px",
                     sm: "0 15px",
-                    md: "0 50px",
-                    lg: "0 150px",
-                    xl: "0 250px"
+                    md: "0 15px",
+                    lg: "0 15px",
+                    xl: "0 15px"
                 },
             }}>
                 <Swiper
                     slidesPerView={props.products?.length || 5}
-                    breakpoints={{ 1536: { slidesPerView: 4, }, 900: { slidesPerView: 3, }, 600: { slidesPerView: 3, }, 0: { slidesPerView: 1, } }}
+                    breakpoints={{ 1536: { slidesPerView: 4, }, 900: { slidesPerView: 4, }, 600: { slidesPerView: 3, }, 0: { slidesPerView: 1, } }}
                     centeredSlides={true}
                     spaceBetween={10}
                     pagination={{ type: 'fraction', }}

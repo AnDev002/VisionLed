@@ -84,14 +84,14 @@ export default function LoginForm({ userNameValue, handleUserNameChange, passwor
                 <Box sx={{ display: { xs: 'none', md: 'block' } }}>
                     <Box className={`login-form ${(toggleLoginForm === true) ? "login-form-active" : ""}`}>
                         <IconButton aria-label="cart" sx={{
-                            position: 'absolute', top: '0', right: '0', color: 'white'
+                            position: 'absolute', top: '0', right: '0', color: '#00000017'
                         }} onClick={() => handleToggleLogin()}>
                             <CloseIcon />
                         </IconButton>
 
                         <Box className="login-form-wrapper">
-                            <div className="left-form">
-                                <Typography variant='h6'>Đăng nhập</Typography>
+                            <div className="left-form" style={{bgcolor: "#00000026 !important"}}>
+                                <Typography variant='h6' sx={{color: "white"}}>Đăng nhập</Typography>
                                 <TextField
                                     id="standard-multiline-flexible"
                                     label="User Name Or Email"
@@ -99,12 +99,71 @@ export default function LoginForm({ userNameValue, handleUserNameChange, passwor
                                     maxRows={4}
                                     variant="standard"
                                     className='username-input'
-                                    sx={{ width: '25ch', margin: '10px' }}
+                                    sx={{ width: '25ch', margin: '10px', '& .MuiInputLabel-root': {
+                                    color: 'white', 
+                                    },
+                                    '& .MuiInputLabel-root.Mui-focused': {
+                                    color: 'white', 
+                                    },
+                                    '& .MuiInput-underline:before': {
+                                        borderBottomColor: 'white', // Đổi màu đường kẻ dưới
+                                      },
+                                      '& .MuiInput-underline:hover:before': {
+                                        borderBottomColor: 'white', // Đổi màu khi hover
+                                      },
+                                      '& .MuiInput-underline:before': {
+          borderBottomColor: 'white', // Màu của dòng kẻ dưới khi chưa focus
+        },
+        '& .MuiInput-underline:hover:before': {
+          borderBottomColor: 'white', // Màu khi hover
+        },
+        '& .MuiInput-underline:after': {
+          borderBottomColor: 'white', // Màu khi có focus (active)
+        },
+        '& .MuiInputBase-input': {
+            color: 'white', // Màu chữ khi nhập vào
+          },
+          '& .MuiFormLabel-root': {
+            color: 'white', // Màu chữ của label
+          },
+          '& .MuiInputBase-input::placeholder': {
+            color: 'white', // Màu chữ của placeholder (nếu có)
+          }
+                                }}
                                     value={userNameValue}
                                     onChange={handleUserNameChange}
                                 />
                                 <div>
-                                    <FormControl sx={{ m: 1, width: '25ch' }} variant="standard">
+                                    <FormControl sx={{ m: 1, width: '25ch', '& .MuiInputLabel-root': {
+                                    color: 'white', 
+                                    },
+                                    '& .MuiInputLabel-root.Mui-focused': {
+                                    color: 'white', 
+                                    },
+                                    '& .MuiInput-underline:before': {
+                                        borderBottomColor: 'white', // Đổi màu đường kẻ dưới
+                                      },
+                                      '& .MuiInput-underline:hover:before': {
+                                        borderBottomColor: 'white', // Đổi màu khi hover
+                                      },
+                                      '& .MuiInput-underline:before': {
+          borderBottomColor: 'white', // Màu của dòng kẻ dưới khi chưa focus
+        },
+        '& .MuiInput-underline:hover:before': {
+          borderBottomColor: 'white', // Màu khi hover
+        },
+        '& .MuiInput-underline:after': {
+          borderBottomColor: 'white', // Màu khi có focus (active)
+        },
+        '& .MuiInputBase-input': {
+            color: 'white', // Màu chữ khi nhập vào
+          },
+          '& .MuiFormLabel-root': {
+            color: 'white', // Màu chữ của label
+          },
+          '& .MuiInputBase-input::placeholder': {
+            color: 'white', // Màu chữ của placeholder (nếu có)
+          } }} variant="standard">
                                         <InputLabel htmlFor="standard-adornment-password">Password</InputLabel>
                                         <Input
                                             id="standard-adornment-password"
@@ -130,20 +189,20 @@ export default function LoginForm({ userNameValue, handleUserNameChange, passwor
                                 <Button className='login-btn'
                                     onClick={handleSignIn}
                                     sx={{
-                                        margin: '20px 0', color: 'white', bgcolor: 'gray',
+                                        margin: '20px 0', color: 'white', bgcolor: '#00000026',
                                         "&:hover": {
                                             bgcolor: 'black',
                                             transition: '.5s'
                                         }
                                     }}>Đăng nhập</Button>
-                                <div className="sign-up-option" >Tạo tài khoản?</div>
+                                <div className="sign-up-option" style={{color: "white"}}>Tạo tài khoản?</div>
                                 <div className="group-sign-in">
-                                    <div className="ggBtn" onClick={handleGoogleLogin} style={{ padding: '5px 10px', background: 'white', border: '1px solid black', color: 'black', borderRadius: '5px' }}><div><img src="https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png" alt="" /></div> Đăng nhập bằng google</div>
-                                    <div className="fbBtn" onClick={handleFacebookLogin} style={{ padding: '5px 10px', background: 'rgb(77 141 237)', color: 'white', borderRadius: '5px' }}><div><img src="https://tmpfiles.nohat.cc/full-m2H7N4N4b1K9b1Z5.png" alt="" /></div> Đăng nhập bằng facebook</div>
+                                    <div className="ggBtn" onClick={handleGoogleLogin} style={{ padding: '5px 10px', background: '#00000026', color: 'white', borderRadius: '5px' }}><div><img src="https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png" alt="" /></div> Đăng nhập bằng google</div>
+                                    <div className="fbBtn" onClick={handleFacebookLogin} style={{ padding: '5px 10px', background: '#00000026', color: 'white', borderRadius: '5px' }}><div><img src="https://static.vecteezy.com/system/resources/previews/018/930/476/non_2x/facebook-logo-facebook-icon-transparent-free-png.png" alt="" /></div> Đăng nhập bằng facebook</div>
                                 </div>
                             </div>
                             <div className="right-form">
-                                <img src="https://static.wixstatic.com/media/5b4b7e_c00ddd98b00041df8389fb23d479c1c9~mv2.jpg/v1/fill/w_510,h_724,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/5b4b7e_c00ddd98b00041df8389fb23d479c1c9~mv2.jpg" alt="btf" />
+                                <img src="https://static.wixstatic.com/media/5b4b7e_c00ddd98b00041df8389fb23d479c1c9~mv2.jpg/v1/fill/w_510,h_724,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/5b4b7e_c00ddd98b00041df8389fb23d479c1c9~mv2.jpg" alt="btf" style={{opacity: "0.8"}}/>
                             </div>
                         </Box>
                     </Box>

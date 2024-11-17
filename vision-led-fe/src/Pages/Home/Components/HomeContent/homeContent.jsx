@@ -46,7 +46,8 @@ export default function HomeContent() {
                                 sm: '2.5rem',
                                 md: '3.5rem'
                             },
-                            fontFamily: "'Sacramento', cursive"
+                            fontFamily: '"Playfair Display", serif',
+                            fontWeight: "200"
                         }}>Better Light For Better Life</Typography>
                         <br />
                     </Box>
@@ -82,7 +83,7 @@ export default function HomeContent() {
                 <div className="shadow-full-height" style={{ zIndex: '50' }}></div>
                 <img src="./imb.png" alt="" />
             </Box>
-            <Box className="top-content-title" sx={{ userSelect: 'none' }}>
+            <Box className="top-content-title" sx={{ userSelect: 'none', marginBottom: "15px" }}>
                 <Typography variant='h4' sx={{
                     padding: {
                         xs: "0 5px",

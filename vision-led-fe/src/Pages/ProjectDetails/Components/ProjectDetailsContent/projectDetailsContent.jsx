@@ -70,13 +70,13 @@ export default function ProjectDetailsContent() {
                 <Grid item xs={12} sm={12} md={4} lg={4} xl={4}>
                         <Box sx={{ margin: {md:'30px 20px'}, marginBottom: {md: '5px'} }}>
                             <Typography variant='body2' sx={{ 
-                                                fontWeight: '700'}}>
+                                                fontWeight: '300'}}>
                                 Thông tin dự án
                             </Typography>
                         </Box>
                         <Box>
-                        <Typography variant='body3' sx={{ margin: {md:'30px 20px'}, 
-                                                fontWeight: "300" }}>
+                        <Typography variant='body2' sx={{ margin: {md:'3px 20px'}, 
+                                                fontWeight: "lighter" }}>
                                 Đơn vị cung cấp: Tam Anh Lighting
                             </Typography>
                         </Box>

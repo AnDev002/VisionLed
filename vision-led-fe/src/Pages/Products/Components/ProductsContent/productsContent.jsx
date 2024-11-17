@@ -17,7 +17,7 @@ import { ExpandLess, ExpandMore, StarBorder } from '@mui/icons-material';
 import { formatPrice } from "../../../../Ults";
 const theme = createTheme({
     typography: {
-        fontFamily: "'Cormorant Garamond', serif", // Thay 'Your-Font-Family' bằng font bạn muốn sử dụng
+        fontFamily: '"Nunito Sans", sans-serif', // Thay 'Your-Font-Family' bằng font bạn muốn sử dụng
     },
 })
 

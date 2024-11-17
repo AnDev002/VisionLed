@@ -41,7 +41,7 @@ function App() {
   useEffect(() => {
     const { storageData, decoded } = handleDecoded()
     if (decoded?.id) {
-      handleGetDetailsUser(decoded?.id, storageData);
+      handleGetDetailsUser(decoded?.id, localStorage.getItem('access_token'));
     }
   }, [])
 
