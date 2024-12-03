@@ -10,6 +10,7 @@ import * as ProductServices from "../../../../Services/ProductServices"
 import { useQuery } from '@tanstack/react-query'
 import { width } from '@mui/system'
 import BtnSeeMore from '../../../Components/btnSeeMore'
+import VerticalCarousel from '../../../Components/CustomCarousel'
 export default function HomeContent() {
     const dispatch = useDispatch();
     dispatch(updateInOrder({ inOrder: false }));
@@ -26,7 +27,6 @@ export default function HomeContent() {
             }
         },
     });
-    console.log("productsRan ", productsRan);
 
     const navigate = useNavigate()
     const handleNavLink = () => {
@@ -34,6 +34,7 @@ export default function HomeContent() {
     }
     return (
         <>
+
             <Box className="full-height-img">
                 <Box sx={{ display: 'flex', justifyContent: 'center', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', zIndex: '100', flexWrap: 'wrap' }}>
                     <Box className="home-content-s" sx={{
@@ -121,6 +122,7 @@ export default function HomeContent() {
                 </Box>
 
             </Box>
+
             <ProductSlideShow products={productsRan} />
             <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: "50px" }}>
                 <Link to='/products/0' style={{ textDecoration: 'none' }}>

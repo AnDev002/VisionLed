@@ -4,6 +4,7 @@ import { Box, Button, Card, CardContent, CardMedia, Grid, Typography } from '@mu
 import { useNavigate, useParams } from 'react-router-dom'
 import * as ProjectServices from "../../../../Services/ProjectServices"
 import { useQuery } from '@tanstack/react-query'
+import VerticalCarousel from '../../../Components/CustomCarousel'
 
 export default function ProjectsContent() {
 
@@ -112,6 +113,7 @@ const ProjectCard = ({ onClickEvent, title, image, description, projectId }) => 
   return (
     <>
         <div className="layer" style={{background: '#373737', position: 'fixed', top: '0', left: '0', right: '0', bottom: '0'}}></div>
+        
         <Box sx={{
                     marginTop: {
                         xs: "65px",

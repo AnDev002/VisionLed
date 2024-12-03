@@ -5,7 +5,6 @@ import StickyNav from './stickyNav';
 import GlobalFooter from './footer';
 import { formatPrice } from '../../Ults';
 
-
 export default function CreateOrderSuccess() {
     const orderSelector = useSelector(state => state.order)
     const userSelector = useSelector(state => state.user)
