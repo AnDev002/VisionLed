@@ -525,6 +525,7 @@ h6 {
     height: 100vh; 
     overflow: hidden;
     touch-action: none;
+    pointer-events: auto;
   }
   
   
@@ -565,7 +566,7 @@ h6 {
     height: 100%; /* Đảm bảo hình ảnh chiếm toàn bộ chiều cao */
     object-fit: cover; /* Cắt bớt hình ảnh nếu cần nhưng giữ tỷ lệ */
     user-select: none; /* Ngăn chọn văn bản trên hình ảnh */
-    pointer-events: none; /* Ngăn tương tác chuột vào hình ảnh */
+    pointer-events: auto; /* Ngăn tương tác chuột vào hình ảnh */
 
   }
   .carousel-container {

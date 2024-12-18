@@ -207,7 +207,7 @@ export default function HomeContent() {
                     padding: '8px 20px',
                     border: '1px solid white',
                     backgroundColor: 'rgba(50, 50, 50, 100%)',
-                    borderRadius: '0',
+                    borderRadius: '20px',
                     '&:hover': {
                         backgroundColor: 'rgba(256, 256, 256, 100%)',
                         border: '1px solid white',

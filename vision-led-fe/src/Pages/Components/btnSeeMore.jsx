@@ -29,7 +29,7 @@ export default function BtnSeeMore(props) {
                             border: '1px solid white',
                             backgroundColor: 'rgba(50, 50, 50, 100%)',
                             fontFamily:  "'Afacad Flux', sans-serif",
-                            borderRadius: '0',
+                            borderRadius: '20px',
                             '&:hover': {
                                 backgroundColor: 'rgba(256, 256, 256, 100%)',
                                 border: '1px solid white',
@@ -55,7 +55,7 @@ export default function BtnSeeMore(props) {
                             border: '1px solid white',
                             backgroundColor: 'rgba(50, 50, 50, 100%)',
                             fontFamily:  "'Afacad Flux', sans-serif",
-                            borderRadius: '0',
+                            borderRadius: '20px',
                             '&:hover': {
                                 backgroundColor: 'rgba(256, 256, 256, 100%)',
                                 border: '1px solid white',

@@ -758,27 +758,7 @@ export default function ProductDetailsContent() {
             }
           </Box>
         </Box>
-        {/* )(*) */}
-        <Box sx={{ display: "flex", fontWeight: "bold", fontSize: "1.5rem", justifyContent: "center", gap: "15px", flexWrap: 'wrap' }}>
-          <Typography sx={{ display: 'flex', alignItems: "center", gap: "5px",color: "white", fontSize: "1rem", background: "black", marginTop: "5px", padding: "5px 10px", borderRadius: "20px" }}>
-          <FcShop/>  Đổi trả hàng dễ dàng
-          </Typography>
-          <Typography sx={{ display: 'flex', alignItems: "center", gap: "5px",color: "white", fontSize: "1rem", background: "black", marginTop: "5px", padding: "5px 10px", borderRadius: "20px" }}>
-     
-
-          <FcApproval/> Bảo hành 2-5 năm
-          </Typography>
-          <Typography sx={{ display: 'flex', alignItems: "center", gap: "5px",color: "white", fontSize: "1rem", background: "black", marginTop: "5px", padding: "5px 10px", borderRadius: "20px" }}>
-
-          <FcHeadset/> Hỗ trợ tư vấn, lắp đặt
-          </Typography>
-          <Typography sx={{ display: 'flex', alignItems: "center", gap: "5px", color: "white", fontSize: "1rem", background: "black", marginTop: "5px", padding: "5px 10px", borderRadius: "20px" }}>
-      
-
-           <FcShipped /> Hỗ trợ vận chuyển toàn quốc
-          </Typography>
-
-        </Box>
+       
       </Box>
       <Box
         sx={{ margin: "50px 0", marginBottom: '0', backgroundColor: "#f7f7f7", padding: "50px 0" }}
