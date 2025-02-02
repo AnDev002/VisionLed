@@ -528,96 +528,115 @@ h6 {
     pointer-events: auto;
   }
   
-  
-  .carousel-item.active {
-    z-index: 10;
-  }
-  
-  .carousel-image {
-    width: 100%;
-    height: 60%;
-    object-fit: cover;
-    margin-bottom: 10px;
-  }
-  
-  .carousel-text {
-    text-align: center;
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-  }
-  
-  .carousel-item {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    user-select: none;
-  }
-  
-  img {
-    width: 100%; /* Đảm bảo hình ảnh chiếm toàn bộ chiều rộng */
-    height: 100%; /* Đảm bảo hình ảnh chiếm toàn bộ chiều cao */
-    object-fit: cover; /* Cắt bớt hình ảnh nếu cần nhưng giữ tỷ lệ */
-    user-select: none; /* Ngăn chọn văn bản trên hình ảnh */
-    pointer-events: auto; /* Ngăn tương tác chuột vào hình ảnh */
 
-  }
-  .carousel-container {
-    position: relative;
-    overflow: hidden; /* Hides overflow content */
-    height: 100vh; /* Set consistent height for carousel */
-    width: 100%; /* Full width of the parent container */
-    touch-action: pan-y; /* Allow vertical page scrolling */
-    user-select: none; /* Disable text selection */
-  }
-  
-  .carousel-item {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    user-select: none;
-  }
-  
-  .carousel-item img {
-    max-width: 100%; /* Ensure image never exceeds container width */
-    max-height: 100%; /* Ensure image never exceeds container height */
-    object-fit: cover; /* Ensures image covers the container without distortion */
-    user-select: none; /* Prevent image text selection */
-  }
+.carousel-item.active {
+z-index: 10;
+}
 
-  .dots-container {
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    z-index: 100;
-  }
+.carousel-image {
+width: 100%;
+height: 60%;
+object-fit: cover;
+margin-bottom: 10px;
+}
+
+.carousel-text {
+text-align: center;
+background: rgba(0, 0, 0, 0.5);
+color: white;
+padding: 10px;
+border-radius: 5px;
+}
+
+.carousel-item {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+user-select: none;
+}
+
+img {
+width: 100%; /* Đảm bảo hình ảnh chiếm toàn bộ chiều rộng */
+height: 100%; /* Đảm bảo hình ảnh chiếm toàn bộ chiều cao */
+object-fit: cover; /* Cắt bớt hình ảnh nếu cần nhưng giữ tỷ lệ */
+user-select: none; /* Ngăn chọn văn bản trên hình ảnh */
+pointer-events: auto; /* Ngăn tương tác chuột vào hình ảnh */
+
+}
+.carousel-container {
+position: relative;
+overflow: hidden; /* Hides overflow content */
+height: 100vh; /* Set consistent height for carousel */
+width: 100%; /* Full width of the parent container */
+touch-action: pan-y; /* Allow vertical page scrolling */
+user-select: none; /* Disable text selection */
+}
+
+.carousel-item {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+user-select: none;
+}
+
+.carousel-item img {
+max-width: 100%; /* Ensure image never exceeds container width */
+max-height: 100%; /* Ensure image never exceeds container height */
+object-fit: cover; /* Ensures image covers the container without distortion */
+user-select: none; /* Prevent image text selection */
+}
+
+.dots-container {
+position: absolute;
+top: 50%;
+right: 10px;
+transform: translateY(-50%);
+display: flex;
+flex-direction: column;
+gap: 10px;
+z-index: 100;
+}
   
-  .dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.6);
+.dot {
+width: 10px;
+height: 10px;
+border-radius: 50%;
+background-color: rgba(255, 255, 255, 0.6);
+cursor: pointer;
+transition: background-color 0.3s;
+}
+  
+.dot.active {
+background-color: rgba(255, 255, 255, 1);
+}
+
+  /* HEADER NAV DROP DOWN */
+.dropdown-menu {
+    position: absolute;
+    top: 50px;
+    background: #292929d9;
+    color: rgba(255, 255, 255, 0.504);
+    padding: 13px 0;
+}
+
+.dropdown-item {
+    padding: 10px 39px;
+    font-weight: lighter;
+    list-style: none;
+}
+.dropdown-item:hover {
+    color: rgb(255, 255, 255);
     cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .dot.active {
-    background-color: rgba(255, 255, 255, 1);
-  }
+}

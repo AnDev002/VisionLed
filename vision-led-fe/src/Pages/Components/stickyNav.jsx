@@ -14,7 +14,11 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { useDispatch, useSelector } from 'react-redux';
 import { resetUser, updateUser } from '../../Redux/Slides/userSlide';
 import { removeProduct } from '../../Redux/Slides/orderSlide';
+import * as ProductServices from "../../Services/ProductServices"
 import CloseIcon from '@mui/icons-material/Close';
+import { useQuery } from '@tanstack/react-query';
+import { MdKeyboardArrowDown } from "react-icons/md";
+
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
@@ -57,11 +61,11 @@ export default function StickyNav() {
         fontWeight: "bold",
         transition: 'top 0.3s',
         background: opac ? "rgb(255 255 255 / 0%)" : "#fff0",
-        top: visible ? '0px' : '-60px', // assuming your header's height is 60px
+        // top: visible ? '0px' : '-60px', // assuming your header's height is 60px
     };
 
     useEffect(() => {
-        window.scrollTo(0, 0); // Di chuyển vị trí cuộn về đầu trang (0, 0)
+        window.scrollTo(0, 0); // scroll to top
     }, []);
 
     const navigate = useNavigate();
@@ -72,7 +76,7 @@ export default function StickyNav() {
             navigate(`/${link}`);
     }
 
-    // redux
+    // redux toolkit
     const dispatch = useDispatch();
     const userSelector = useSelector((state) => state.user)
     const orderSelector = useSelector((state) => state.order)
@@ -89,8 +93,10 @@ export default function StickyNav() {
     let [toggleAccountOption, setToggleAccountOption] = useState(false);
     const handleToggleAccountOption = () => setToggleAccountOption(!toggleAccountOption);
 
+    const [isOpenDropdown, setIsOpenDropdown] = useState(false);
+
     const [searchValue, setSearchValue] = useState("")
-    // SEARCH HANDLE
+    // SEARCH HANDLE 
     const onSearch = (e) => {
         setSearchValue(e.target.value)
     }
@@ -124,6 +130,14 @@ export default function StickyNav() {
 
     const { data, isLoading, isSuccess } = mutation
 
+
+    const getAllProductType = async () => {
+        const res = await ProductServices.getAllProductType();
+        return res;
+    }
+
+    const { isLoading: isLoadingType, data: typeData } = useQuery({ queryKey: ['product-types'], queryFn: getAllProductType })
+
     useEffect(() => {
         if (isSuccess) {
             if (data?.access_token !== undefined) {
@@ -142,12 +156,12 @@ export default function StickyNav() {
     const handleLogOut = async () => {
         dispatch(resetUser())
         await UserServices.LogOutUser();
-        localStorage.removeItem('access_token');
+        localStorage.removeItem('access_token'); // remove access token when logout
     }
 
     const handleGetDetailsUser = async (id, token) => {
         const res = await UserServices.GetDetailsUser(id, token);
-        dispatch(updateUser({ ...res?.data, access_token: token }))
+        dispatch(updateUser({ ...res?.data, access_token: token })) // update local access token
     }
 
     const handleRemoveItemInCart = (id) => {
@@ -164,11 +178,15 @@ export default function StickyNav() {
 
     return (
         <>
-            <div className="nav-container" style={headerStyle}>
-                <AppBar position='static' sx={{ bgcolor: {xs: "rgb(30, 30, 30)", md: "#292929d9"}, boxShadow: 'none' }}>
+            <div className="nav-container" style={headerStyle} onMouseLeave={() => setIsOpenDropdown(false)} >
+                <AppBar position='static' sx={{ padding: {xs: '100px', md: '0px'}, background: 
+                {xs: "linear-gradient(180deg, rgba(28, 28, 28, 0.93) 0%,rgba(28, 28, 28, 0.72) 40%, rgba(0, 0, 0, 0.41) 70%, rgba(0, 0, 0, 0) 100%)", md: "#292929d9"}, boxShadow: 'none' }}>
                     <Toolbar className="nav-wrapper" style={{ display: "flex", justifyContent: "space-between" }}>
-                        <Box onClick={() => handleLink("")} sx={{ color: 'black !important' }}>
-                            <Typography variant="h5" sx={{color: "white", fontFamily: "'Playfair Display', serif"}}>Tam Anh Lighting</Typography>
+                        <Box onClick={() => handleLink("")} sx={{ color: 'black !important', position: { xs: 'fixed', md: 'static' },
+                                                                left: { xs: '50%', md: 'auto' },
+                                                                top: { xs: '50px', md: 'auto' },
+                                                                transform: { xs: 'translate(-50%, -50%)', md: 'none' } }}>
+                            <Typography variant="h5" sx={{color: "white", fontFamily: "'Playfair Display', serif", cursor: 'pointer' }}>Tam Anh Lighting</Typography>
                         </Box>
                         <Box sx={{
                             display: 'flex', gap: {
@@ -177,21 +195,37 @@ export default function StickyNav() {
                                 lg: "80px"
                             }
                         }}>
-                            <Button onClick={() => handleLink("products/0")}
+                            <Button onMouseEnter={() => setIsOpenDropdown(true)} onClick={() => handleLink("products/0")}
                                 color='inherit' sx={{
                                     display: { xs: 'none', md: 'flex' }, textTransform: 'none', fontFamily: "'Noto Serif Display', serif", fontWeight: 'bold', "&.hover": {
                                         border: 'none',
                                         boxShadow: 'none'
                                     }
                                 }}>
-                                <Typography variant="body2" sx={{
-                                    color: "white", 
-                                    fontFamily: "'Noto Serif Display', serif", "&:hover": {
-                                        color: "white",
-                                    },
-                                    fontSize: {md: "0.5rem", lg: "0.6rem"}
-                                }}>SẢN PHẨM</Typography>
+                                <div style={{display: 'flex', gap: '5px', alignItems: 'center'}}>
+                                    <Typography variant="body2" sx={{
+                                        color: "white", 
+                                        fontFamily: "'Noto Serif Display', serif", "&:hover": {
+                                            color: "white",
+                                        },
+                                        fontSize: {md: "0.5rem", lg: "0.6rem"}
+                                    }}>SẢN PHẨM  </Typography><MdKeyboardArrowDown style={{fontSize: '15px'}}/>
+                                </div>
                             </Button>
+
+                            <Box sx={{display: {md: 'none'},position: 'fixed', top: '80px', left: '10vw', width: '80vw', height: '30px', border: '2px solid white'}}>
+                            </Box>
+
+                            {isOpenDropdown && (
+                                <ul className="dropdown-menu">
+                                    <div style={{width: '100%', height: '3.9px', backgroundColor: '#373737', position: 'absolute', top: '0'}}></div>
+                                {typeData?.data?.map((item, index) => (
+                                    <li key={index} className="dropdown-item">
+                                    {item.typeName}
+                                    </li>
+                                ))}
+                                </ul>
+                            )}
                             <Button color='inherit' sx={{ display: { xs: 'none', md: 'flex' }, textTransform: 'none', fontFamily: "'Cormorant Garamond', serif", fontWeight: 'bold' }}>
                                 <Typography onClick={() => handleLink("collections")} sx={{
                                     color: "white", 
@@ -237,12 +271,12 @@ export default function StickyNav() {
 
                         <div style={{ display: 'flex', alignItems: "center", justifyContent: "center" }}>
                             
-                            <div className="right-nav" style={{ position: 'relative' }}>
+                            <div className="right-nav" style={{ position: 'relative', right: { xs: "50%", md: "0" } }}>
                                 <Box sx={{
                                     display: {
                                         md: 'block'
                                     },
-                                        marginLeft: '15px'
+                                        marginLeft: '105px'
                                 }}>
                                     {
                                         ((toggleLoginForm === true) ? <Overlay func={handleToggleLogin} /> : "") || ((toggleAccountOption === true) ? <Overlay func={handleToggleAccountOption} /> : "")
@@ -297,7 +331,7 @@ export default function StickyNav() {
                                     handleToggleLogin={handleToggleLogin}
                                 />
                             </div>
-                            <div className='right-nav' style={{ position: 'relative', display: "flex", alignItems: "center", justifyContent: "center" }}>
+                            <div className='right-nav' style={{ position: 'relative', right: { xs: "50%", md: "0" }, display: "flex", alignItems: "center", justifyContent: "center" }}>
                                 <IconButton sx={{ color: opac ? "white" : "white", marginRight: {xs: '20px', md: '10px'} }} aria-label="cart" onClick={() => handleToggleCart()}>
                                     <StyledBadge badgeContent={orderSelector.orderItems.length} color="error">
                                         <ShoppingCartIcon sx={{ fontSize: {xs:'15px !important', md: '20px !important'} }} />
@@ -344,7 +378,7 @@ export default function StickyNav() {
                                     </Box>
                                 </div> : ""}
                             </div>
-                            <div className='right-nav' style={{ position: 'relative', display: "flex", alignItems: "center", justifyContent: "center", marginTop: "5px" }}>
+                            <div className='right-nav' style={{ position: 'relative', right: '100%', display: "flex", alignItems: "center", justifyContent: "center", marginTop: "5px" }}>
                                 <ToggleSideBar />
                             </div>
                         </div>

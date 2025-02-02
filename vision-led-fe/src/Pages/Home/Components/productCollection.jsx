@@ -1,6 +1,6 @@
-import React, { useMemo } from 'react'
+import React, { useEffect, useMemo, useRef, useState } from 'react'
 import './../home.css'
-import { Box, Card, CardMedia, Grid, Typography } from '@mui/material'
+import { Box, Card, Button, CardMedia, Grid, Typography } from '@mui/material'
 import BtnSeeMore from '../../Components/btnSeeMore'
 import * as CollectionServices from "../../../Services/CollectionServices"
 import { useQuery } from '@tanstack/react-query'
@@ -26,6 +26,97 @@ const generateRandomNumbers = (totalSum, count) => {
         return [];
     }
 }
+
+
+const FadeUpSection = (props) => {
+    const [isVisible, setIsVisible] = useState(false);
+    const sectionRef = useRef(null);
+  
+    useEffect(() => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+          }
+        },
+        { threshold: 0.2 } 
+      );
+  
+      if (sectionRef.current) {
+        observer.observe(sectionRef.current);
+      }
+  
+      return () => {
+        if (sectionRef.current) {
+          observer.unobserve(sectionRef.current);
+        }
+      };
+    }, []);
+  
+    return (
+      <div
+        ref={sectionRef}
+        className={`fade-up ${isVisible ? 'visible' : ''}`}
+      >
+        <Card sx={{
+            cursor: 'pointer',
+            width: '100%',
+            height: 'auto',
+            backgroundColor: '#ffffff'
+        }} className="crd crd-collection">
+            <CardMedia alt='unsplash image' component="img" sx={{ height: props.itemRan[props.itemIndex] }} image={props.itemImage} />
+            <Typography variant='h4' sx={{ textAlign: 'center', margin: '10px 0', fontWeight: "400", fontFamily: "'Afacad Flux', sans-serif", textTransform: "uppercase", fontSize: "1.5rem" }}>{props.itemName}</Typography>
+            <BtnSeeMore collectionId={props.itemId} mgLeft={'50%'} transform='translateX(-50%)' />
+        </Card>
+      </div>
+    );
+  };
+
+  
+const FadeUpSection2 = (props) => {
+    const [isVisible, setIsVisible] = useState(false);
+    const sectionRef = useRef(null);
+  
+    useEffect(() => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+          }
+        },
+        { threshold: 0.2 } 
+      );
+  
+      if (sectionRef.current) {
+        observer.observe(sectionRef.current);
+      }
+  
+      return () => {
+        if (sectionRef.current) {
+          observer.unobserve(sectionRef.current);
+        }
+      };
+    }, []);
+  
+    return (
+      <div
+        ref={sectionRef}
+        className={`fade-up ${isVisible ? 'visible' : ''}`}
+      >
+        <Card sx={{
+            cursor: 'pointer',
+            width: '100%',
+            height: 'auto',
+            backgroundColor: '#ffffff'
+        }} className="crd crd-collection">
+            <CardMedia alt='unsplash image' component="img" sx={{ height: props.itemRan[props.itemIndex] }} image={props.itemImage} />
+            <Typography variant='h4' sx={{ textAlign: 'center', margin: '10px 0', fontWeight: "400", fontFamily: "'Afacad Flux', sans-serif", textTransform: "uppercase", fontSize: "1.5rem" }}>{props.itemName}</Typography>
+            <BtnSeeMore collectionId={props.itemId} mgLeft={'50%'} transform='translateX(-50%)' />
+        </Card>
+      </div>
+    );
+  };
+
 
 export default function ProductCollection() {
     const getAllCollection = async () => {
@@ -67,17 +158,17 @@ export default function ProductCollection() {
                             }}>
                                 {
                                     data?.data.slice(0, Math.floor(totalCollections / 2)).map((item, index) => {
-
-                                        return <Card sx={{
-                                            cursor: 'pointer',
-                                            width: '100%',
-                                            height: 'auto',
-                                            backgroundColor: '#ffffff'
-                                        }} className="crd crd-collection">
-                                            <CardMedia alt='unsplash image' component="img" sx={{ height: randomNums1[index] }} image={item.image} />
-                                            <Typography variant='h4' sx={{ textAlign: 'center', margin: '10px 0', fontWeight: "400", fontFamily: "'Afacad Flux', sans-serif", textTransform: "uppercase", fontSize: "1.5rem" }}>{item.name}</Typography>
-                                            <BtnSeeMore collectionId={item._id} mgLeft={'50%'} transform='translateX(-50%)' />
-                                        </Card>
+                                        return <FadeUpSection itemId={item._id} itemImage={item.image} itemName={item.name} itemIndex={index} itemRan={randomNums1}/>
+                                        // <Card sx={{
+                                        //     cursor: 'pointer',
+                                        //     width: '100%',
+                                        //     height: 'auto',
+                                        //     backgroundColor: '#ffffff'
+                                        // }} className="crd crd-collection">
+                                        //     <CardMedia alt='unsplash image' component="img" sx={{ height: randomNums1[index] }} image={item.image} />
+                                        //     <Typography variant='h4' sx={{ textAlign: 'center', margin: '10px 0', fontWeight: "400", fontFamily: "'Afacad Flux', sans-serif", textTransform: "uppercase", fontSize: "1.5rem" }}>{item.name}</Typography>
+                                        //     <BtnSeeMore collectionId={item._id} mgLeft={'50%'} transform='translateX(-50%)' />
+                                        // </Card>
                                     })
                                 }
                             </Grid>
@@ -93,16 +184,7 @@ export default function ProductCollection() {
                             }}>
                                 {
                                     data?.data.slice(Math.floor(totalCollections / 2), totalCollections).map((item, index) => {
-                                        return <Card sx={{
-                                            cursor: 'pointer',
-                                            width: '100%',
-                                            height: 'auto',
-                                            backgroundColor: '#ffffff'
-                                        }} className="crd crd-collection">
-                                            <CardMedia alt='unsplash image' sx={{ height: randomNums2[index] }} component="img" image={item.image} />
-                                            <Typography variant='h4' sx={{ textAlign: 'center', margin: '10px 0', fontWeight: "400", fontFamily: "'Afacad Flux', sans-serif", textTransform: "uppercase", fontSize: "1.3rem" }}>{item.name}</Typography>
-                                            <BtnSeeMore collectionId={item._id} mgLeft={'50%'} transform='translateX(-50%)' />
-                                        </Card>
+                                        return <FadeUpSection itemId={item._id} itemImage={item.image} itemName={item.name} itemIndex={index} itemRan={randomNums2}/>
                                     })
                                 }
                             </Grid>

@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { Box, Button, Typography } from '@mui/material'
+import React, { useEffect, useRef, useState } from 'react'
+import { Box, Button, Grid, Typography } from '@mui/material'
 import ProductSlideShow from '../../../Components/productSlideShow'
 import ProductCollection from '../productCollection'
 import { Link, useNavigate } from 'react-router-dom'
@@ -11,6 +11,251 @@ import { useQuery } from '@tanstack/react-query'
 import { width } from '@mui/system'
 import BtnSeeMore from '../../../Components/btnSeeMore'
 import VerticalCarousel from '../../../Components/CustomCarousel'
+
+
+const FadeUpSection = (props) => {
+    const [isVisible, setIsVisible] = useState(false);
+    const sectionRef = useRef(null);
+  
+    useEffect(() => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+          }
+        },
+        { threshold: 0.2 } 
+      );
+  
+      if (sectionRef.current) {
+        observer.observe(sectionRef.current);
+      }
+  
+      return () => {
+        if (sectionRef.current) {
+          observer.unobserve(sectionRef.current);
+        }
+      };
+    }, []);
+  
+    return (
+      <div
+        ref={sectionRef}
+        className={`fade-up ${isVisible ? 'visible' : ''}`}
+      >
+        <Box className="top-content-title" sx={{ userSelect: 'none', marginBottom: "15px" }}>
+                <Typography variant='h4' sx={{
+                    padding: {
+                        xs: "0 5px",
+                        sm: "0 15px",
+                        md: "0 50px",
+                        lg: "0 150px",
+                        xl: "0 250px"
+                    }, userSelect: 'none', marginBottom: "10px", fontWeight: '400', fontFamily: "'Noto Serif Display', serif", fontSize: '1.5rem'
+                }}>Mua sắm với chúng tôi</Typography>
+
+                <Box sx={{
+                    display: {
+                        xs: 'none',
+                        md: 'block'
+                    }
+                }}>
+                    <Typography variant='h6' sx={{
+                        padding: {
+                            xs: "0 5px",
+                            sm: "0 15px",
+                            md: "0 50px",
+                            lg: "0 150px",
+                            xl: "0 250px"
+                        }, userSelect: 'none', bgColor: "#ffffff !important", color: 'black', fontWeight: "300", fontFamily: "'Afacad Flux', sans-serif", fontSize: '1.0rem'
+                    }}>
+                        Vision Led là một trong những đối tác hàng đầu trong việc thiết kế các giải pháp chiếu sáng cho mọi nhà. Chúng tôi tự hào về việc mang đến sự sáng tạo độc đáo và ưu tiên hàng đầu là sự hài lòng của khách hàng trong mọi dự án chúng tôi thực hiện</Typography>
+                </Box>
+                <Box sx={{
+                    display: {
+                        xs: 'block',
+                        md: 'none'
+                    }
+                }}>
+                    <TextWithReadMore text="Vision Led là một trong những đối tác hàng đầu trong việc thiết kế các giải pháp chiếu sáng cho mọi nhà. Chúng tôi tự hào về việc mang đến sự sáng tạo độc đáo và ưu tiên hàng đầu là sự hài lòng của khách hàng trong mọi dự án chúng tôi thực hiện" maxLength={100} />
+                </Box>
+
+            </Box>
+
+            <ProductSlideShow products={props.productsRan} />
+
+            <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: "50px" }}>
+                <Link to='/products/0' style={{ textDecoration: 'none' }}>
+                    <Button color='primary' sx={{
+                        display: 'flex',
+                        justifyContent: 'center', fontFamily: "'Afacad Flux', sans-serif",
+                        alignItems: 'center',
+                        color: 'white',
+                        padding: '8px 20px',
+                        border: '1px solid black',
+                        backgroundColor: 'rgba(50, 50, 50)',
+                        borderRadius: '0',
+                        '&:hover': {
+                            backgroundColor: 'rgba(256, 256, 256)',
+                            border: '1px solid black',
+                            color: 'black',
+                            transition: '.3s',
+                        },
+                    }}>
+                        Mua Ngay
+                    </Button>
+                </Link>
+            </Box>
+      </div>
+    );
+  };
+  
+const FadeUpSection2 = (props) => {
+    const [isVisible, setIsVisible] = useState(false);
+    const sectionRef = useRef(null);
+  
+    useEffect(() => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+          }
+        },
+        { threshold: 0.2 } 
+      );
+  
+      if (sectionRef.current) {
+        observer.observe(sectionRef.current);
+      }
+  
+      return () => {
+        if (sectionRef.current) {
+          observer.unobserve(sectionRef.current);
+        }
+      };
+    }, []);
+  
+    return (
+      <div
+        ref={sectionRef}
+        className={`fade-up ${isVisible ? 'visible' : ''}`}
+      >
+        <Box className="top-content-title" sx={{ userSelect: 'none' }}>
+                <Typography variant='h4' sx={{
+                    padding: {
+                        xs: "0 5px",
+                        sm: "0 15px",
+                        md: "0 50px",
+                        lg: "0 150px",
+                        xl: "0 250px"
+                    }, userSelect: 'none', marginBottom: "10px", fontWeight: '400', fontFamily: "'Noto Serif Display', serif", fontSize: '1.5rem'
+                }}>Khám phá bộ sưu tập của chúng tôi</Typography>
+
+                <Box sx={{
+                    display: {
+                        xs: 'none',
+                        md: 'block'
+                    }
+                }}>
+                    <Typography variant='h6' sx={{
+                        padding: {
+                            xs: "0 5px",
+                            sm: "0 15px",
+                            md: "0 50px",
+                            lg: "0 150px",
+                            xl: "0 250px"
+                        }, userSelect: 'none', color: 'black', fontWeight: "300", fontFamily: "'Afacad Flux', sans-serif", fontSize: '1.0rem'
+                    }}>Chúng tôi đã tuyển chọn các thiết bị chiếu sáng tốt nhất từ ​​các nhà thiết kế và nhà sản xuất nổi tiếng trên khắp thế giới. Bộ sưu tập của chúng tôi có nhiều mẫu mã, từ kiểu dáng đẹp và hiện đại đến cổ điển và trang trí tinh tế, tất cả đều được chế tác từ những vật liệu chất lượng cao nhất và hoàn thiện đến từng chi tiết nhỏ nhất.
+                    </Typography>
+                </Box>
+                <Box sx={{
+                    display: {
+                        xs: 'block',
+                        md: 'none'
+                    }
+                }}>
+                    <TextWithReadMore text="Chúng tôi đã tuyển chọn các thiết bị chiếu sáng tốt nhất từ ​​các nhà thiết kế và nhà sản xuất nổi tiếng trên khắp thế giới. Bộ sưu tập của chúng tôi có nhiều mẫu mã, từ kiểu dáng đẹp và hiện đại đến cổ điển và trang trí tinh tế, tất cả đều được chế tác từ những vật liệu chất lượng cao nhất và hoàn thiện đến từng chi tiết nhỏ nhất." maxLength={100} />
+                </Box>
+            </Box>
+      </div>
+    );
+  };
+
+  
+const FadeUpSection3 = (props) => {
+    const [isVisible, setIsVisible] = useState(false);
+    const sectionRef = useRef(null);
+  
+    useEffect(() => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+          }
+        },
+        { threshold: 0.2 } 
+      );
+  
+      if (sectionRef.current) {
+        observer.observe(sectionRef.current);
+      }
+  
+      return () => {
+        if (sectionRef.current) {
+          observer.unobserve(sectionRef.current);
+        }
+      };
+    }, []);
+  
+    return (
+      <div
+        ref={sectionRef}
+        className={`fade-up ${isVisible ? 'visible' : ''}`}
+      >
+        <Box sx={{backgroundColor: '#333333', padding: {xs: '7px 5px', sm: '8px 6px', md: '10px 8px'}}}>
+              <Box sx={{backgroundColor: 'white', display: {
+                xs: "block",
+                md: "flex"
+              }, borderRadius: '12px', overflow: 'hidden'
+              }}>
+                <Box sx={{width: {xs: "100%", md: '75vw'}, height: 'auto', overflow: 'hidden'}}>
+                    <Box sx={{padding: { xs: "15px", sm: '18px', md: '30px', alignItems: 'center'}}}>
+                        <Typography sx={{fontSize: '2.6rem', fontWeight: '400', fontFamily: "'Noto Serif Display', serif"}}>Về Chúng Tôi</Typography>
+                        <Typography sx={{fontWeight: "300", fontFamily: "'Afacad Flux', sans-serif", fontSize: '1.5rem'}}>Với 20 năm kinh nghiệm, chúng tôi là công ty hàng đầu chuyên sản xuất và thiết kế các giải pháp chiếu sáng cho các công trình lớn. Thành công của chúng tôi trong ngành là nhờ vào khả năng hiểu và đáp ứng mong đợi và nguyện vọng của khách hàng. Bằng cách hợp tác với các đối tác từ khắp nơi trên thế giới, chúng tôi cung cấp cho khách hàng những vật liệu chất lượng hàng đầu và những lợi ích lớn nhất khi sử dụng.</Typography>
+                    
+                    <Button color='primary' sx={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    margin: {xs: '10px 0', md: '50px 0'},
+                    marginBottom: '50px',
+                    marginLeft: `5px`,
+                    transform: `5px`,
+                    color: 'white',
+                    padding: '8px 20px',
+                    border: '1px solid white',
+                    backgroundColor: 'rgba(50, 50, 50, 100%)',
+                    borderRadius: '20px',
+                    '&:hover': {
+                        backgroundColor: 'rgba(256, 256, 256, 100%)',
+                        border: '1px solid white',
+                        color: 'black',
+                        borderColor: 'black',
+                        transition: '.3s',
+                    },
+                    fontFamily: "'Afacad Flux', sans-serif"
+                    }}>Xem Thêm</Button>
+                    </Box>
+                </Box>
+                <Box sx={{width: {xs: "100%", md: "530px"}, height: 'auto', overflow: 'hidden', display: {xs: 'none', md: 'block'}}}>
+                    <img style={{width: '100%', height: '100%'}} src="https://storage.googleapis.com/visionled/hilton.jpg" alt="" />
+                </Box>
+              </Box>
+            </Box>
+      </div>
+    );
+  };
+
 export default function HomeContent() {
     const dispatch = useDispatch();
     dispatch(updateInOrder({ inOrder: false }));
@@ -34,7 +279,6 @@ export default function HomeContent() {
     }
     return (
         <>
-
             <Box className="full-height-img">
                 <Box sx={{ display: 'flex', justifyContent: 'center', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', zIndex: '100', flexWrap: 'wrap' }}>
                     <Box className="home-content-s" sx={{
@@ -84,146 +328,12 @@ export default function HomeContent() {
                 <div className="shadow-full-height" style={{ zIndex: '50' }}></div>
                 <img src="./imb.png" alt="" />
             </Box>
-            <Box className="top-content-title" sx={{ userSelect: 'none', marginBottom: "15px" }}>
-                <Typography variant='h4' sx={{
-                    padding: {
-                        xs: "0 5px",
-                        sm: "0 15px",
-                        md: "0 50px",
-                        lg: "0 150px",
-                        xl: "0 250px"
-                    }, userSelect: 'none', marginBottom: "10px", fontWeight: '400', fontFamily: "'Noto Serif Display', serif", fontSize: '1.5rem'
-                }}>Mua sắm với chúng tôi</Typography>
-
-                <Box sx={{
-                    display: {
-                        xs: 'none',
-                        md: 'block'
-                    }
-                }}>
-                    <Typography variant='h6' sx={{
-                        padding: {
-                            xs: "0 5px",
-                            sm: "0 15px",
-                            md: "0 50px",
-                            lg: "0 150px",
-                            xl: "0 250px"
-                        }, userSelect: 'none', bgColor: "#ffffff !important", color: 'black', fontWeight: "300", fontFamily: "'Afacad Flux', sans-serif", fontSize: '1.0rem'
-                    }}>
-                        Vision Led là một trong những đối tác hàng đầu trong việc thiết kế các giải pháp chiếu sáng cho mọi nhà. Chúng tôi tự hào về việc mang đến sự sáng tạo độc đáo và ưu tiên hàng đầu là sự hài lòng của khách hàng trong mọi dự án chúng tôi thực hiện</Typography>
-                </Box>
-                <Box sx={{
-                    display: {
-                        xs: 'block',
-                        md: 'none'
-                    }
-                }}>
-                    <TextWithReadMore text="Vision Led là một trong những đối tác hàng đầu trong việc thiết kế các giải pháp chiếu sáng cho mọi nhà. Chúng tôi tự hào về việc mang đến sự sáng tạo độc đáo và ưu tiên hàng đầu là sự hài lòng của khách hàng trong mọi dự án chúng tôi thực hiện" maxLength={100} />
-                </Box>
-
-            </Box>
-
-            <ProductSlideShow products={productsRan} />
-            <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: "50px" }}>
-                <Link to='/products/0' style={{ textDecoration: 'none' }}>
-                    <Button color='primary' sx={{
-                        display: 'flex',
-                        justifyContent: 'center', fontFamily: "'Afacad Flux', sans-serif",
-                        alignItems: 'center',
-                        color: 'white',
-                        padding: '8px 20px',
-                        border: '1px solid black',
-                        backgroundColor: 'rgba(50, 50, 50)',
-                        borderRadius: '0',
-                        '&:hover': {
-                            backgroundColor: 'rgba(256, 256, 256)',
-                            border: '1px solid black',
-                            color: 'black',
-                            transition: '.3s',
-                        },
-                    }}>
-                        Mua Ngay
-                    </Button>
-                </Link>
-            </Box>
-            <Box className="top-content-title" sx={{ userSelect: 'none' }}>
-                <Typography variant='h4' sx={{
-                    padding: {
-                        xs: "0 5px",
-                        sm: "0 15px",
-                        md: "0 50px",
-                        lg: "0 150px",
-                        xl: "0 250px"
-                    }, userSelect: 'none', marginBottom: "10px", fontWeight: '400', fontFamily: "'Noto Serif Display', serif", fontSize: '1.5rem'
-                }}>Khám phá bộ sưu tập của chúng tôi</Typography>
-
-                <Box sx={{
-                    display: {
-                        xs: 'none',
-                        md: 'block'
-                    }
-                }}>
-                    <Typography variant='h6' sx={{
-                        padding: {
-                            xs: "0 5px",
-                            sm: "0 15px",
-                            md: "0 50px",
-                            lg: "0 150px",
-                            xl: "0 250px"
-                        }, userSelect: 'none', color: 'black', fontWeight: "300", fontFamily: "'Afacad Flux', sans-serif", fontSize: '1.0rem'
-                    }}>Chúng tôi đã tuyển chọn các thiết bị chiếu sáng tốt nhất từ ​​các nhà thiết kế và nhà sản xuất nổi tiếng trên khắp thế giới. Bộ sưu tập của chúng tôi có nhiều mẫu mã, từ kiểu dáng đẹp và hiện đại đến cổ điển và trang trí tinh tế, tất cả đều được chế tác từ những vật liệu chất lượng cao nhất và hoàn thiện đến từng chi tiết nhỏ nhất.
-                    </Typography>
-                </Box>
-                <Box sx={{
-                    display: {
-                        xs: 'block',
-                        md: 'none'
-                    }
-                }}>
-                    <TextWithReadMore text="Chúng tôi đã tuyển chọn các thiết bị chiếu sáng tốt nhất từ ​​các nhà thiết kế và nhà sản xuất nổi tiếng trên khắp thế giới. Bộ sưu tập của chúng tôi có nhiều mẫu mã, từ kiểu dáng đẹp và hiện đại đến cổ điển và trang trí tinh tế, tất cả đều được chế tác từ những vật liệu chất lượng cao nhất và hoàn thiện đến từng chi tiết nhỏ nhất." maxLength={100} />
-                </Box>
-            </Box>
+            <FadeUpSection productsRan={productsRan}/>
+            <FadeUpSection2 />
+            
             <ProductCollection />
-            <Box sx={{backgroundColor: '#333333', padding: {xs: '7px 5px', sm: '8px 6px', md: '10px 8px'}}}>
-              <Box sx={{backgroundColor: 'white', display: {
-                xs: "block",
-                md: "flex"
-              }, borderRadius: '12px', overflow: 'hidden'
-              }}>
-                <Box sx={{width: {xs: "100%", md: '75vw'}, height: 'auto', overflow: 'hidden'}}>
-                    <Box sx={{padding: { xs: "15px", sm: '18px', md: '30px', alignItems: 'center'}}}>
-                        <Typography sx={{fontSize: '2.6rem', fontWeight: '400', fontFamily: "'Noto Serif Display', serif"}}>Về Chúng Tôi</Typography>
-                        <Typography sx={{fontWeight: "300", fontFamily: "'Afacad Flux', sans-serif", fontSize: '1.5rem'}}>Với 20 năm kinh nghiệm, chúng tôi là công ty hàng đầu chuyên sản xuất và thiết kế các giải pháp chiếu sáng cho các công trình lớn. Thành công của chúng tôi trong ngành là nhờ vào khả năng hiểu và đáp ứng mong đợi và nguyện vọng của khách hàng. Bằng cách hợp tác với các đối tác từ khắp nơi trên thế giới, chúng tôi cung cấp cho khách hàng những vật liệu chất lượng hàng đầu và những lợi ích lớn nhất khi sử dụng.</Typography>
-                    
-                    <Button color='primary' sx={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    margin: {xs: '10px 0', md: '50px 0'},
-                    marginBottom: '50px',
-                    marginLeft: `5px`,
-                    transform: `5px`,
-                    color: 'white',
-                    padding: '8px 20px',
-                    border: '1px solid white',
-                    backgroundColor: 'rgba(50, 50, 50, 100%)',
-                    borderRadius: '20px',
-                    '&:hover': {
-                        backgroundColor: 'rgba(256, 256, 256, 100%)',
-                        border: '1px solid white',
-                        color: 'black',
-                        borderColor: 'black',
-                        transition: '.3s',
-                    },
-                    fontFamily: "'Afacad Flux', sans-serif"
-                    }}>Xem Thêm</Button>
-                    </Box>
-                </Box>
-                <Box sx={{width: {xs: "100%", md: "530px"}, height: 'auto', overflow: 'hidden', display: {xs: 'none', md: 'block'}}}>
-                    <img style={{width: '100%', height: '100%'}} src="https://storage.googleapis.com/visionled/hilton.jpg" alt="" />
-                </Box>
-              </Box>
-            </Box>
+            <FadeUpSection3 />
+            
         </>
     )
 }
