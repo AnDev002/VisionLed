@@ -8,7 +8,6 @@ import { formatPrice } from '../../Ults';
 const FadeUpSection = (props) => {
     const [isVisible, setIsVisible] = useState(false);
     const sectionRef = useRef(null);
-  
     const navigate = useNavigate();
     const handleLink = () => {
         navigate(`/product-details/${props.index}`)
@@ -63,7 +62,7 @@ export default function ProductCard(props) {
     // const saleRateDisplay = "-" + (props.saleRate * 100) + "%"
     return (
         <>
-            <FadeUpSection image={props.productImg ? props.productImg : ""} productName={props.productName} priceDisplay={priceDisplay}/>
+            <FadeUpSection image={props.productImg ? props.productImg : ""} productName={props.productName} priceDisplay={priceDisplay} index={props.index}/>
         </>
     )
 }
