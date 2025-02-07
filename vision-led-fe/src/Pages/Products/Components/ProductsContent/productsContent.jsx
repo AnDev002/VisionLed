@@ -250,8 +250,8 @@ export default function ProductsContent() {
             <ThemeProvider theme={theme}>
                 <Box sx={{
                     marginTop: {
-                        xs: "35px",
-                        sm: "40px",
+                        xs: "160px",
+                        sm: "160px",
                         md: "45px",
                         lg: "50px",
                     },

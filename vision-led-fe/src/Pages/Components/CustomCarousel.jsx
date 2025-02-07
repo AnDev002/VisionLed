@@ -104,13 +104,13 @@ const VerticalCarousel = ({ items }) => {
 
       {/* Dot Navigation */}
       <div className="dots-container">
-        {items.map((_, index) => (
+        {items ? items.map((_, index) => (
           <div
             key={index}
             className={`dot ${activeIndex === index ? 'active' : ''}`}
             onClick={() => setActiveIndex(index)} // Chuyển đến hình ảnh tương ứng khi click vào dot
           />
-        ))}
+        )) : ""}
       </div>
     </div>
   );

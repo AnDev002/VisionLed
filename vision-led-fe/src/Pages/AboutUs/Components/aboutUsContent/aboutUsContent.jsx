@@ -39,12 +39,12 @@ const FadeUpSection = (props) => {
                         md: "20px"
                     },
                 }}>
-            <Grid item xs={12} sm={12} md={6} lg={6} xl={6} sx={{ display: { xs: 'none', sm: 'block' }, borderRadius: '5px', objectFit: 'cover', overflow: 'hidden' }} >
+            <Grid item xs={12} sm={12} md={6} lg={6} xl={6} sx={{ display: { xs: 'block', sm: 'block' }, borderRadius: '5px', objectFit: 'cover', overflow: 'hidden' }} >
                 <Typography variant="h6" >
                                 Tam Anh là đối tác nổi bật trong việc thiết kế các giải pháp chiếu sáng trong nhà và ngoài trời từ những ngôi nhà sang trọng cho đến những công trình trọng điểm lớn. Chúng tôi tự hào mang đến sự sáng tạo độc đáo, chất lượng trong từng sản phẩm và ưu tiên tầm nhìn cũng như sự hài lòng của khách hàng trong mọi dự án chúng tôi thực hiện.
                 </Typography>
             </Grid>
-            <Grid item xs={12} sm={12} md={6} lg={6} xl={6} sx={{ display: { xs: 'none', sm: 'block' }, borderRadius: '5px', objectFit: 'cover', overflow: 'hidden' }} >
+            <Grid item xs={12} sm={12} md={6} lg={6} xl={6} sx={{ display: { xs: 'block', sm: 'block' }, borderRadius: '5px', objectFit: 'cover', overflow: 'hidden' }} >
                 <img src="hiltongarden.webp" alt="" />
             </Grid>
         </Grid>
@@ -87,10 +87,10 @@ const FadeUpSection = (props) => {
                           md: "20px"
                       },
                   }}>
-                <Grid item xs={12} sm={12} md={6} lg={6} xl={6} sx={{ display: { xs: 'none', sm: 'block' }, borderRadius: '5px', objectFit: 'cover', overflow: 'hidden' }} >
-                    <img src="hiltongarden.webp" alt="" />
+                <Grid item xs={12} sm={12} md={6} lg={6} xl={6} sx={{ display: { xs: 'block', sm: 'block' }, borderRadius: '5px', objectFit: 'cover', overflow: 'hidden' }} >
+                    <img src="hiltongarden.webp" alt="tam anh" />
                 </Grid>
-                <Grid item xs={12} sm={12} md={6} lg={6} xl={6} sx={{ display: { xs: 'none', sm: 'block' }, borderRadius: '5px', objectFit: 'cover', overflow: 'hidden' }} >
+                <Grid item xs={12} sm={12} md={6} lg={6} xl={6} sx={{ display: { xs: 'block', sm: 'block' }, borderRadius: '5px', objectFit: 'cover', overflow: 'hidden' }} >
                     <Typography variant="h6" >
                                  Chúng tôi đã tuyển chọn các thiết bị chiếu sáng tốt nhất từ ​​các nhà máy và nhà sản xuất nổi tiếng trên khắp thế giới. Các sản phẩm đa dạng và phong phú từ kiểu dáng, tính năng cho đến giá thành, phù hợp với nhiều tệp khách hàng mà chúng tôi muốn hướng đến.
                     </Typography>
@@ -156,9 +156,9 @@ export default function AboutUsContent() {
                  <div className="parallax-content" style={{ transform: `translateX(${scrollX * 0.2}px)` }}>
                      <div className="parallax-item">
                         <div style={{position: "relative"}}></div>
-                     <img src="hiltongarden.webp" alt="Nature" />
+                     <img style={{}} src="hiltongarden.webp" alt="Nature" />
                      <div  style={{position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)"}}>
-                     <Typography variant="h3" sx={{ fontFamily: "'Noto Serif Display',serif", color: "white" }}>Về chúng tôi</Typography>
+                     {/* <Typography variant="h3" sx={{ fontFamily: "'Noto Serif Display',serif", color: "white", fontSize: {xs: "1.2rem", md: "2.5rem"} }}>Về chúng tôi</Typography> */}
                      </div>
                      
                      </div>

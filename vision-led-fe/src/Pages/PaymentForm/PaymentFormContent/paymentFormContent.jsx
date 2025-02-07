@@ -218,7 +218,7 @@ export default function PaymentFormContent() {
     const { dataM, isSuccessM } = mutation
     return (
         <>
-            <Box sx={{ marginTop: '80px', padding: '25px' }}>
+            <Box sx={{ marginTop: '160px', padding: '25px' }}>
                 <Typography variant='h3'>ĐẶT HÀNG</Typography>
             </Box>
             <Grid container spacing={2} sx={{

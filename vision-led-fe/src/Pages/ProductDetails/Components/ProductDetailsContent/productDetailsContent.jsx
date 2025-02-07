@@ -246,7 +246,7 @@ export default function ProductDetailsContent() {
 
   return (
     <>
-      <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }} sx={{ marginTop: '100px', padding: "5px", fontFamily: "Roboto" }}>
+      <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }} sx={{ marginTop: '160px', padding: "5px", fontFamily: "Roboto" }}>
         {
           isLoadingDetails === false && isLoadingDetails !== null ?
             <>

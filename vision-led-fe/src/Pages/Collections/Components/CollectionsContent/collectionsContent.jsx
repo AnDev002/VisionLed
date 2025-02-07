@@ -13,16 +13,16 @@ export default function CollectionsContent() {
    
     return (
         <>
-            {/* <div style={{position: 'fixed', zIndex: '250', top: 0, left: 0, right: 0, bottom: 0, background: '#00000063'}}></div> */}
-            {/* {
+            <div style={{position: 'fixed', zIndex: '250', top: 0, left: 0, right: 0, bottom: 0, background: '#00000063'}}></div>
+            {
                 data?.data.map((item, index) => {
                     return <>
                         <ParallaxCollections img={item.image} name={item.name.toUpperCase()} index={item._id} />
                     </>
                 })
-            } */}
+            }
             
-            <VerticalCarousel items={data?.data}/>
+            {/* <VerticalCarousel items={data?.data}/> */}
             {/* <FullpageScroll /> */}
         </>
     )

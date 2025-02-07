@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Box, Button, Card, CardContent, CardMedia, Grid, Typography } from '@mui/material'
 
 import { useNavigate, useParams } from 'react-router-dom'
 import * as ProjectServices from "../../../../Services/ProjectServices"
 import { useQuery } from '@tanstack/react-query'
 import VerticalCarousel from '../../../Components/CustomCarousel'
+
+
+
 
 export default function ProjectsContent() {
 
@@ -110,6 +113,42 @@ const ProjectCard = ({ onClickEvent, title, image, description, projectId }) => 
   </CardContent>
 </Card>
 );
+
+
+const FadeUpSection = (props) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.2 } 
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
+  return (
+    <div
+      ref={sectionRef}
+      className={`fade-up ${isVisible ? 'visible' : ''}`}
+    >
+      <ProjectCard projectId={props.projectId} style={{ mgLeft: '0', transform: 'none' }} title={props.title} image={props.itemImage} description={props.itemDesc} />
+    </div>
+  );
+};
   return (
     <>
         <div className="layer" style={{background: '#373737', position: 'fixed', top: '0', left: '0', right: '0', bottom: '0'}}></div>
@@ -139,7 +178,8 @@ const ProjectCard = ({ onClickEvent, title, image, description, projectId }) => 
                         isLoading === false && data?.data.length > 0 &&
                         data.data.map((item, index) => (
                           <Grid item key={index} xs={12} sm={12} md={12}>
-                            <ProjectCard projectId={item._id} style={{ mgLeft: '0', transform: 'none' }} title={item.name} image={item.image} description={item.description} />
+                            <FadeUpSection projectId={item._id} title={item.name} itemImage={item.image} itemDesc={item.description} />
+                          
                           </Grid>
                         ))
                       }

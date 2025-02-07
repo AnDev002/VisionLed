@@ -38,7 +38,7 @@ export default function GlobalFooter() {
                     </Grid> 
                     <Grid item xs={12} sm={12} md={5} lg={5} xl={5}>
                         <Box sx={{borderRadius: "20px", overflow: "hidden", cursor: "pointer", position:"relative"}}>
-                            <img style={{width: "100%", height: "100%"}} src="hiltongarden.webp" alt="tamanhlighting" />
+                            <img style={{width: "100%", height: "100%"}} src="/hiltongarden.webp" alt="tamanhlighting" />
                                 <Box sx={{position:"absolute", top: 0, left: 0, right: 0, top: 0, width: "500px", height: "500px", backgroundColor: "#0000009c", zIndex: "50"}}></Box>
                                 <div style={{position: "absolute", top: "35%", left: "42%", transform: "translate(-35%, -42%)", zIndex: "100"}}>
                                     <Typography sx={{color: "white", fontSize: {xs: ".7rem", md: "1.2rem"}, whiteSpace: "nowrap", whiteSpace: "nowrap"}}>Trở thành đối tác của Tam Anh Lighting</Typography>

@@ -82,7 +82,7 @@ export default function PaymentContent() {
                     xs: "5px",
                     md: "50px"
                 },
-                marginTop: '100px'
+                marginTop: '160px'
             }}>
                 <Typography variant='h3' sx={{
                     padding: {
