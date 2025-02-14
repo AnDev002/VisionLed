@@ -210,15 +210,131 @@ export default function StickyNav() {
     return (
         <>
             <div className="nav-container" style={headerStyle} onMouseLeave={() => setIsOpenDropdown(false)} >
-                <AppBar position='static' sx={{ padding: {xs: '60px', md: '0px'}, background: 
+                <AppBar position='static' sx={{ padding: {xs: '0px', md: '0px'}, background: 
                 {xs: "linear-gradient(180deg, rgba(28, 28, 28, 0.93) 0%,rgba(28, 28, 28, 0.72) 40%, rgba(0, 0, 0, 0.41) 70%, rgba(0, 0, 0, 0) 100%)", md: "#292929d9"}, boxShadow: 'none' }}>
                     <Toolbar className="nav-wrapper" style={{ display: "flex", justifyContent: "space-between" }}>
-                        <Box onClick={() => handleLink("")} sx={{ color: 'black !important', position: { xs: 'fixed', md: 'static' },
-                                                                left: { xs: '50%', md: 'auto' },
-                                                                top: { xs: '50px', md: 'auto' },
-                                                                transform: { xs: 'translate(-50%, -50%)', md: 'none' } }}>
-                            <Typography variant="h5" sx={{color: "white", fontFamily: "'Playfair Display', serif", cursor: 'pointer' }}>Tam Anh Lighting</Typography>
+                    <Box className="desktop-only" onClick={() => handleLink("")} sx={{ color: 'black !important'}}>
+                                <Typography variant="h5" sx={{color: "white", fontFamily: "'Playfair Display', serif", cursor: 'pointer', marginLeft: "15px" }}>Tam Anh Lighting</Typography>
+                    </Box>
+                    <div style={{ display: 'flex', alignItems: "center", justifyContent: "space-between", width: "100vw" }}>
+                        <Box className='right-nav' sx={{ display: {xs: "flex", md: "none"} }}>
+                            <ToggleSideBar />
+                            <Box onClick={() => handleLink("")} sx={{ color: 'black !important'}}>
+                                <Typography variant="h5" sx={{color: "white", fontFamily: "'Playfair Display', serif", cursor: 'pointer', marginLeft: "15px" }}>Tam Anh Lighting</Typography>
+                            </Box>
                         </Box>
+                        <div style={{display: "flex"}}>
+                        <Box className="right-nav" sx={{ display: {xs: "flex", md: "none"} }}>
+                                <Box sx={{
+                                    display: {
+                                        md: 'block'
+                                    }
+                                }}>
+                                    {
+                                        ((toggleLoginForm === true) ? <Overlay func={handleToggleLogin} /> : "") || ((toggleAccountOption === true) ? <Overlay func={handleToggleAccountOption} /> : "")
+                                    }
+                                    {(isLoggedIn === false)
+                                        ?
+                                        <IconButton sx={{ color: opac ? "white" : "white" }} aria-label="cart" onClick={() => handleToggleLogin()} >
+                                            <AccountCircleIcon style={{ fontSize: '20px !important', width: '32px' }} />
+                                        </IconButton>
+                                        : <IconButton aria-label="cart" onClick={() => handleToggleAccountOption()}>
+                                            <AccountCircleIcon style={{ fontSize: '20px !important', width: '32px' }} />
+                                        </IconButton> 
+                                    }
+
+                                    {
+                                        (toggleAccountOption === true)
+                                            ?
+                                            <Box sx={{ position: 'absolute', right: '0', bgcolor: 'white', padding: '10px', width: '200px', borderRadius: '5px', zIndex: "100" }}>
+                                                <Typography variant='h6' sx={{ color: 'white', display: 'flex', alignItems: 'center' }}>
+                                                    <AccountCircleIcon style={{ fontSize: '10px !important' }} />
+                                                    <span style={{ margin: '5px', marginBottom: '10px' }}>
+                                                        {userSelector.name}
+                                                    </span>
+                                                </Typography>
+                                                {
+                                                    userSelector.isAdmin === true ?
+                                                        <Box onClick={() => handleLink("admin")} sx={{ fontSize: ".8rem", color: "gray", cursor: "pointer", padding: "0 20px", "&:hover": { color: "black", transition: ".5s" } }}>
+                                                            <Typography variant="body1">
+                                                                Go to admin page
+                                                            </Typography>
+                                                        </Box>
+                                                        : ""
+                                                }
+                                                <Typography variant="body1" onClick={() => handleLink("follow-your-orders")} sx={{
+                                                    color: "gray", padding: "0 20px", paddingBottom: "12px", cursor: "pointer", "&:hover": {
+                                                        color: "black", transition: ".5s"
+                                                    }
+                                                }}>Đơn hàng của bạn</Typography>
+                                                <Button onClick={handleLogOut} sx={{ width: '100%', color: 'white', backgroundColor: 'black', '&:hover': { backgroundColor: 'white', color: 'black' } }}>Đăng xuất</Button>
+                                            </Box>
+                                            : ""
+                                    }
+                                </Box>
+                                <LoginForm
+                                    userNameValue={userNameValue}
+                                    handleUserNameChange={handleUserNameChange}
+                                    passwordValue={passwordValue}
+                                    handlePasswordChange={handlePasswordChange}
+                                    handleSignIn={handleSignIn}
+                                    data={data}
+                                    toggleLoginForm={toggleLoginForm}
+                                    handleToggleLogin={handleToggleLogin}
+                                />
+                            </Box>
+                            <Box className='right-nav' sx={{ display: {xs: "flex", md: "none"} }}>
+                                <IconButton sx={{ color: opac ? "white" : "white", marginRight: {xs: '20px', md: '10px'} }} aria-label="cart" onClick={() => handleToggleCart()}>
+                                    <StyledBadge badgeContent={orderSelector.orderItems.length} color="error">
+                                        <ShoppingCartIcon sx={{ fontSize: {xs:'23px !important', md: '23px !important'} }} />
+                                    </StyledBadge>
+                                </IconButton>
+                                {(toggleCart === true) ? <Overlay func={handleToggleCart} /> : ""}
+                                {(toggleCart === true) ? <div className="cart-details">
+                                    <Box className='cart-content' sx={{ textAlign: 'center' }}>
+                                        {
+                                            (orderSelector.orderItems.length > 0) ? <Typography variant='h5'>Giỏ hàng</Typography> : ""
+                                        }
+                                        {
+                                            (orderSelector.orderItems.length > 0) ? orderSelector?.orderItems?.map((item, index) => {
+                                                return <div className="item-in-cart-wrapper" key={index}>
+                                                    <div className="item-in-cart">
+                                                        <div className="left">
+                                                            <div className="img-item">
+                                                                <img src={item.main_image} alt="this is lamp" />
+                                                            </div>
+                                                            <Typography variant="body1" className="item-name">
+                                                                {item.itemName + " x " + item.quantity}
+                                                            </Typography>
+                                                        </div>
+                                                        <div className="remove-item" onClick={() => handleRemoveItemInCart(item.productDetails)}><CloseIcon /></div>
+                                                    </div>
+                                                </div>
+                                            }) : <Box sx={{ margin: '50px 0' }}>
+                                                <div className="img-empty-cart">
+                                                    <img src="https://cdn-icons-png.flaticon.com/512/2038/2038854.png" alt="" />
+                                                </div>
+                                                <Typography style={{ marginTop: '20px' }} variant='body2'>Không có sản phẩm trong giỏ hàng!</Typography>
+                                            </Box>
+                                        }
+                                        {
+                                            (orderSelector.orderItems.length > 0) ? <Button onClick={handleLinkToCart} sx={{
+                                                color: 'white', background: '#000', width: '100%', "&:hover": {
+                                                    background: 'black',
+                                                    color: 'white'
+                                                }
+                                            }} className="to-payment">
+                                                Xem chi tiết đơn hàng
+                                            </Button> : ""
+                                        }
+                                    </Box>
+                                </div> : ""}
+                            </Box>
+                        </div>
+                            
+                        </div>
+
+                        
                         <Box sx={{
                             display: 'flex', gap: {
                                 xs: "0px",
@@ -244,11 +360,11 @@ export default function StickyNav() {
                                 </div>
                             </Button>
 
-                            <Box sx={{display: {xs: "flex", md: 'none'},position: 'fixed', top: '80px', left: '10vw', width: '80vw', height: '30px', border: '2px solid white', alignItems: "center", justifyContent: "center"}}>
+                            {/* <Box sx={{display: {xs: "flex", md: 'none'},position: 'fixed', top: '80px', left: '10vw', width: '80vw', height: '30px', border: '2px solid white', alignItems: "center", justifyContent: "center"}}>
                                 <Typography className='page-title' variant="body1" sx={{ }}>
                                     {pageTitle}
                                 </Typography>
-                            </Box>
+                            </Box> */}
 
                             {isOpenDropdown && (
                                 <ul className="dropdown-menu">
@@ -366,6 +482,7 @@ export default function StickyNav() {
                                 />
                             </Box>
                             <Box className='right-nav' sx={{ position: 'relative', right: { xs: "50%", md: "0" }, display: {xs: "none", md: "flex"}, alignItems: "center", justifyContent: "center" }}>
+                              
                                 <IconButton sx={{ color: opac ? "white" : "white", marginRight: {xs: '20px', md: '10px'} }} aria-label="cart" onClick={() => handleToggleCart()}>
                                     <StyledBadge badgeContent={orderSelector.orderItems.length} color="error">
                                         <ShoppingCartIcon sx={{ fontSize: {xs:'15px !important', md: '20px !important'} }} />
@@ -417,117 +534,7 @@ export default function StickyNav() {
                             </Box>
                         </div>
                     </Toolbar>
-                    <div style={{ display: 'flex', alignItems: "center", justifyContent: "center" }}>
-                            <Box className='right-nav' sx={{ display: {xs: "flex", md: "none"} }}>
-                                <ToggleSideBar />
-                            </Box>
-                            <Box className="right-nav" sx={{ display: {xs: "flex", md: "none"} }}>
-                                <Box sx={{
-                                    display: {
-                                        md: 'block'
-                                    }
-                                }}>
-                                    {
-                                        ((toggleLoginForm === true) ? <Overlay func={handleToggleLogin} /> : "") || ((toggleAccountOption === true) ? <Overlay func={handleToggleAccountOption} /> : "")
-                                    }
-                                    {(isLoggedIn === false)
-                                        ?
-                                        <IconButton sx={{ color: opac ? "white" : "white" }} aria-label="cart" onClick={() => handleToggleLogin()} >
-                                            <AccountCircleIcon style={{ fontSize: '20px !important', width: '32px' }} />
-                                        </IconButton>
-                                        : <IconButton aria-label="cart" onClick={() => handleToggleAccountOption()}>
-                                            <AccountCircleIcon style={{ fontSize: '20px !important', width: '32px' }} />
-                                        </IconButton> 
-                                    }
-
-                                    {
-                                        (toggleAccountOption === true)
-                                            ?
-                                            <Box sx={{ position: 'absolute', right: '0', bgcolor: 'white', padding: '10px', width: '200px', borderRadius: '5px', zIndex: "100" }}>
-                                                <Typography variant='h6' sx={{ color: 'white', display: 'flex', alignItems: 'center' }}>
-                                                    <AccountCircleIcon style={{ fontSize: '10px !important' }} />
-                                                    <span style={{ margin: '5px', marginBottom: '10px' }}>
-                                                        {userSelector.name}
-                                                    </span>
-                                                </Typography>
-                                                {
-                                                    userSelector.isAdmin === true ?
-                                                        <Box onClick={() => handleLink("admin")} sx={{ fontSize: ".8rem", color: "gray", cursor: "pointer", padding: "0 20px", "&:hover": { color: "black", transition: ".5s" } }}>
-                                                            <Typography variant="body1">
-                                                                Go to admin page
-                                                            </Typography>
-                                                        </Box>
-                                                        : ""
-                                                }
-                                                <Typography variant="body1" onClick={() => handleLink("follow-your-orders")} sx={{
-                                                    color: "gray", padding: "0 20px", paddingBottom: "12px", cursor: "pointer", "&:hover": {
-                                                        color: "black", transition: ".5s"
-                                                    }
-                                                }}>Đơn hàng của bạn</Typography>
-                                                <Button onClick={handleLogOut} sx={{ width: '100%', color: 'white', backgroundColor: 'black', '&:hover': { backgroundColor: 'white', color: 'black' } }}>Đăng xuất</Button>
-                                            </Box>
-                                            : ""
-                                    }
-                                </Box>
-                                <LoginForm
-                                    userNameValue={userNameValue}
-                                    handleUserNameChange={handleUserNameChange}
-                                    passwordValue={passwordValue}
-                                    handlePasswordChange={handlePasswordChange}
-                                    handleSignIn={handleSignIn}
-                                    data={data}
-                                    toggleLoginForm={toggleLoginForm}
-                                    handleToggleLogin={handleToggleLogin}
-                                />
-                            </Box>
-                            <Box className='right-nav' sx={{ display: {xs: "flex", md: "none"} }}>
-                                <IconButton sx={{ color: opac ? "white" : "white", marginRight: {xs: '20px', md: '10px'} }} aria-label="cart" onClick={() => handleToggleCart()}>
-                                    <StyledBadge badgeContent={orderSelector.orderItems.length} color="error">
-                                        <ShoppingCartIcon sx={{ fontSize: {xs:'23px !important', md: '23px !important'} }} />
-                                    </StyledBadge>
-                                </IconButton>
-                                {(toggleCart === true) ? <Overlay func={handleToggleCart} /> : ""}
-                                {(toggleCart === true) ? <div className="cart-details">
-                                    <Box className='cart-content' sx={{ textAlign: 'center' }}>
-                                        {
-                                            (orderSelector.orderItems.length > 0) ? <Typography variant='h5'>Giỏ hàng</Typography> : ""
-                                        }
-                                        {
-                                            (orderSelector.orderItems.length > 0) ? orderSelector?.orderItems?.map((item, index) => {
-                                                return <div className="item-in-cart-wrapper" key={index}>
-                                                    <div className="item-in-cart">
-                                                        <div className="left">
-                                                            <div className="img-item">
-                                                                <img src={item.main_image} alt="this is lamp" />
-                                                            </div>
-                                                            <Typography variant="body1" className="item-name">
-                                                                {item.itemName + " x " + item.quantity}
-                                                            </Typography>
-                                                        </div>
-                                                        <div className="remove-item" onClick={() => handleRemoveItemInCart(item.productDetails)}><CloseIcon /></div>
-                                                    </div>
-                                                </div>
-                                            }) : <Box sx={{ margin: '50px 0' }}>
-                                                <div className="img-empty-cart">
-                                                    <img src="https://cdn-icons-png.flaticon.com/512/2038/2038854.png" alt="" />
-                                                </div>
-                                                <Typography style={{ marginTop: '20px' }} variant='body2'>Không có sản phẩm trong giỏ hàng!</Typography>
-                                            </Box>
-                                        }
-                                        {
-                                            (orderSelector.orderItems.length > 0) ? <Button onClick={handleLinkToCart} sx={{
-                                                color: 'white', background: '#000', width: '100%', "&:hover": {
-                                                    background: 'black',
-                                                    color: 'white'
-                                                }
-                                            }} className="to-payment">
-                                                Xem chi tiết đơn hàng
-                                            </Button> : ""
-                                        }
-                                    </Box>
-                                </div> : ""}
-                            </Box>
-                        </div>
+                    
                 </AppBar>
                 
             </div>

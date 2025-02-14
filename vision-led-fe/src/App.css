@@ -104,3 +104,26 @@ body::-webkit-scrollbar-thumb:vertical {
 input {
   touch-action: manipulation;
 }
+
+@font-face {
+  font-family: 'neutra-text-alt';
+  src: url('/neutra-text-alt-587261020eccb.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+.desktop-only {
+    display: block;
+  }
+  
+  .mobile-only {
+    display: none;
+  }
+  
+  @media (max-width: 1024px) {
+    .desktop-only {
+      display: none;
+    }
+    .mobile-only {
+      display: block;
+    }
+  }
