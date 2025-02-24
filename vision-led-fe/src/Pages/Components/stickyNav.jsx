@@ -216,8 +216,8 @@ export default function StickyNav() {
                     <Box className="desktop-only" onClick={() => handleLink("")} sx={{ color: 'black !important'}}>
                                 <Typography variant="h5" sx={{color: "white", fontFamily: "'Playfair Display', serif", cursor: 'pointer', marginLeft: "15px" }}>Tam Anh Lighting</Typography>
                     </Box>
-                    <div style={{ display: 'flex', alignItems: "center", justifyContent: "space-between", width: "100vw" }}>
-                        <Box className='right-nav' sx={{ display: {xs: "flex", md: "none"} }}>
+                    <div style={{ display: 'flex', alignItems: "center", justifyContent: "space-between" }}>
+                        <Box className='right-nav' sx={{ display: {xs: "flex", md: "none"}, width: {xs: "100vw", md: "auto"} }}>
                             <ToggleSideBar />
                             <Box onClick={() => handleLink("")} sx={{ color: 'black !important'}}>
                                 <Typography variant="h5" sx={{color: "white", fontFamily: "'Playfair Display', serif", cursor: 'pointer', marginLeft: "15px" }}>Tam Anh Lighting</Typography>
