@@ -62,22 +62,52 @@ const FadeUpSection = (props) => {
       <div
         ref={sectionRef}
         className={`fade-up ${isVisible ? 'visible' : ''}`}
+        style={{padding: "8px 6px"}}
       >
         <Card sx={{
             cursor: 'pointer',
             width: '100%',
             height: 'auto',
-            backgroundColor: '#ffffff'
+            backgroundColor: '#ffffff',
+            overflow: 'hidden', // Đảm bảo ảnh không tràn ra ngoài
+            '&:hover img': {
+              transform: 'scale(1.2)', // Scale ảnh khi hover
+            },
+            '&:hover .overlay': {
+              opacity: 0, // Khi hover vào thì layer mờ dần
+            },
         }} className="crd crd-collection">
+          <Box
+            sx={{
+              position: "relative", // Để overlay có thể fit với ảnh
+              width: "100%",
+              maxWidth: "800px",
+              aspectRatio: "1 / 1",
+            }}
+          >
             <CardMedia alt='unsplash image' onClick={() => handleNavLink(props.itemId)} component="img" sx={{ width: "100%", 
                                                                   maxWidth: "800px",
                                                                   aspectRatio: "1 / 1",
                                                                   objectFit: "cover", 
                                                                   borderRadius: "10px", 
-                                                                  padding: "10px 6px" }} image={props.itemImage} />
-            <Typography variant='h5' sx={{ position: "absolute", bottom: '15px', left: "50%", color: "white", transform: "translateX(-50%)", textAlign: 'center', margin: '10px 0', fontWeight: "400", fontFamily: "neutra-text-alt", textTransform: "uppercase", fontSize: "1rem" }}>{props.itemName}</Typography>
+                                                                  transition: "transform 1.2s ease-in-out" }} image={props.itemImage} />
+            
             {/* <BtnSeeMore collectionId={props.itemId} mgLeft={'50%'} transform='translateX(-50%)' /> */}
-        
+            <Box
+              className="overlay"
+              sx={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+                backgroundColor: "rgba(0, 0, 0, 0.3)", // Màu đen mờ
+                transition: "opacity 1.2s ease-in-out",
+                borderRadius: "10px", // Để overlay bo góc như ảnh
+              }}
+            />
+            </Box>
+            <Typography variant='h5' sx={{ position: "absolute", bottom: '15px', left: "50%", color: "white", transform: "translateX(-50%)", textAlign: 'center', margin: '10px 0', fontWeight: "400", fontFamily: "neutra-text-alt", textTransform: "uppercase", fontSize: "1rem" }}>{props.itemName}</Typography>
         </Card>
       </div>
     );
