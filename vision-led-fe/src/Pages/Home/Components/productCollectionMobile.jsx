@@ -107,7 +107,7 @@ const FadeUpSection = (props) => {
               }}
             />
             </Box>
-            <Typography variant='h5' sx={{ position: "absolute", bottom: '15px', left: "50%", color: "white", transform: "translateX(-50%)", textAlign: 'center', margin: '10px 0', fontWeight: "400", fontFamily: "neutra-text-alt", textTransform: "uppercase", fontSize: "1rem" }}>{props.itemName}</Typography>
+            <Typography variant='h5' sx={{ position: "absolute", bottom: '15px', left: "50%", color: "white", transform: "translateX(-50%)", textAlign: 'center', margin: '10px 0', fontWeight: "400", fontFamily: "Roboto", textTransform: "uppercase", fontSize: "1rem" }}>{props.itemName}</Typography>
         </Card>
       </div>
     );

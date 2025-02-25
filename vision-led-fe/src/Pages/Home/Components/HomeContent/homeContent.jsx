@@ -55,7 +55,7 @@ const FadeUpSection = (props) => {
                         md: "0 50px",
                         lg: "0 150px",
                         xl: "0 250px"
-                    }, userSelect: 'none', marginBottom: "10px", fontWeight: '400', fontFamily: "neutra-text-alt", fontSize: '1.5rem'
+                    }, userSelect: 'none', marginBottom: "10px", fontWeight: 'bold', fontFamily: "Roboto", fontSize: '1.5rem'
                 }}>Mua sắm với chúng tôi</Typography>
                 <Box sx={{
                     display: {
@@ -70,7 +70,7 @@ const FadeUpSection = (props) => {
                             md: "0 50px",
                             lg: "0 150px",
                             xl: "0 250px"
-                        }, userSelect: 'none', bgColor: "#ffffff !important", color: 'black', fontWeight: "300", fontFamily: "neutra-text-alt", fontSize: '1.0rem'
+                        }, userSelect: 'none', bgColor: "#ffffff !important", color: 'black', fontWeight: "300", fontFamily: "Roboto", fontSize: '1.0rem'
                     }}>
                         Vision Led là một trong những đối tác hàng đầu trong việc thiết kế các giải pháp chiếu sáng cho mọi nhà. Chúng tôi tự hào về việc mang đến sự sáng tạo độc đáo và ưu tiên hàng đầu là sự hài lòng của khách hàng trong mọi dự án chúng tôi thực hiện</Typography>
                 </Box>
@@ -92,7 +92,7 @@ const FadeUpSection = (props) => {
                 <Link to='/products/0' style={{ textDecoration: 'none' }}>
                     <Button color='primary' sx={{
                         display: 'flex',
-                        justifyContent: 'center', fontFamily: "neutra-text-alt",
+                        justifyContent: 'center', fontFamily: "Roboto",
                         alignItems: 'center',
                         color: 'white',
                         padding: '8px 20px',
@@ -154,7 +154,7 @@ const FadeUpSection2 = (props) => {
                         md: "0 5px",
                         lg: "0 150px",
                         xl: "0 250px"
-                    }, userSelect: 'none', marginBottom: "10px", fontWeight: '400', fontFamily: "neutra-text-alt", fontSize: '1.5rem'
+                    }, userSelect: 'none', marginBottom: "10px", fontWeight: 'bold', fontFamily: "Roboto", fontSize: '1.5rem'
                 }}>Khám phá bộ sưu tập của chúng tôi</Typography>
 
                 <Box sx={{
@@ -170,7 +170,7 @@ const FadeUpSection2 = (props) => {
                             md: "0 50px",
                             lg: "0 150px",
                             xl: "0 250px"
-                        }, userSelect: 'none', color: 'black', fontWeight: "300", fontFamily: "neutra-text-alt", fontSize: '1.0rem'
+                        }, userSelect: 'none', color: 'black', fontWeight: "300", fontFamily: "Roboto", fontSize: '1.0rem'
                     }}>Chúng tôi đã tuyển chọn các thiết bị chiếu sáng tốt nhất từ ​​các nhà thiết kế và nhà sản xuất nổi tiếng trên khắp thế giới. Bộ sưu tập của chúng tôi có nhiều mẫu mã, từ kiểu dáng đẹp và hiện đại đến cổ điển và trang trí tinh tế, tất cả đều được chế tác từ những vật liệu chất lượng cao nhất và hoàn thiện đến từng chi tiết nhỏ nhất.
                     </Typography>
                 </Box>
@@ -225,9 +225,9 @@ const FadeUpSection3 = (props) => {
               }, borderRadius: '12px', overflow: 'hidden'
               }}>
                 <Box sx={{width: {xs: "100%", md: '75vw'}, height: 'auto', overflow: 'hidden'}}>
-                    <Box sx={{padding: { xs: "15px", sm: '18px', md: '30px', alignItems: 'center'}}}>
-                        <Typography sx={{fontSize: '2.6rem', fontWeight: '400', fontFamily: "neutra-text-alt"}}>Về Chúng Tôi</Typography>
-                        <Typography sx={{fontWeight: "300", fontFamily: "neutra-text-alt", fontSize: '1.5rem'}}>Với 20 năm kinh nghiệm, chúng tôi là công ty hàng đầu chuyên sản xuất và thiết kế các giải pháp chiếu sáng cho các công trình lớn. Thành công của chúng tôi trong ngành là nhờ vào khả năng hiểu và đáp ứng mong đợi và nguyện vọng của khách hàng. Bằng cách hợp tác với các đối tác từ khắp nơi trên thế giới, chúng tôi cung cấp cho khách hàng những vật liệu chất lượng hàng đầu và những lợi ích lớn nhất khi sử dụng.</Typography>
+                    <Box sx={{}}>
+                        <Typography sx={{fontSize: '2.6rem', fontWeight: "bold", fontFamily: "Roboto"}}>Về Chúng Tôi</Typography>
+                        <Typography sx={{fontWeight: "300", fontFamily: "Roboto", fontSize: '1.5rem'}}>Với 20 năm kinh nghiệm, chúng tôi là công ty hàng đầu chuyên sản xuất và thiết kế các giải pháp chiếu sáng cho các công trình lớn. Thành công của chúng tôi trong ngành là nhờ vào khả năng hiểu và đáp ứng mong đợi và nguyện vọng của khách hàng. Bằng cách hợp tác với các đối tác từ khắp nơi trên thế giới, chúng tôi cung cấp cho khách hàng những vật liệu chất lượng hàng đầu và những lợi ích lớn nhất khi sử dụng.</Typography>
                     
                     <Button color='primary' sx={{
                     display: 'flex',
@@ -249,7 +249,7 @@ const FadeUpSection3 = (props) => {
                         borderColor: 'black',
                         transition: '.3s',
                     },
-                    fontFamily: "'Afacad Flux', sans-serif"
+                    fontFamily: "Roboto"
                     }}>Xem Thêm</Button>
                     </Box>
                 </Box>
@@ -297,7 +297,7 @@ export default function HomeContent() {
                                 sm: '2.5rem',
                                 md: '3.5rem'
                             },
-                            fontFamily: 'neutra-text-alt',
+                            fontFamily: "Roboto",
                             fontWeight: "200"
                         }}>Chọn đèn, chọn sự hoàn hảo.</Typography>
                         <br />
@@ -325,7 +325,7 @@ export default function HomeContent() {
                                 color: 'white',
                                 transition: '.3s',
                             },
-                            marginTop: '20px', fontWeight: "300", fontFamily: "neutra-text-alt"
+                            marginTop: '20px', fontWeight: "300", fontFamily: "Roboto"
                         }}>
                             bộ sưu tập
                         </Button>
@@ -343,7 +343,7 @@ export default function HomeContent() {
             <div className="mobile-only">
               <ProductCollectionMobile />
             </div>
-            <FadeUpSection3 />
+            {/* <FadeUpSection3 /> */}
             
         </>
     )

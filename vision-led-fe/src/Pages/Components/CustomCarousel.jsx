@@ -90,10 +90,10 @@ const VerticalCarousel = ({ items }) => {
             <img src={item.image} alt={item.title} draggable="false" />
             <div style={{ height: "100vh" }}>
               <div style={insideStyles}>
-                <Typography variant="h4" sx={{fontFamily: "'Times New Roman', Times, serif", color: "black"}}>{item.name}</Typography>
+                <Typography variant="h4" sx={{fontFamily: "Roboto"}}>{item.name}</Typography>
                 <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                   <BtnSeeMore onClick={() => handleNavLink(index)} styles={{
-                    fontFamily: "'Times New Roman', Times, serif"
+                    fontFamily: "Roboto"
                   }} />
                 </div>
               </div>

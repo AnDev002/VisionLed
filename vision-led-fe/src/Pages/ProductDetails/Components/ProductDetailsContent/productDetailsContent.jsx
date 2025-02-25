@@ -265,7 +265,7 @@ export default function ProductDetailsContent() {
                         sx={{
                           userSelect: "none",
                           fontSize: "2rem",
-                          fontFamily: '"Noto Serif Display", serif !important'
+                          fontFamily: 'Roboto'
                         }}
                       >
                         {productDetail?.product.name}
@@ -278,7 +278,7 @@ export default function ProductDetailsContent() {
                           userSelect: "none",
                           fontSize: "1.8rem",
                           marginTop: '10px',
-                          fontFamily: '"Noto Serif Display", serif'
+                          fontFamily: 'Roboto'
                         }}
                       >
                         Mã sản phẩm - {productDetail?.idProduct ? productDetail?.idProduct : ""}
@@ -289,7 +289,7 @@ export default function ProductDetailsContent() {
                       {
                         (productDetail?.unit_price !== productDetail?.sale_price)
                           ? <span style={{ display: 'flex', gap: '20px', margin: "20px 0" }}>
-                            <Typography
+                            {/* <Typography
                               variant="h4"
                               component="div"
                               sx={{
@@ -301,8 +301,8 @@ export default function ProductDetailsContent() {
                               }}
                             >
                               {formatPrice(productDetail?.unit_price)}
-                            </Typography>
-                            <Typography
+                            </Typography> */}
+                            {/* <Typography
                               variant="h2"
                               component="div"
                               sx={{
@@ -315,7 +315,7 @@ export default function ProductDetailsContent() {
                               }}
                             >
                               {" " + formatPrice(productDetail?.sale_price)}
-                            </Typography>
+                            </Typography> */}
                           </span>
                           : <Typography
                             variant="h3"
@@ -328,12 +328,13 @@ export default function ProductDetailsContent() {
                               fontFamily: "Roboto"
                             }}
                           >
-                            {formatPrice(productDetail?.unit_price)}
+                            {/* {formatPrice(productDetail?.unit_price)} */}
                           </Typography>
                       }
                     </div>
                     <Box sx={{ background: "#f9f9f9", borderRadius: "8px", padding: "15px 15px", maxWidth: "550px" }}>
-                      <div className="model">
+                      <Typography variant="h5">Liên hệ để biết thêm chi tiết</Typography>
+                      {/* <div className="model">
                         <span
                           style={{
                             userSelect: "none",
@@ -341,7 +342,7 @@ export default function ProductDetailsContent() {
                             fontFamily: "Roboto"
                           }}
                         >
-                          <Typography sx={{fontFamily: '"Noto Serif Display", serif !important'}}>
+                          <Typography sx={{fontFamily: 'Roboto'}}>
                             Model
                           </Typography>
                         </span>
@@ -371,7 +372,7 @@ export default function ProductDetailsContent() {
                           fontFamily: "Roboto"
                         }}
                       >
-                        <Typography sx={{fontFamily: '"Noto Serif Display", serif !important'}}>
+                        <Typography sx={{fontFamily: 'Roboto'}}>
                           Số Lượng
                         </Typography>
                       </span>
@@ -445,13 +446,13 @@ export default function ProductDetailsContent() {
                             checkedIcon={<Favorite style={{ color: 'red' }} />}
                           />
                         </button>
-                      </div>
+                      </div> */}
                     </Box>
                     <Box sx={{ background: "#f9f9f9", marginTop: "10px", borderRadius: "8px", padding: "15px 15px", maxWidth: "550px" }}>
                       <div style={{ width: "100%" }}>
                         <div style={{}}>
                           <Typography variant="h5" sx={{ marginBottom: "10px",
-                          fontFamily: '"Noto Serif Display", serif !important' }}>
+                          fontFamily: 'Roboto' }}>
                             THÔNG SỐ KĨ THUẬT
                           </Typography>
                         </div>
@@ -466,8 +467,7 @@ export default function ProductDetailsContent() {
                                   sx={{
                                     userSelect: "none",
                                     fontSize: "1rem",
-                                    fontFamily: "Roboto",
-                                    fontWeight: 'bold',
+                                    fontFamily: "Roboto"
                                   }}
                                 >
                                   Điện áp - {productDetail?.voltage}
@@ -482,8 +482,7 @@ export default function ProductDetailsContent() {
                                 sx={{
                                   userSelect: "none",
                                   fontSize: "1rem",
-                                  fontFamily: "Roboto",
-                                  fontWeight: 'bold',
+                                  fontFamily: "Roboto"
                                 }}
                               >
                                 Công suất  - {productDetail?.power.powerValue}
@@ -499,8 +498,6 @@ export default function ProductDetailsContent() {
                                     sx={{
                                       userSelect: "none",
                                       fontSize: "1rem",
-                                      fontWeight: 'bold',
-                                      fontFamily: "Roboto"
                                     }}
                                   >
                                     Quang thông - {productDetail?.luminous_flux}
@@ -517,8 +514,6 @@ export default function ProductDetailsContent() {
                                     sx={{
                                       userSelect: "none",
                                       fontSize: "1rem",
-                                      fontWeight: 'bold',
-                                      fontFamily: "Roboto"
                                     }}
                                   >
                                     Tiêu chuẩn - {productDetail?.standard}
@@ -535,8 +530,6 @@ export default function ProductDetailsContent() {
                                     sx={{
                                       userSelect: "none",
                                       fontSize: "1rem",
-                                      fontWeight: 'bold',
-                                      fontFamily: "Roboto"
                                     }}
                                   >
                                     Lớp bảo vệ - {productDetail?.secureLv}
@@ -553,8 +546,6 @@ export default function ProductDetailsContent() {
                                     sx={{
                                       userSelect: "none",
                                       fontSize: "1rem",
-                                      fontWeight: 'bold',
-                                      fontFamily: "Roboto"
                                     }}
                                   >
                                     Vật liệu - {productDetail?.texture}
@@ -571,8 +562,6 @@ export default function ProductDetailsContent() {
                                     sx={{
                                       userSelect: "none",
                                       fontSize: "1rem",
-                                      fontWeight: 'bold',
-                                      fontFamily: "Roboto"
                                     }}
                                   >
                                     Nhiệt độ màu - {productDetail?.lumens_color_temperature}
@@ -590,8 +579,6 @@ export default function ProductDetailsContent() {
                                     sx={{
                                       userSelect: "none",
                                       fontSize: "1rem",
-                                      fontWeight: 'bold',
-                                      fontFamily: "Roboto"
                                     }}
                                   >
                                     Chỉ số hoàn màu (CRI) - {productDetail?.CRI}
@@ -608,7 +595,6 @@ export default function ProductDetailsContent() {
                                     sx={{
                                       userSelect: "none",
                                       fontSize: "1rem",
-                                      fontWeight: 'bold',
                                       fontFamily: "Roboto"
                                     }}
                                   >
@@ -626,7 +612,6 @@ export default function ProductDetailsContent() {
                                     sx={{
                                       userSelect: "none",
                                       fontSize: "1rem",
-                                      fontWeight: 'bold',
                                       fontFamily: "Roboto"
                                     }}
                                   >
@@ -644,7 +629,6 @@ export default function ProductDetailsContent() {
                                     sx={{
                                       userSelect: "none",
                                       fontSize: "1rem",
-                                      fontWeight: 'bold',
                                       fontFamily: "Roboto"
                                     }}
                                   >
@@ -662,8 +646,6 @@ export default function ProductDetailsContent() {
                                     sx={{
                                       userSelect: "none",
                                       fontSize: "1rem",
-
-                                      fontWeight: 'bold',
                                       fontFamily: "Roboto"
                                     }}
                                   >
@@ -681,7 +663,6 @@ export default function ProductDetailsContent() {
                                     sx={{
                                       userSelect: "none",
                                       fontSize: "1rem",
-                                      fontWeight: 'bold',
                                       fontFamily: "Roboto"
                                     }}
                                   >
@@ -787,12 +768,13 @@ export default function ProductDetailsContent() {
                   variant="h5"
                   sx={{
                     marginLeft: "5px",
-                    fontSize: "1rem"
+                    fontSize: "1rem",
+                    fontFamily: "Roboto"
                   }}
                 >
                   Có thể bạn quan tâm
                 </Typography>
-                <div className="btn-see-more" onClick={() => handleSeeMore(typeId)}>Xem Thêm</div>
+                <div className="btn-see-more" style={{fontFamily: "Roboto"}} onClick={() => handleSeeMore(typeId)}>Xem Thêm</div>
               </Box>
               <ProductSlideShow products={dataByType?.data} />
             </>

@@ -30,7 +30,7 @@ import { TouchProvider } from './Hooks/TouchProvider';
 
 const theme = createTheme({
   typography: {
-    fontFamily: "'Nunito Sans', sans-serif", // Thay 'Your-Font-Family' bằng font bạn muốn sử dụng
+    fontFamily: "Roboto", // Thay 'Your-Font-Family' bằng font bạn muốn sử dụng
   },
 })
 
