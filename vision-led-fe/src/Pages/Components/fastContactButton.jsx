@@ -7,6 +7,7 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import { FaTiktok } from "react-icons/fa";
 import { FcContacts } from "react-icons/fc";
 import { BsHeadphones } from "react-icons/bs";
+import { IoIosCall } from "react-icons/io";
 
 const actions = [
     { icon: <FaTiktok />, name: 'Tiktok' },
@@ -31,7 +32,7 @@ export default function FastContactButton() {
                 sx={{
                     position: 'absolute', bottom: 16, right: 16, fontSize: '10px !important', background: "none",
                 }}
-                icon={<BsHeadphones style={{ fontSize: '42px', backgroundColor: "#555555", padding: '8px', borderRadius: '100%' }} />}
+                icon={<IoIosCall style={{ fontSize: '42px', backgroundColor: "#555555", padding: '8px', borderRadius: '100%' }} />}
 
             >
                 {actions.map((action) => (
