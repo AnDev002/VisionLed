@@ -260,6 +260,7 @@ body {
 .crd-collection {
     box-shadow: none !important;
     border: none !important;
+    border-radius: 0 !important;
 }
 
 .collection-info {

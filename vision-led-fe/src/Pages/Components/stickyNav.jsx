@@ -217,7 +217,8 @@ export default function StickyNav() {
                                 <Typography variant="h5" sx={{color: "white", fontFamily: "'Playfair Display', serif", cursor: 'pointer', marginLeft: "15px" }}>Tam Anh Lighting</Typography>
                     </Box>
                     <div style={{ display: 'flex', alignItems: "center", justifyContent: "space-between" }}>
-                        <Box className='right-nav' sx={{ display: {xs: "flex", md: "none"}, width: {xs: "100vw", md: "auto"}, justifyContent: "space-between", paddingRight: "21px" }}>
+                        <Box className='right-nav' sx={{ display: {xs: "flex", md: "none"}, width: {xs: "100vw", md: "auto"}, justifyContent: "space-between", paddingRight: "25px"
+                         }}>
                             <Box onClick={() => handleLink("")} sx={{ color: 'black !important'}}>
                                 <Typography variant="h5" sx={{color: "white", fontFamily: "'Playfair Display', serif", cursor: 'pointer' }}>Tam Anh Lighting</Typography>
                             </Box>

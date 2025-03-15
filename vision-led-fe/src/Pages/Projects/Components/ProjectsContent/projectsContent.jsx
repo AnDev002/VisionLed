@@ -4,10 +4,6 @@ import { Box, Button, Card, CardContent, CardMedia, Grid, Typography } from '@mu
 import { useNavigate, useParams } from 'react-router-dom'
 import * as ProjectServices from "../../../../Services/ProjectServices"
 import { useQuery } from '@tanstack/react-query'
-import VerticalCarousel from '../../../Components/CustomCarousel'
-
-
-
 
 export default function ProjectsContent() {
 
@@ -51,14 +47,14 @@ const ProjectCard = ({ onClickEvent, title, image, description, projectId }) => 
   />
   <CardContent sx={{
         display: 'flex',
-        flexDirection: 'column', // Đặt chiều dọc cho nội dung
-        alignItems: 'center', // Căn giữa theo chiều ngang
-        justifyContent: 'center', // Căn giữa theo chiều dọc
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
         backgroundColor: 'transparent',
         width: {
           xs: '95vw',
           md: '70vw'
-        }, // Chiếm phần còn lại của thẻ Card
+        }, 
   }}>
     <br />
     <Typography variant="h2" component="div" sx={{fontFamily: "'Times New Roman', Times, serif", textAlign: 'center', fontSize: {
@@ -179,14 +175,11 @@ const FadeUpSection = (props) => {
                         data.data.map((item, index) => (
                           <Grid item key={index} xs={12} sm={12} md={12}>
                             <FadeUpSection projectId={item._id} title={item.name} itemImage={item.image} itemDesc={item.description} />
-                          
                           </Grid>
                         ))
                       }
                       </Grid>
                     </Box>
-
-        {/*Content Here */}
     </>
   )
 }
