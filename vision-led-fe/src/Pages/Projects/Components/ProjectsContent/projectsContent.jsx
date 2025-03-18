@@ -6,6 +6,20 @@ import * as ProjectServices from "../../../../Services/ProjectServices"
 import { useQuery } from '@tanstack/react-query'
 
 export default function ProjectsContent() {
+  const images = [
+    "https://letsenhance.io/static/a31ab775f44858f1d1b80ee51738f4f3/11499/EnhanceAfter.jpg",
+    "https://i0.wp.com/plopdo.com/wp-content/uploads/2021/11/feature-pic.jpg?fit=537%2C322&ssl=1",
+  ];
+  
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 3000); 
+
+    return () => clearInterval(interval);
+  }, []);
 
   const navigate = useNavigate();
   const getAllProject = async () => {
@@ -21,8 +35,6 @@ export default function ProjectsContent() {
 const ProjectCard = ({ onClickEvent, title, image, description, projectId }) => (
   <Card 
   sx={{
-    cursor: "pointer",
-    border: '1px solid black', 
     display: {
       xs: "block",
       md: 'flex'
@@ -36,13 +48,7 @@ const ProjectCard = ({ onClickEvent, title, image, description, projectId }) => 
     image={image}
     title={title}
     sx={{
-      cursor: "pointer",
-      userSelect: 'none',
-      width: {
-        xs: '100%',
-        md: '30vw',
-      },
-      height: 'auto'
+      userSelect: 'none', width: { xs:"100%", md: "33%"}, aspectRatio: "1 / 1", overflow: "hidden", cursor: "pointer",
     }}
   />
   <CardContent sx={{
@@ -50,17 +56,16 @@ const ProjectCard = ({ onClickEvent, title, image, description, projectId }) => 
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: 'transparent',
         width: {
           xs: '95vw',
           md: '70vw'
         }, 
   }}>
     <br />
-    <Typography variant="h2" component="div" sx={{fontFamily: "'Times New Roman', Times, serif", textAlign: 'center', fontSize: {
-      xs: '22px',
-      sm: '30px',
-      md: '36px'
+    <Typography variant="h2" component="div" sx={{fontFamily: "Roboto", textAlign: 'center', fontSize: {
+      xs: '15px',
+      sm: '20px',
+      md: '25px'
     }}}>
       {title}
     </Typography>
@@ -73,11 +78,11 @@ const ProjectCard = ({ onClickEvent, title, image, description, projectId }) => 
       '-webkit-line-clamp': 3, 
       '-webkit-box-orient': 'vertical',
       wordWrap: 'break-word',
-      fontFamily: "'Times New Roman', Times, serif",
+      fontFamily: "Roboto",
       fontSize: {
-        xs: '18px',
-        sm: '26px',
-        md: '30px'
+        xs: '13px',
+        sm: '18px',
+        md: '23px'
       }
     }}>
       {description}
@@ -87,13 +92,11 @@ const ProjectCard = ({ onClickEvent, title, image, description, projectId }) => 
                             display: 'flex',
                             justifyContent: 'center',
                             alignItems: 'center',
-                            padding: '5px 10px',
-                            paddingRight: '20px',
                             margin: '5px 0px',
                             marginBottom: '50px',
                             marginLeft: `10px`,
                             color: 'white',
-                            padding: '8px 20px',
+                            padding: '3px 12px',
                             border: '1px solid white',
                             backgroundColor: 'rgba(50, 50, 50, 100%)',
                             borderRadius: '0',
@@ -105,7 +108,11 @@ const ProjectCard = ({ onClickEvent, title, image, description, projectId }) => 
                                 transition: '.3s',
                             },
 
-                        }}>Xem Chi Tiết Dự Án</Button>
+                        }}>
+                          <Typography variant='body2' sx={{fontSize: "9px", fontFamily: "Roboto"}}>
+                            Xem Chi Tiết Dự Án
+                          </Typography>
+                          </Button>
   </CardContent>
 </Card>
 );
@@ -139,7 +146,7 @@ const FadeUpSection = (props) => {
   return (
     <div
       ref={sectionRef}
-      className={`fade-up ${isVisible ? 'visible' : ''}`}
+      className={`fade-up ${isVisible ? 'visible' : 'visible'}`}
     >
       <ProjectCard projectId={props.projectId} style={{ mgLeft: '0', transform: 'none' }} title={props.title} image={props.itemImage} description={props.itemDesc} />
     </div>
@@ -147,8 +154,24 @@ const FadeUpSection = (props) => {
 };
   return (
     <>
-        <div className="layer" style={{background: '#373737', position: 'fixed', top: '0', left: '0', right: '0', bottom: '0'}}></div>
-        
+        <div className="layer" style={{ position: 'fixed', top: '0', left: '0', right: '0', bottom: '0'}}></div>
+        <div className="parallax-content" style={{ transform: `translateX(${scrollX * 0.2}px)` }}>
+                             <div className="parallax-item">
+                                <div style={{position: "relative"}}></div>
+                                {images.map((img, index) => (
+                                  <img
+                                    key={index}
+                                    src={img}
+                                    alt={`Slide ${index + 1}`}
+                                    style={{width: "100%", height: "100%"}}
+                                    className={`slide ${index === currentIndex ? "active" : ""}`}
+                                  />
+                                ))}                     
+                              <div  style={{position: "absolute", top: "50%", left: "20%", transform: "translate(-50%, -20%)"}}>
+                                <Typography variant="h3" sx={{ fontFamily: "Roboto", fontWeight: "bold", color: "white", fontSize: {xs: "1.2rem", md: "3.5rem"} }}>Dự Án</Typography>
+                              </div>
+                            </div>
+                         </div>
         <Box sx={{
                     marginTop: {
                         xs: "65px",
@@ -156,7 +179,6 @@ const FadeUpSection = (props) => {
                         md: "75px",
                         lg: "80px",
                     },
-                    background: "#373737",
                     position: 'relative',
                     zIndex: 80,
                     display: 'flex',
@@ -167,7 +189,6 @@ const FadeUpSection = (props) => {
                     },
                     justifyContent: 'space-around',
                     alignItems: 'center',
-                    padding: '20px',
                     gap: '20px'}}>
                       <Grid container spacing={1}>
                       {
