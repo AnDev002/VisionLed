@@ -27,27 +27,6 @@ export default function ProjectSlideShow(props) {
                             </Box></SwiperSlide>
                         </>
                     })
-                    && props?.project?.map((item, index) => {
-                        return <>
-                            <SwiperSlide key={index}><Box sx={{height: '300px', overflow: 'hidden'}}>
-                                <img style={{width: '100%', height: '100%', objectFit: 'cover' }} src={item?.image ? item?.image : ""} alt="dendownlight.jpg" />
-                            </Box></SwiperSlide>
-                        </>
-                    })
-                    && props?.project?.map((item, index) => {
-                        return <>
-                            <SwiperSlide key={index}><Box sx={{height: '300px', overflow: 'hidden'}}>
-                                <img style={{width: '100%', height: '100%', objectFit: 'cover' }} src={item?.image ? item?.image : ""} alt="dendownlight.jpg" />
-                            </Box></SwiperSlide>
-                        </>
-                    })
-                    && props?.project?.map((item, index) => {
-                        return <>
-                            <SwiperSlide key={index}><Box sx={{height: '300px', overflow: 'hidden'}}>
-                                <img style={{width: '100%', height: '100%', objectFit: 'cover' }} src={item?.image ? item?.image : ""} alt="dendownlight.jpg" />
-                            </Box></SwiperSlide>
-                        </>
-                    })
                 }
                 {/* <SwiperSlide key={65}><Box sx={{height: '300px', overflow: 'hidden'}}>
                          <img style={{width: '100%', height: '100%', objectFit: 'cover' }} src={props?.project[0].image ? props?.project[0].image : ""} alt="dendownlight.jpg" />

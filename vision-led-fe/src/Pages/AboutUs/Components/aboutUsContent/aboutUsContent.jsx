@@ -218,7 +218,7 @@ export default function AboutUsContent() {
                  </div>
                 <FadeUpSection />
                 <FadeUpSection2 />
-                <FadeUpSection3 />
+                {/* <FadeUpSection3 /> */}
                
             </div>
         </>

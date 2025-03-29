@@ -26,8 +26,8 @@ export default function ProductCardHome(props) {
             </Card >
             <div>
                 <CardContent sx={{ minHeight: "50px", justifyContent: 'end', textAlign: 'left', display: 'flex', flexDirection: 'column', borderRadius: "0 !important" }}>
-                    <Typography gutterBottom variant='h5' sx={{ fontFamily: "Roboto", color: 'black', fontSize: '1rem', flex: 'left' }}>{props.productName}</Typography>
-                    {/* <Typography variant='body1' sx={{ fontFamily: "Roboto", color: 'black', fontWeight: 'bold', fontSize: '1rem' }}>{priceDisplay}</Typography> */}
+                    <Typography gutterBottom variant='h5' sx={{ fontFamily: '"Open Sans", sans-serif', color: 'black', fontSize: '1rem', flex: 'left' }}>{props.productName}</Typography>
+                    {/* <Typography variant='body1' sx={{ fontFamily: '"Open Sans", sans-serif', color: 'black', fontWeight: 'bold', fontSize: '1rem' }}>{priceDisplay}</Typography> */}
                 </CardContent>
             </div>
         </>

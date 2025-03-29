@@ -12,3 +12,74 @@
     overflow-y: scroll;
     height: 100vh;
 }
+
+/* Box container */
+.image-box {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
+    transition: all 1s ease-in-out; /* Transition khi hover vào Box */
+  }
+  
+  .image-effect {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out; 
+  }
+  
+  .image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0); 
+    transition: background-color 1s ease-in-out;
+    z-index: 1;  
+}
+  .image-box:hover .image-overlay {
+    background-color: rgba(0, 0, 0, 0.242); 
+  }
+  .image-box:hover .image-effect {
+    transform: scale(1.2); 
+  }
+  .image-box:hover .image-button {
+    background-color: #0000006b;
+  }
+  .image-button:hover  {
+    background-color: black;
+  }
+
+  .image-box2 {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    transition: all 1s ease-in-out; /* Transition khi hover vào Box */
+  }
+  
+  .image-effect2 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out; 
+  }
+  
+  .image-overlay2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0); 
+    transition: background-color 1s ease-in-out;
+    z-index: 1;  
+}
+  .image-box2:hover .image-overlay2 {
+    background-color: rgba(0, 0, 0, 0.242); 
+  }
+  .image-box2:hover .image-effect2 {
+    transform: scale(1.2); 
+  }

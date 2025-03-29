@@ -12,3 +12,33 @@
     /* overflow-y: scroll; */
     height: 100vh;
 }
+/* 
+.parallax-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.parallax-container:hover img {
+    transform: scale(3.2); 
+    opacity: 0.9;  
+    transition: all 0.5s ease-in-out; 
+}
+
+
+.parallax-container img {
+    transform: scale(1); 
+    opacity: 1;  
+    transition: all 0.5s ease-in-out; 
+}
+
+.parallax-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 300;
+    transition: all 0.3s ease-in-out;
+} */

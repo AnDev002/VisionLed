@@ -6,9 +6,67 @@ import { PiTiktokLogo } from "react-icons/pi";
 import { HiOutlinePhone } from "react-icons/hi";
 import { SiZalo } from "react-icons/si";
 import BtnSeeMore from './btnSeeMore';
-export default function GlobalFooter() {
+import { useState } from 'react';
+
+function EmailForm(props) {
+
     return (
         <>
+            <Box sx={{position: "fixed", top: 0, left: 0, right: 0, bottom: 0, zIndex: 100}} onClick={props?.onClickEv}></Box>
+            <Box sx={{position: "fixed", top: "50%", left: "50%", transform: "translate(-50%, -50%)", zIndex: 101, padding: "20px 30px", bgcolor: "white", border: "1px solid black", borderRadius: "5px", alignItems: "center"}}>
+                <Box sx={{display: 'flex', justifyContent: "center"}}>
+                    <Typography variant='h5' sx={{fontFamily:'"Open Sans", sans-serif' }}>Thông Tin Liên Hệ</Typography>
+                </Box>
+                <Box sx={{display: "flex", gap: "10px", margin: "15px 0"}}>
+                    <Box>
+                        <Typography variant='h6' sx={{fontFamily:'"Open Sans", sans-serif' }}>Tên</Typography>
+                    </Box>
+                    <input type="text" placeholder='Nhập tên ở đây!' style={{border: "none", outline: "none", fontFamily: '"Open Sans", sans-serif'}}/>
+                </Box>
+                <Box sx={{display: "flex", gap: "10px", margin: "15px 0"}}>
+                    <Box>
+                        <Typography variant='h6' sx={{fontFamily:'"Open Sans", sans-serif' }}>Email</Typography>
+                    </Box>
+                    <input type="text" placeholder='Nhập email ở đây!' style={{border: "none", outline: "none", fontFamily: '"Open Sans", sans-serif'}}/>
+                </Box>
+                <Box sx={{display: "flex", gap: "10px", margin: "15px 0"}}>
+                    <Box>
+                        <Typography variant='h6' sx={{fontFamily:'"Open Sans", sans-serif' }}>Số điện thoại</Typography>
+                    </Box>
+                    <input type="text" placeholder='Nhập số điện thoại ở đây!' style={{border: "none", outline: "none", fontFamily: '"Open Sans", sans-serif'}}/>
+                </Box>
+                <Box sx={{display: "flex", gap: "10px", margin: "15px 0"}}>
+                    <Box>
+                        <Typography variant='h6' sx={{fontFamily:'"Open Sans", sans-serif' }}>Ghi chú thêm</Typography>
+                    </Box>
+                    <input type="text" placeholder='Nhập số ghi chú ở đây!' style={{border: "none", outline: "none", fontFamily: '"Open Sans", sans-serif'}}/>
+                </Box>
+                <Box sx={{display: "flex", gap: "10px", margin: "15px 0"}}>
+                    <Box>
+                        <Typography variant='body2' sx={{fontFamily:'"Open Sans", sans-serif', color: "gray" }}>*Chúng tôi sẽ liên hệ lại cho bạn trong thời gian sớm nhất!</Typography>
+                    </Box>
+                </Box>
+                <Box sx={{display: "flex", gap: "10px", margin: "15px 0", float: "right"}}>
+                    <Box sx={{display: "flex"}}>
+                        <Button onClick={props?.onClickEv}>
+                            <Typography variant='body2' sx={{fontFamily:'"Open Sans", sans-serif', color: "black" }}>Hủy</Typography>
+                        </Button>
+                        <Button onClick={props?.onClickEv}>
+                            <Typography variant='body2' sx={{fontFamily:'"Open Sans", sans-serif', color: "black" }}>Gửi</Typography>
+                        </Button>
+                    </Box>
+                </Box>
+            </Box>
+        </>
+    )
+}
+
+export default function GlobalFooter() {
+    let [toggleFooter, setToggleFooter] = useState(false);
+    const handleToggleFooter = () => setToggleFooter(!toggleFooter);
+    return (
+        <>
+
             <Box sx={{
                 backgroundColor: '#272727',
                 fontWeight: "300", fontFamily: "Roboto"
@@ -49,7 +107,7 @@ export default function GlobalFooter() {
                             <Typography sx={{fontWeight: "300", fontFamily: "Roboto", fontSize: '0.8rem'}}>Với 20 năm kinh nghiệm, chúng tôi là công ty hàng đầu chuyên sản xuất và thiết kế các giải pháp chiếu sáng cho các công trình lớn. Thành công của chúng tôi trong ngành là nhờ vào khả năng hiểu và đáp ứng mong đợi và nguyện vọng của khách hàng. Bằng cách hợp tác với các đối tác từ khắp nơi trên thế giới, chúng tôi cung cấp cho khách hàng những vật liệu chất lượng hàng đầu và những lợi ích lớn nhất khi sử dụng.</Typography>
                         </Box>
                         <Box sx={{margin: "10px 0", marginTop: "20px"}}>
-                            <Button color='primary' sx={{
+                            <Button color='primary' onClick={handleToggleFooter} sx={{
                                                     transform: `00`,
                                                     color: 'white',
                                                     padding: '8px 20px',
@@ -66,6 +124,10 @@ export default function GlobalFooter() {
                                                     },
                                                 }}>Trở thành đối tác của Tam Anh Lighting</Button>
                         </Box>
+                        {
+                            toggleFooter == true ? <EmailForm onClickEv={handleToggleFooter}/> : ""
+                        }
+                        
                     </Grid>
                 </Grid>
                  
@@ -76,3 +138,4 @@ export default function GlobalFooter() {
         </>
     )
 }
+

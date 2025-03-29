@@ -18,6 +18,7 @@ import * as ProductServices from "../../Services/ProductServices"
 import CloseIcon from '@mui/icons-material/Close';
 import { useQuery } from '@tanstack/react-query';
 import { MdKeyboardArrowDown } from "react-icons/md";
+import { IoIosSearch } from "react-icons/io";
 
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
@@ -214,13 +215,13 @@ export default function StickyNav() {
                 {xs: "linear-gradient(180deg, rgba(28, 28, 28, 0.93) 0%,rgba(28, 28, 28, 0.72) 40%, rgba(0, 0, 0, 0.41) 70%, rgba(0, 0, 0, 0) 100%)", md: "#292929d9"}, boxShadow: 'none' }}>
                     <Toolbar className="nav-wrapper" style={{ display: "flex", justifyContent: "space-between" }}>
                     <Box className="desktop-only" onClick={() => handleLink("")} sx={{ color: 'black !important'}}>
-                                <Typography variant="h5" sx={{color: "white", fontFamily: "'Playfair Display', serif", cursor: 'pointer', marginLeft: "15px" }}>Tam Anh Lighting</Typography>
+                                <Typography variant="h6" sx={{color: "white", fontFamily: "'Playfair Display', serif", cursor: 'pointer', marginLeft: "15px" }}>TAM ANH LIGHTING</Typography>
                     </Box>
                     <div style={{ display: 'flex', alignItems: "center", justifyContent: "space-between" }}>
                         <Box className='right-nav' sx={{ display: {xs: "flex", md: "none"}, width: {xs: "100vw", md: "auto"}, justifyContent: "space-between", paddingRight: "25px"
                          }}>
                             <Box onClick={() => handleLink("")} sx={{ color: 'black !important'}}>
-                                <Typography variant="h5" sx={{color: "white", fontFamily: "'Playfair Display', serif", cursor: 'pointer' }}>Tam Anh Lighting</Typography>
+                                <Typography variant="h6" sx={{color: "white", fontFamily: "'Playfair Display', serif", cursor: 'pointer' }}>TAM ANH LIGHTING</Typography>
                             </Box>
                             <ToggleSideBar />
                         </Box>
@@ -237,7 +238,7 @@ export default function StickyNav() {
                         }}>
                             <Button onMouseEnter={() => setIsOpenDropdown(true)} onClick={() => handleLink("products/0")}
                                 color='inherit' sx={{
-                                    display: { xs: 'none', md: 'flex' }, textTransform: 'none', fontFamily: "Roboto", fontWeight: 'bold', "&.hover": {
+                                    display: { xs: 'none', md: 'flex' }, textTransform: 'none', fontFamily: '"Open Sans", sans-serif', fontWeight: 'bold', "&.hover": {
                                         border: 'none',
                                         boxShadow: 'none'
                                     }
@@ -245,7 +246,7 @@ export default function StickyNav() {
                                 <div style={{display: 'flex', gap: '5px', alignItems: 'center'}}>
                                     <Typography variant="body2" sx={{
                                         color: "white", 
-                                        fontFamily: "Roboto", "&:hover": {
+                                        fontFamily: '"Open Sans", sans-serif', "&:hover": {
                                             color: "white",
                                         }, fontWeight: 'bold',
                                         fontSize: {md: "0.5rem", lg: "0.6rem"}
@@ -269,10 +270,10 @@ export default function StickyNav() {
                                 ))}
                                 </ul>
                             )}
-                            <Button color='inherit' sx={{ display: { xs: 'none', md: 'flex' }, textTransform: 'none', fontFamily: "Roboto", fontWeight: 'bold' }}>
+                            <Button color='inherit' sx={{ display: { xs: 'none', md: 'flex' }, textTransform: 'none', fontFamily: '"Open Sans", sans-serif', fontWeight: 'bold' }}>
                                 <Typography onClick={() => handleLink("collections")} sx={{
                                     color: "white", 
-                                    fontFamily: "Roboto", "&:hover": {
+                                    fontFamily: '"Open Sans", sans-serif', "&:hover": {
                                         color: "white",
                                     }, fontWeight: 'bold',
                                     fontSize: {md: "0.5rem", lg: "0.6rem"}
@@ -282,29 +283,29 @@ export default function StickyNav() {
                                 display: {
                                     xs: 'none',
                                     md: 'flex'
-                                }, textTransform: 'none', fontFamily: "Roboto"
+                                }, textTransform: 'none', fontFamily: '"Open Sans", sans-serif'
                             }}>
                                 <Typography onClick={() => handleLink("projects")} sx={{
                                     color: "white", 
-                                    fontFamily: "Roboto", "&:hover": {
+                                    fontFamily: '"Open Sans", sans-serif', "&:hover": {
                                         color: "white",
                                     }, fontWeight: 'bold',
                                     fontSize: {md: "0.5rem", lg: "0.6rem"}
                                 }}>DỰ ÁN</Typography>
                             </Button>
-                            <Button color='inherit' sx={{ display: { xs: 'none', md: 'flex' }, textTransform: 'none', fontFamily: "Roboto" }}>
+                            <Button color='inherit' sx={{ display: { xs: 'none', md: 'flex' }, textTransform: 'none', fontFamily: '"Open Sans", sans-serif' }}>
                                 <Typography onClick={() => handleLink("about-us")} sx={{
                                     color: "white", 
-                                    fontFamily: "Roboto", "&:hover": {
+                                    fontFamily: '"Open Sans", sans-serif', "&:hover": {
                                         color: "white",
                                     }, fontWeight: 'bold',
                                     fontSize: {md: "0.5rem", lg: "0.6rem"}
                                 }}>TIN TỨC</Typography>
                             </Button>
-                            <Button color='inherit' sx={{ display: { xs: 'none', md: 'flex' }, textTransform: 'none', fontFamily: "Roboto" }}>
+                            <Button color='inherit' sx={{ display: { xs: 'none', md: 'flex' }, textTransform: 'none', fontFamily: '"Open Sans", sans-serif' }}>
                                 <Typography onClick={() => handleLink("about-us")} sx={{
                                     color: "white", 
-                                    fontFamily: "Roboto", "&:hover": {
+                                    fontFamily: '"Open Sans", sans-serif', "&:hover": {
                                         color: "white",
                                     }, fontWeight: 'bold',
                                     fontSize: {md: "0.5rem", lg: "0.6rem"}
@@ -321,7 +322,7 @@ export default function StickyNav() {
                                     },
                                         marginLeft: '105px'
                                 }}>
-                                    {
+                                    {/* {
                                         ((toggleLoginForm === true) ? <Overlay func={handleToggleLogin} /> : "") || ((toggleAccountOption === true) ? <Overlay func={handleToggleAccountOption} /> : "")
                                     }
                                     {(isLoggedIn === false)
@@ -361,9 +362,9 @@ export default function StickyNav() {
                                                 <Button onClick={handleLogOut} sx={{ width: '100%', color: 'white', backgroundColor: 'black', '&:hover': { backgroundColor: 'white', color: 'black' } }}>Đăng xuất</Button>
                                             </Box>
                                             : ""
-                                    }
+                                    } */}
                                 </Box>
-                                <LoginForm
+                                {/* <LoginForm
                                     userNameValue={userNameValue}
                                     handleUserNameChange={handleUserNameChange}
                                     passwordValue={passwordValue}
@@ -372,53 +373,20 @@ export default function StickyNav() {
                                     data={data}
                                     toggleLoginForm={toggleLoginForm}
                                     handleToggleLogin={handleToggleLogin}
-                                />
+                                /> */}
                             </Box>
                             <Box className='right-nav' sx={{ position: 'relative', right: { xs: "50%", md: "0" }, display: {xs: "none", md: "flex"}, alignItems: "center", justifyContent: "center" }}>
                               
                                 <IconButton sx={{ color: opac ? "white" : "white", marginRight: {xs: '20px', md: '10px'} }} aria-label="cart" onClick={() => handleToggleCart()}>
                                     <StyledBadge badgeContent={orderSelector.orderItems.length} color="error">
-                                        <ShoppingCartIcon sx={{ fontSize: {xs:'15px !important', md: '20px !important'} }} />
+                                        <IoIosSearch sx={{ fontSize: {xs:'15px !important', md: '20px !important'} }} />
                                     </StyledBadge>
                                 </IconButton>
                                 {(toggleCart === true) ? <Overlay func={handleToggleCart} /> : ""}
                                 {(toggleCart === true) ? <div className="cart-details">
                                     <Box className='cart-content' sx={{ textAlign: 'center' }}>
-                                        {
-                                            (orderSelector.orderItems.length > 0) ? <Typography variant='h5'>Giỏ hàng</Typography> : ""
-                                        }
-                                        {
-                                            (orderSelector.orderItems.length > 0) ? orderSelector?.orderItems?.map((item, index) => {
-                                                return <div className="item-in-cart-wrapper" key={index}>
-                                                    <div className="item-in-cart">
-                                                        <div className="left">
-                                                            <div className="img-item">
-                                                                <img src={item.main_image} alt="this is lamp" />
-                                                            </div>
-                                                            <Typography variant="body1" className="item-name">
-                                                                {item.itemName + " x " + item.quantity}
-                                                            </Typography>
-                                                        </div>
-                                                        <div className="remove-item" onClick={() => handleRemoveItemInCart(item.productDetails)}><CloseIcon /></div>
-                                                    </div>
-                                                </div>
-                                            }) : <Box sx={{ margin: '50px 0' }}>
-                                                <div className="img-empty-cart">
-                                                    <img src="https://cdn-icons-png.flaticon.com/512/2038/2038854.png" alt="" />
-                                                </div>
-                                                <Typography style={{ marginTop: '20px' }} variant='body2'>Không có sản phẩm trong giỏ hàng!</Typography>
-                                            </Box>
-                                        }
-                                        {
-                                            (orderSelector.orderItems.length > 0) ? <Button onClick={handleLinkToCart} sx={{
-                                                color: 'white', background: '#000', width: '100%', "&:hover": {
-                                                    background: 'black',
-                                                    color: 'white'
-                                                }
-                                            }} className="to-payment">
-                                                Xem chi tiết đơn hàng
-                                            </Button> : ""
-                                        }
+                                        <input type="text" placeholder='Tim kiem san pham' style={{outline: "none", fontFamily: '"Open Sans", sans-serif', border: "none"}}/>
+                                        <Button sx={{color: "black"}}><IoIosSearch/></Button>
                                     </Box>
                                 </div> : ""}
                             </Box>

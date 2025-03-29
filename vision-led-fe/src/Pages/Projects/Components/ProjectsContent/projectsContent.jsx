@@ -4,7 +4,7 @@ import { Box, Button, Card, CardContent, CardMedia, Grid, Typography } from '@mu
 import { useNavigate, useParams } from 'react-router-dom'
 import * as ProjectServices from "../../../../Services/ProjectServices"
 import { useQuery } from '@tanstack/react-query'
-
+import "../projects.css"
 export default function ProjectsContent() {
   const images = [
     "https://letsenhance.io/static/a31ab775f44858f1d1b80ee51738f4f3/11499/EnhanceAfter.jpg",
@@ -33,88 +33,124 @@ export default function ProjectsContent() {
   }
 
 const ProjectCard = ({ onClickEvent, title, image, description, projectId }) => (
-  <Card 
-  sx={{
-    display: {
-      xs: "block",
-      md: 'flex'
-    }
-  }}
-  onClick={onClickEvent} 
-  >
-  <CardMedia
-    component="img"
-    alt={title}
-    image={image}
-    title={title}
-    sx={{
-      userSelect: 'none', width: { xs:"100%", md: "33%"}, aspectRatio: "1 / 1", overflow: "hidden", cursor: "pointer",
-    }}
-  />
-  <CardContent sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        width: {
-          xs: '95vw',
-          md: '70vw'
-        }, 
+//   <Card 
+//   sx={{
+//     display: {
+//       xs: "block",
+//       md: 'flex'
+//     }
+//   }}
+//   onClick={onClickEvent} 
+//   >
+//   <CardMedia
+//     component="img"
+//     alt={title}
+//     image={image}
+//     title={title}
+//     sx={{
+//       userSelect: 'none', width: { xs:"100%", md: "33%"}, aspectRatio: "1 / 1", overflow: "hidden", cursor: "pointer",
+//     }}
+//   />
+//   <CardContent sx={{
+//         display: 'flex',
+//         flexDirection: 'column',
+//         alignItems: 'center',
+//         justifyContent: 'center',
+//         width: {
+//           xs: '95vw',
+//           md: '70vw'
+//         }, 
+//   }}>
+//     <br />
+//     <Typography variant="h2" component="div" sx={{fontFamily: "Roboto", textAlign: 'center', fontSize: {
+//       xs: '15px',
+//       sm: '20px',
+//       md: '25px'
+//     }}}>
+//       {title}
+//     </Typography>
+//     <br /><br />
+//     <Typography variant="h4" color="text.secondary" sx={{
+//       padding: '0px 50px',
+//       overflow: 'hidden', 
+//       textOverflow: 'ellipsis', 
+//       display: '-webkit-box',
+//       '-webkit-line-clamp': 3, 
+//       '-webkit-box-orient': 'vertical',
+//       wordWrap: 'break-word',
+//       fontFamily: "Roboto",
+//       fontSize: {
+//         xs: '13px',
+//         sm: '18px',
+//         md: '23px'
+//       }
+//     }}>
+//       {description}
+//     </Typography>
+//     <br />
+//     <Button onClick={() => handleNavLink(projectId)} color='primary' sx={{
+//                             display: 'flex',
+//                             justifyContent: 'center',
+//                             alignItems: 'center',
+//                             margin: '5px 0px',
+//                             marginBottom: '50px',
+//                             marginLeft: `10px`,
+//                             color: 'white',
+//                             padding: '3px 12px',
+//                             border: '1px solid white',
+//                             backgroundColor: 'rgba(50, 50, 50, 100%)',
+//                             borderRadius: '0',
+//                             '&:hover': {
+//                                 backgroundColor: 'rgba(256, 256, 256, 100%)',
+//                                 border: '1px solid white',
+//                                 color: 'black',
+//                                 borderColor: 'black',
+//                                 transition: '.3s',
+//                             },
+
+//                         }}>
+//                           <Typography variant='body2' sx={{fontSize: "9px", fontFamily: "Roboto"}}>
+//                             Xem Chi Tiết Dự Án
+//                           </Typography>
+//                           </Button>
+//   </CardContent>
+// </Card>
+<Box sx={{padding: "0 100px", marginBottom: "20px"}}>
+  <Box sx={{width: "100%", height: "80vh"}} className="image-box">
+    <div className="image-overlay"></div>
+    <img src={image} alt="tam anh lighting" className="image-effect" />
+    <Button className='image-button' onClick={() => handleNavLink(projectId)} color='primary' sx={{
+      position: "absolute",
+      left: "50%",
+      top: "90%",
+      transform: "translate(-50%, -50%)",
+      zIndex: 1000,
+      color: "white",
   }}>
-    <br />
-    <Typography variant="h2" component="div" sx={{fontFamily: "Roboto", textAlign: 'center', fontSize: {
-      xs: '15px',
-      sm: '20px',
-      md: '25px'
-    }}}>
+    <Typography variant='body2' sx={{fontSize: "1.5rem", fontFamily: '"Open Sans", sans-serif'}}>
       {title}
     </Typography>
-    <br /><br />
-    <Typography variant="h4" color="text.secondary" sx={{
-      padding: '0px 50px',
-      overflow: 'hidden', 
-      textOverflow: 'ellipsis', 
-      display: '-webkit-box',
-      '-webkit-line-clamp': 3, 
-      '-webkit-box-orient': 'vertical',
-      wordWrap: 'break-word',
-      fontFamily: "Roboto",
-      fontSize: {
-        xs: '13px',
-        sm: '18px',
-        md: '23px'
-      }
-    }}>
-      {description}
-    </Typography>
-    <br />
-    <Button onClick={() => handleNavLink(projectId)} color='primary' sx={{
-                            display: 'flex',
-                            justifyContent: 'center',
-                            alignItems: 'center',
-                            margin: '5px 0px',
-                            marginBottom: '50px',
-                            marginLeft: `10px`,
-                            color: 'white',
-                            padding: '3px 12px',
-                            border: '1px solid white',
-                            backgroundColor: 'rgba(50, 50, 50, 100%)',
-                            borderRadius: '0',
-                            '&:hover': {
-                                backgroundColor: 'rgba(256, 256, 256, 100%)',
-                                border: '1px solid white',
-                                color: 'black',
-                                borderColor: 'black',
-                                transition: '.3s',
-                            },
-
-                        }}>
-                          <Typography variant='body2' sx={{fontSize: "9px", fontFamily: "Roboto"}}>
-                            Xem Chi Tiết Dự Án
-                          </Typography>
-                          </Button>
-  </CardContent>
-</Card>
+      </Button>
+  </Box>
+  <Box sx={{display: "flex", justifyContent: "space-between", gap: "10px"}}>
+    <Box sx={{marginTop: "10px"}} className="image-box2">
+      <div className="image-overlay2"></div>
+      <img src={image} alt="tam anh lighting" className="image-effect2"  />
+    </Box>
+    <Box sx={{marginTop: "10px"}} className="image-box2">
+      <div className="image-overlay2"></div>
+      <img src={image} alt="tam anh lighting" className="image-effect2"  />
+    </Box> 
+    <Box sx={{marginTop: "10px"}} className="image-box2">
+      <div className="image-overlay2"></div>
+      <img src={image} alt="tam anh lighting" className="image-effect2"  />
+    </Box> 
+    <Box sx={{marginTop: "10px"}} className="image-box2">
+      <div className="image-overlay2"></div>
+      <img src={image} alt="tam anh lighting" className="image-effect2" />
+    </Box>
+  </Box>
+</Box>
 );
 
 
