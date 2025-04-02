@@ -17,7 +17,7 @@ import { ExpandLess, ExpandMore, StarBorder } from '@mui/icons-material';
 import { formatPrice } from "../../../../Ults";
 const theme = createTheme({
     typography: {
-        fontFamily: 'Roboto', // Thay 'Your-Font-Family' bằng font bạn muốn sử dụng
+        fontFamily: '"Open Sans", sans-serif', fontWeight: "400", // Thay 'Your-Font-Family' bằng font bạn muốn sử dụng
     },
 })
 

@@ -581,6 +581,7 @@ export default function ProductDetailsContent() {
                                     sx={{
                                       userSelect: "none",
                                       fontSize: "1rem",
+                                      fontFamily: '"Open Sans", sans-serif',
                                     }}
                                   >
                                     Chỉ số hoàn màu (CRI) - {productDetail?.CRI}

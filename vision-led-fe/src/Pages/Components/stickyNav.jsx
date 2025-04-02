@@ -238,7 +238,7 @@ export default function StickyNav() {
                         }}>
                             <Button onMouseEnter={() => setIsOpenDropdown(true)} onClick={() => handleLink("products/0")}
                                 color='inherit' sx={{
-                                    display: { xs: 'none', md: 'flex' }, textTransform: 'none', fontFamily: '"Open Sans", sans-serif', fontWeight: 'bold', "&.hover": {
+                                    display: { xs: 'none', md: 'flex' }, textTransform: 'none', fontFamily: '"Open Sans", sans-serif', fontWeight: '400', "&.hover": {
                                         border: 'none',
                                         boxShadow: 'none'
                                     }
@@ -246,10 +246,10 @@ export default function StickyNav() {
                                 <div style={{display: 'flex', gap: '5px', alignItems: 'center'}}>
                                     <Typography variant="body2" sx={{
                                         color: "white", 
-                                        fontFamily: '"Open Sans", sans-serif', "&:hover": {
+                                        fontFamily: '"Open Sans", sans-serif', fontWeight: '400', "&:hover": {
                                             color: "white",
-                                        }, fontWeight: 'bold',
-                                        fontSize: {md: "0.5rem", lg: "0.6rem"}
+                                        },
+                                        fontSize: {md: "0.5rem", lg: "0.6rem"}, fontWeight: "bold"
                                     }}>SẢN PHẨM  </Typography><MdKeyboardArrowDown style={{fontSize: '15px'}}/>
                                 </div>
                             </Button>
@@ -270,10 +270,10 @@ export default function StickyNav() {
                                 ))}
                                 </ul>
                             )}
-                            <Button color='inherit' sx={{ display: { xs: 'none', md: 'flex' }, textTransform: 'none', fontFamily: '"Open Sans", sans-serif', fontWeight: 'bold' }}>
+                            <Button color='inherit' sx={{ display: { xs: 'none', md: 'flex' }, textTransform: 'none', fontFamily: '"Open Sans", sans-serif', fontWeight: '400' }}>
                                 <Typography onClick={() => handleLink("collections")} sx={{
                                     color: "white", 
-                                    fontFamily: '"Open Sans", sans-serif', "&:hover": {
+                                    fontFamily: '"Open Sans", sans-serif', fontWeight: '400', "&:hover": {
                                         color: "white",
                                     }, fontWeight: 'bold',
                                     fontSize: {md: "0.5rem", lg: "0.6rem"}
@@ -283,29 +283,29 @@ export default function StickyNav() {
                                 display: {
                                     xs: 'none',
                                     md: 'flex'
-                                }, textTransform: 'none', fontFamily: '"Open Sans", sans-serif'
+                                }, textTransform: 'none', fontFamily: '"Open Sans", sans-serif', fontWeight: '400'
                             }}>
                                 <Typography onClick={() => handleLink("projects")} sx={{
                                     color: "white", 
-                                    fontFamily: '"Open Sans", sans-serif', "&:hover": {
+                                    fontFamily: '"Open Sans", sans-serif', fontWeight: '400', "&:hover": {
                                         color: "white",
                                     }, fontWeight: 'bold',
                                     fontSize: {md: "0.5rem", lg: "0.6rem"}
                                 }}>DỰ ÁN</Typography>
                             </Button>
-                            <Button color='inherit' sx={{ display: { xs: 'none', md: 'flex' }, textTransform: 'none', fontFamily: '"Open Sans", sans-serif' }}>
+                            <Button color='inherit' sx={{ display: { xs: 'none', md: 'flex' }, textTransform: 'none', fontFamily: '"Open Sans", sans-serif', fontWeight: '400' }}>
                                 <Typography onClick={() => handleLink("about-us")} sx={{
                                     color: "white", 
-                                    fontFamily: '"Open Sans", sans-serif', "&:hover": {
+                                    fontFamily: '"Open Sans", sans-serif', fontWeight: '400', "&:hover": {
                                         color: "white",
                                     }, fontWeight: 'bold',
                                     fontSize: {md: "0.5rem", lg: "0.6rem"}
                                 }}>TIN TỨC</Typography>
                             </Button>
-                            <Button color='inherit' sx={{ display: { xs: 'none', md: 'flex' }, textTransform: 'none', fontFamily: '"Open Sans", sans-serif' }}>
+                            <Button color='inherit' sx={{ display: { xs: 'none', md: 'flex' }, textTransform: 'none', fontFamily: '"Open Sans", sans-serif', fontWeight: '400'}}>
                                 <Typography onClick={() => handleLink("about-us")} sx={{
                                     color: "white", 
-                                    fontFamily: '"Open Sans", sans-serif', "&:hover": {
+                                    fontFamily: '"Open Sans", sans-serif', fontWeight: '400', "&:hover": {
                                         color: "white",
                                     }, fontWeight: 'bold',
                                     fontSize: {md: "0.5rem", lg: "0.6rem"}
@@ -385,7 +385,7 @@ export default function StickyNav() {
                                 {(toggleCart === true) ? <Overlay func={handleToggleCart} /> : ""}
                                 {(toggleCart === true) ? <div className="cart-details">
                                     <Box className='cart-content' sx={{ textAlign: 'center' }}>
-                                        <input type="text" placeholder='Tim kiem san pham' style={{outline: "none", fontFamily: '"Open Sans", sans-serif', border: "none"}}/>
+                                        <input type="text" placeholder='Tim kiem san pham' style={{outline: "none", fontFamily: '"Open Sans", sans-serif', fontWeight: '400', border: "none"}}/>
                                         <Button sx={{color: "black"}}><IoIosSearch/></Button>
                                     </Box>
                                 </div> : ""}

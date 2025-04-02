@@ -55,7 +55,7 @@ const FadeUpSection = (props) => {
                         md: "0 50px",
                         lg: "0 150px",
                         xl: "0 250px"
-                    }, userSelect: 'none', marginBottom: "10px", fontFamily: '"Open Sans", sans-serif', fontSize: '1.5rem'
+                    }, userSelect: 'none', marginBottom: "10px", fontFamily: '"Open Sans", sans-serif', fontSize: '1.5rem', textTransform: "uppercase", fontWeight: 400 
                 }}>Mua sắm với chúng tôi</Typography>
                 <Box sx={{
                     display: {
@@ -70,7 +70,7 @@ const FadeUpSection = (props) => {
                             md: "0 50px",
                             lg: "0 150px",
                             xl: "0 250px"
-                        }, userSelect: 'none', bgColor: "#ffffff !important", color: 'black', fontWeight: "300", fontFamily: '"Open Sans", sans-serif', fontSize: '1.0rem'
+                        }, userSelect: 'none', bgColor: "#ffffff !important", color: 'black', fontWeight: "300", fontFamily: '"Open Sans", sans-serif', fontSize: '1.0rem', fontWeight: 400
                     }}>
                         Vision Led là một trong những đối tác hàng đầu trong việc thiết kế các giải pháp chiếu sáng cho mọi nhà. Chúng tôi tự hào về việc mang đến sự sáng tạo độc đáo và ưu tiên hàng đầu là sự hài lòng của khách hàng trong mọi dự án chúng tôi thực hiện</Typography>
                 </Box>
@@ -154,7 +154,7 @@ const FadeUpSection2 = (props) => {
                         md: "0 5px",
                         lg: "0 150px",
                         xl: "0 250px"
-                    }, userSelect: 'none', marginBottom: "10px", fontFamily: '"Open Sans", sans-serif', fontSize: '1.5rem'
+                    }, userSelect: 'none', marginBottom: "10px", fontFamily: '"Open Sans", sans-serif', fontSize: '1.5rem', textTransform: "uppercase", fontWeight: 400
                 }}>Khám phá bộ sưu tập của chúng tôi</Typography>
 
                 <Box sx={{
@@ -170,7 +170,7 @@ const FadeUpSection2 = (props) => {
                             md: "0 50px",
                             lg: "0 150px",
                             xl: "0 250px"
-                        }, userSelect: 'none', color: 'black', fontWeight: "300", fontFamily: '"Open Sans", sans-serif', fontSize: '1.0rem'
+                        }, userSelect: 'none', color: 'black', fontWeight: "300", fontFamily: '"Open Sans", sans-serif', fontSize: '1.0rem', fontWeight: 400
                     }}>Chúng tôi đã tuyển chọn các thiết bị chiếu sáng tốt nhất từ ​​các nhà thiết kế và nhà sản xuất nổi tiếng trên khắp thế giới. Bộ sưu tập của chúng tôi có nhiều mẫu mã, từ kiểu dáng đẹp và hiện đại đến cổ điển và trang trí tinh tế, tất cả đều được chế tác từ những vật liệu chất lượng cao nhất và hoàn thiện đến từng chi tiết nhỏ nhất.
                     </Typography>
                 </Box>
@@ -298,8 +298,8 @@ export default function HomeContent() {
                                 md: '3.5rem'
                             },
                             fontFamily: '"Open Sans", sans-serif',
-                            fontWeight: "200"
-                        }}>Chọn đèn, chọn sự hoàn hảo.</Typography>
+                            fontWeight: "400"
+                        }}>Tam Anh Lighting</Typography>
                         <br />
                     </Box>
                     <Link className='btn-dir' to='/collections' style={{ textDecoration: 'none' }}>
@@ -325,7 +325,7 @@ export default function HomeContent() {
                                 color: 'white',
                                 transition: '.3s',
                             },
-                            marginTop: '20px', fontWeight: "300", fontFamily: '"Open Sans", sans-serif'
+                            marginTop: '20px', fontWeight: "400", fontFamily: '"Open Sans", sans-serif'
                         }}>
                             bộ sưu tập
                         </Button>

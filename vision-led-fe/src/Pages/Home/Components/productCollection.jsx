@@ -65,7 +65,7 @@ const FadeUpSection = (props) => {
             backgroundColor: '#ffffff'
         }} className="crd crd-collection">
             <CardMedia alt='unsplash image' component="img" sx={{ height: props.itemRan[props.itemIndex] }} image={props.itemImage} />
-            <Typography variant='h4' sx={{ textAlign: 'center', margin: '10px 0', fontWeight: "bold", fontFamily: "Roboto", textTransform: "uppercase", fontSize: "1.5rem" }}>{props.itemName}</Typography>
+            <Typography variant='h4' sx={{ textAlign: 'center', margin: '10px 0', fontWeight: 400, fontFamily: '"Open Sans", sans-serif', textTransform: "uppercase", fontSize: "1.5rem" }}>{props.itemName}</Typography>
             <BtnSeeMore collectionId={props.itemId} mgLeft={'50%'} transform='translateX(-50%)' />
         </Card>
       </div>
@@ -110,7 +110,7 @@ const FadeUpSection2 = (props) => {
             backgroundColor: '#ffffff'
         }} className="crd crd-collection">
             <CardMedia alt='unsplash image' component="img" sx={{ height: props.itemRan[props.itemIndex] }} image={props.itemImage} />
-            <Typography variant='h4' sx={{ textAlign: 'center', margin: '10px 0', fontWeight: "bold", fontFamily: "Roboto", textTransform: "uppercase", fontSize: "1.5rem" }}>{props.itemName}</Typography>
+            <Typography variant='h4' sx={{ textAlign: 'center', margin: '10px 0', fontWeight: "bold", fontFamily: '"Open Sans", sans-serif', textTransform: "uppercase", fontSize: "1.5rem" }}>{props.itemName}</Typography>
             <BtnSeeMore collectionId={props.itemId} mgLeft={'50%'} transform='translateX(-50%)' />
         </Card>
       </div>

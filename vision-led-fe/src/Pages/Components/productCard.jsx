@@ -48,7 +48,7 @@ const FadeUpSection = (props) => {
                 <span onClick={handleLink}>
                     <CardMedia alt='unsplash image' component="img" image={props.image} />
                     <CardContent sx={{ position: 'absolute', bottom: 0, left: 0, minHeight: "150px", justifyContent: 'end', textAlign: 'left', display: 'flex', flexDirection: 'column', borderRadius: "0 !important" }}>
-                        <Typography gutterBottom variant='h5' sx={{ fontFamily: "Roboto", color: 'black', fontSize: '1rem', flex: 'left' }}>{props.productName}</Typography>
+                        <Typography gutterBottom variant='h5' sx={{ fontFamily: '"Open Sans", sans-serif', fontWeight: 400, color: 'black', fontSize: '1rem', flex: 'left' }}>{props.productName}</Typography>
                         {/* <Typography variant='body1' sx={{ fontFamily: "Roboto", color: 'black', fontWeight: 'bold', fontSize: '1rem' }}>{props.priceDisplay}</Typography> */}
                     </CardContent>
                 </span>
