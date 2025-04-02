@@ -128,3 +128,35 @@ input {
       display: block;
     }
   }
+
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    z-index: 9999;
+    animation: slideLeft 1s ease-in-out 2s forwards;
+  }
+  
+  @keyframes slideLeft {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+  }
+  
+  .main-content.hidden {
+    opacity: 0;
+  }
+  
+  .main-content.fade-in {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+  }

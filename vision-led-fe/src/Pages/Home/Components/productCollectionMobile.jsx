@@ -131,7 +131,7 @@ export default function ProductCollectionMobile() {
             {
                 data?.data ?
 
-                    <Box>
+                    <Box sx={{marginTop: "30px"}}>
                         <Grid container sx={{
                             padding: {
                                 xs: "0 0px",

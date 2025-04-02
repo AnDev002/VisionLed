@@ -337,12 +337,10 @@ export default function HomeContent() {
             <FadeUpSection productsRan={productsRan}/>
             <FadeUpSection2 />
             
-            <div className="desktop-only">
+            {/* <div className="desktop-only">
               <ProductCollection />
-            </div>
-            <div className="mobile-only">
+            </div> */}
               <ProductCollectionMobile />
-            </div>
             {/* <FadeUpSection3 /> */}
             
         </>

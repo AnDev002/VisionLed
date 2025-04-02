@@ -34,6 +34,13 @@ const theme = createTheme({
   },
 })
 
+const Loader = () => {
+  return (
+    <div className="overlay">
+      <div className="logo">Tam Anh Lighting</div>
+    </div>
+  );
+};
 
 function App() {
   const dispatch = useDispatch();
@@ -74,8 +81,20 @@ function App() {
     return Promise.reject(err);
   })
 
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 3000); // Thời gian hiển thị loading (3s)
+  }, []);
+
+
   return (
     <>
+        {loading && <Loader />}
+
+        <div className={`main-content ${loading ? "hidden" : "fade-in"}`}>
       <ThemeProvider theme={theme}>
         
           <Router>
@@ -101,6 +120,7 @@ function App() {
           </Router>
 
       </ThemeProvider>
+      </div>
     </>
   );
 }
