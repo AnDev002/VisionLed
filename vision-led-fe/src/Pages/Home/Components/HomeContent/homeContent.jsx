@@ -334,7 +334,7 @@ export default function HomeContent() {
                     </Link>
                 </Box>
                 <div className="shadow-full-height" style={{ zIndex: '50' }}></div>
-                <img src="./imb.png" alt="" />
+                <img src="./img_ttt.png" alt="" />
             </Box>
             <FadeUpSection productsRan={productsRan}/>
             <FadeUpSection2 />
