@@ -249,7 +249,7 @@ export default function StickyNav() {
                                         fontFamily: '"Open Sans", sans-serif', fontWeight: '400', "&:hover": {
                                             color: "white",
                                         },
-                                        fontSize: {md: "0.5rem", lg: "0.6rem"}, fontWeight: "bold"
+                                        fontSize: {md: "0.6rem", lg: "0.8rem"}
                                     }}>SẢN PHẨM  </Typography><MdKeyboardArrowDown style={{fontSize: '15px'}}/>
                                 </div>
                             </Button>
@@ -275,8 +275,8 @@ export default function StickyNav() {
                                     color: "white", 
                                     fontFamily: '"Open Sans", sans-serif', fontWeight: '400', "&:hover": {
                                         color: "white",
-                                    }, fontWeight: 'bold',
-                                    fontSize: {md: "0.5rem", lg: "0.6rem"}
+                                    },
+                                    fontSize: {md: "0.6rem", lg: "0.8rem"}
                                 }}>BỘ SƯU TẬP</Typography>
                             </Button>
                             <Button color='inherit' sx={{
@@ -289,8 +289,8 @@ export default function StickyNav() {
                                     color: "white", 
                                     fontFamily: '"Open Sans", sans-serif', fontWeight: '400', "&:hover": {
                                         color: "white",
-                                    }, fontWeight: 'bold',
-                                    fontSize: {md: "0.5rem", lg: "0.6rem"}
+                                    },
+                                    fontSize: {md: "0.6rem", lg: "0.8rem"}
                                 }}>DỰ ÁN</Typography>
                             </Button>
                             <Button color='inherit' sx={{ display: { xs: 'none', md: 'flex' }, textTransform: 'none', fontFamily: '"Open Sans", sans-serif', fontWeight: '400' }}>
@@ -298,17 +298,17 @@ export default function StickyNav() {
                                     color: "white", 
                                     fontFamily: '"Open Sans", sans-serif', fontWeight: '400', "&:hover": {
                                         color: "white",
-                                    }, fontWeight: 'bold',
-                                    fontSize: {md: "0.5rem", lg: "0.6rem"}
-                                }}>TIN TỨC</Typography>
+                                    }, 
+                                    fontSize: {md: "0.6rem", lg: "0.8rem"}
+                                }}>THIẾT KẾ</Typography>
                             </Button>
                             <Button color='inherit' sx={{ display: { xs: 'none', md: 'flex' }, textTransform: 'none', fontFamily: '"Open Sans", sans-serif', fontWeight: '400'}}>
                                 <Typography onClick={() => handleLink("about-us")} sx={{
                                     color: "white", 
                                     fontFamily: '"Open Sans", sans-serif', fontWeight: '400', "&:hover": {
                                         color: "white",
-                                    }, fontWeight: 'bold',
-                                    fontSize: {md: "0.5rem", lg: "0.6rem"}
+                                    }, 
+                                    fontSize: {md: "0.6rem", lg: "0.8rem"}
                                 }}>VỀ CHÚNG TÔI</Typography>
                             </Button>
                         </Box>

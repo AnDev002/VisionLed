@@ -41,7 +41,7 @@ const FadeUpSection = (props) => {
                 }}>
                   <Grid item xs={12} sm={12} md={1} lg={1} xl={1}></Grid>
             <Grid item xs={12} sm={12} md={4} lg={4} xl={4} sx={{ display: { xs: 'block', sm: 'block' }, borderRadius: '5px', objectFit: 'cover', overflow: 'hidden' }} >
-                <Typography variant="h6" >
+                <Typography variant="h6" sx={{color: "white"}}>
                                 Tam Anh là đối tác nổi bật trong việc thiết kế các giải pháp chiếu sáng trong nhà và ngoài trời từ những ngôi nhà sang trọng cho đến những công trình trọng điểm lớn. Chúng tôi tự hào mang đến sự sáng tạo độc đáo, chất lượng trong từng sản phẩm và ưu tiên tầm nhìn cũng như sự hài lòng của khách hàng trong mọi dự án chúng tôi thực hiện.
                 </Typography>
             </Grid>
@@ -96,7 +96,7 @@ const FadeUpSection = (props) => {
                 </Grid>
                 <Grid item xs={12} sm={12} md={1} lg={1} xl={1}></Grid>
                 <Grid item xs={12} sm={12} md={4} lg={4} xl={4} sx={{ display: { xs: 'block', sm: 'block' }, borderRadius: '5px', objectFit: 'cover', overflow: 'hidden' }} >
-                    <Typography variant="h6" >
+                    <Typography variant="h6" sx={{color: "white"}} >
                                  Chúng tôi đã tuyển chọn các thiết bị chiếu sáng tốt nhất từ ​​các nhà máy và nhà sản xuất nổi tiếng trên khắp thế giới. Các sản phẩm đa dạng và phong phú từ kiểu dáng, tính năng cho đến giá thành, phù hợp với nhiều tệp khách hàng mà chúng tôi muốn hướng đến.
                                  Công ty TNHH điện chiếu sáng Tam Anh hoạt động trong lĩnh vực mua bán, kinh doanh, tư vấn, sản xuất, nhập khẩu và phân phối các thiết bị đèn, thiết bị chiếu sáng dân dụng và công trình dưới tên thương hiệu Vision Led
 
@@ -107,6 +107,9 @@ const FadeUpSection = (props) => {
                     <img src="hiltongarden.webp" alt="tam anh" />
                 </Grid>
           </Grid>
+          <br />
+          <br />
+          <br /><br />
         </div>
       );
     };

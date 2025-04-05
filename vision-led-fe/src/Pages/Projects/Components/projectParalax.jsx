@@ -5,10 +5,10 @@ import BtnSeeMore from '../../Components/btnSeeMore';
 import { useNavigate } from 'react-router-dom';
 
 
-export default function ParallaxCollections({ img, name, index }) {
+export default function ProjectParallaxCollections({ img, name, index }) {
     const navigate = useNavigate();
     const handleNavLink = (collectionId) => {
-        navigate(`/products/${collectionId}`);
+        navigate(`/project-details/${collectionId}`);
     }
     const insideStyles = {
         color: "white",

@@ -55,7 +55,7 @@ const FadeUpSection = (props) => {
                         md: "0 50px",
                         lg: "0 150px",
                         xl: "0 250px"
-                    }, userSelect: 'none', marginBottom: "10px", fontFamily: '"Open Sans", sans-serif', fontSize: '1.5rem', textTransform: "uppercase", fontWeight: 400 
+                    }, userSelect: 'none', marginBottom: "10px", fontFamily: '"Open Sans", sans-serif', fontSize: '1.5rem', textTransform: "uppercase", fontWeight: 400, color: "#e6e6e6"
                 }}>Mua sắm với chúng tôi</Typography>
                 <Box sx={{
                     display: {
@@ -70,7 +70,7 @@ const FadeUpSection = (props) => {
                             md: "0 50px",
                             lg: "0 150px",
                             xl: "0 250px"
-                        }, userSelect: 'none', bgColor: "#ffffff !important", color: 'black', fontWeight: "300", fontFamily: '"Open Sans", sans-serif', fontSize: '1.0rem', fontWeight: 400
+                        }, userSelect: 'none', bgColor: "#ffffff !important", color: 'black', fontWeight: "300", fontFamily: '"Open Sans", sans-serif', fontSize: '1.0rem', fontWeight: 400, color: "#e6e6e6"
                     }}>
                         Vision Led là một trong những đối tác hàng đầu trong việc thiết kế các giải pháp chiếu sáng cho mọi nhà. Chúng tôi tự hào về việc mang đến sự sáng tạo độc đáo và ưu tiên hàng đầu là sự hài lòng của khách hàng trong mọi dự án chúng tôi thực hiện</Typography>
                 </Box>
@@ -87,8 +87,8 @@ const FadeUpSection = (props) => {
             </Box>
 
             <div className="desktop-only">
-              <ProductSlideShow products={props.productsRan} />
-            <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: "50px" }}>
+              {/* <ProductSlideShow products={props.productsRan} /> */}
+            <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: "0px" }}>
                 <Link to='/products/0' style={{ textDecoration: 'none' }}>
                     <Button color='primary' sx={{
                         display: 'flex',
@@ -109,6 +109,8 @@ const FadeUpSection = (props) => {
                         Mua Ngay
                     </Button>
                 </Link>
+                <br />
+                <br />
             </Box>
             </div>
         </div>
@@ -154,7 +156,7 @@ const FadeUpSection2 = (props) => {
                         md: "0 5px",
                         lg: "0 150px",
                         xl: "0 250px"
-                    }, userSelect: 'none', marginBottom: "10px", fontFamily: '"Open Sans", sans-serif', fontSize: '1.5rem', textTransform: "uppercase", fontWeight: 400
+                    }, userSelect: 'none', marginBottom: "10px", fontFamily: '"Open Sans", sans-serif', fontSize: '1.5rem', textTransform: "uppercase", fontWeight: 400, color: "#e6e6e6"
                 }}>Khám phá bộ sưu tập của chúng tôi</Typography>
 
                 <Box sx={{
@@ -170,7 +172,7 @@ const FadeUpSection2 = (props) => {
                             md: "0 50px",
                             lg: "0 150px",
                             xl: "0 250px"
-                        }, userSelect: 'none', color: 'black', fontWeight: "300", fontFamily: '"Open Sans", sans-serif', fontSize: '1.0rem', fontWeight: 400
+                        }, userSelect: 'none', color: 'black', fontWeight: "300", fontFamily: '"Open Sans", sans-serif', fontSize: '1.0rem', fontWeight: 400, color: "#e6e6e6"
                     }}>Chúng tôi đã tuyển chọn các thiết bị chiếu sáng tốt nhất từ ​​các nhà thiết kế và nhà sản xuất nổi tiếng trên khắp thế giới. Bộ sưu tập của chúng tôi có nhiều mẫu mã, từ kiểu dáng đẹp và hiện đại đến cổ điển và trang trí tinh tế, tất cả đều được chế tác từ những vật liệu chất lượng cao nhất và hoàn thiện đến từng chi tiết nhỏ nhất.
                     </Typography>
                 </Box>

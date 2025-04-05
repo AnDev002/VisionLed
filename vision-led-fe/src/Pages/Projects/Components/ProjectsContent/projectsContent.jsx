@@ -5,6 +5,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import * as ProjectServices from "../../../../Services/ProjectServices"
 import { useQuery } from '@tanstack/react-query'
 import "../projects.css"
+import ProjectParallaxCollections from '../projectParalax'
 export default function ProjectsContent() {
   const images = [
     "https://letsenhance.io/static/a31ab775f44858f1d1b80ee51738f4f3/11499/EnhanceAfter.jpg",
@@ -115,7 +116,10 @@ const ProjectCard = ({ onClickEvent, title, image, description, projectId }) => 
 //                           </Button>
 //   </CardContent>
 // </Card>
-<Box sx={{padding: "0 100px", marginBottom: "20px"}}>
+{/* 
+  
+  
+  <Box sx={{padding: "0 100px", marginBottom: "20px"}}>
   <Box sx={{width: "100%", height: "80vh"}} className="image-box">
     <div className="image-overlay"></div>
     <img src={image} alt="tam anh lighting" className="image-effect" />
@@ -150,7 +154,7 @@ const ProjectCard = ({ onClickEvent, title, image, description, projectId }) => 
       <img src={image} alt="tam anh lighting" className="image-effect2" />
     </Box>
   </Box>
-</Box>
+</Box> */}
 );
 
 
@@ -184,37 +188,17 @@ const FadeUpSection = (props) => {
       ref={sectionRef}
       className={`fade-up ${isVisible ? 'visible' : 'visible'}`}
     >
-      <ProjectCard projectId={props.projectId} style={{ mgLeft: '0', transform: 'none' }} title={props.title} image={props.itemImage} description={props.itemDesc} />
+      {/* <ProjectCard projectId={props.projectId} style={{ mgLeft: '0', transform: 'none' }} title={props.title} image={props.itemImage} description={props.itemDesc} /> */}
+    <ProjectParallaxCollections img={props.itemImage} name={props.title.toUpperCase()} index={props.projectId} />
+    
     </div>
   );
 };
   return (
     <>
         <div className="layer" style={{ position: 'fixed', top: '0', left: '0', right: '0', bottom: '0'}}></div>
-        <div className="parallax-content" style={{ transform: `translateX(${scrollX * 0.2}px)` }}>
-                             <div className="parallax-item">
-                                <div style={{position: "relative"}}></div>
-                                {images.map((img, index) => (
-                                  <img
-                                    key={index}
-                                    src={img}
-                                    alt={`Slide ${index + 1}`}
-                                    style={{width: "100%", height: "100%"}}
-                                    className={`slide ${index === currentIndex ? "active" : ""}`}
-                                  />
-                                ))}                     
-                              <div  style={{position: "absolute", top: "50%", left: "20%", transform: "translate(-50%, -20%)"}}>
-                                <Typography variant="h3" sx={{ fontFamily: "Roboto", fontWeight: "bold", color: "white", fontSize: {xs: "1.2rem", md: "3.5rem"} }}>Dự Án</Typography>
-                              </div>
-                            </div>
-                         </div>
+        
         <Box sx={{
-                    marginTop: {
-                        xs: "65px",
-                        sm: "70px",
-                        md: "75px",
-                        lg: "80px",
-                    },
                     position: 'relative',
                     zIndex: 80,
                     display: 'flex',

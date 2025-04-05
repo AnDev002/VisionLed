@@ -40,14 +40,31 @@ const FadeUpSection = (props) => {
         className={`fade-up ${isVisible ? 'visible' : ''}`}
       >
         <Card sx={{
-                // cursor: 'pointer', border: '1px solid #f3f3f3',
-                // display: 'flex',
-                // flexDirection: 'column',
-                // height: '100%'
+           position: 'relative',
+           overflow: 'hidden',
+           transition: 'transform 0.3s ease, opacity 0.3s ease',
+           '&:hover': {
+             transform: 'scale(1.03)',
+             opacity: 0.7,
+           }
             }} className='card'>
                 <span onClick={handleLink}>
-                    <CardMedia alt='unsplash image' component="img" image={props.image} />
-                    <CardContent sx={{ position: 'absolute', bottom: 0, left: 0, minHeight: "150px", justifyContent: 'end', textAlign: 'left', display: 'flex', flexDirection: 'column', borderRadius: "0 !important" }}>
+                    <CardMedia alt='unsplash image' component="img" image={props.image}  sx={{
+                       transition: 'transform 0.3s ease',
+                       '&:hover': {
+                         transform: 'scale(1.05)',
+                       }
+                    }}/>
+                    <CardContent sx={{  position: 'absolute',
+                                        bottom: 0,
+                                        left: 0,
+                                        minHeight: "150px",
+                                        justifyContent: 'end',
+                                        textAlign: 'left',
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        borderRadius: "0 !important",
+                    }}>
                         <Typography gutterBottom variant='h5' sx={{ fontFamily: '"Open Sans", sans-serif', fontWeight: 400, color: 'black', fontSize: '1rem', flex: 'left' }}>{props.productName}</Typography>
                         {/* <Typography variant='body1' sx={{ fontFamily: "Roboto", color: 'black', fontWeight: 'bold', fontSize: '1rem' }}>{props.priceDisplay}</Typography> */}
                     </CardContent>

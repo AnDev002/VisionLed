@@ -20,7 +20,7 @@ body {
   /* Internet Explorer and Microsoft Edge */
   /* -ms-overflow-style: inherit;  */
   scrollbar-color: Gray;
-  background-color: #ffffff;
+  background-color: #131313;
 }
 
 body::-webkit-scrollbar {

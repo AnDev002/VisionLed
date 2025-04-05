@@ -37,7 +37,7 @@ const theme = createTheme({
 const Loader = () => {
   return (
     <div className="overlay">
-      <div className="logo">Tam Anh Lighting</div>
+      <div className="logo" style={{fontFamily: "'Playfair Display',serif", fontWeight: 500}}>Tam Anh Lighting</div>
     </div>
   );
 };
@@ -94,7 +94,7 @@ function App() {
     <>
         {loading && <Loader />}
 
-        <div className={`main-content ${loading ? "hidden" : "fade-in"}`}>
+        <div className={`main-content ${loading ? "hidden" : "fade-in"}`} style={{backgroundColor: "#272727"}}>
       <ThemeProvider theme={theme}>
         
           <Router>

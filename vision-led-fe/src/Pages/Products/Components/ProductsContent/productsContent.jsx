@@ -402,43 +402,7 @@ export default function ProductsContent() {
                                     </Collapse>
                                 </div>
                                 <hr style={{ margin: "10px 0" }} />
-                                <Typography component='div' variant="h5" >Giá tiền</Typography>
                                 <div>
-                                    <TextField
-                                        label="Thấp nhất"
-                                        type="number"
-                                        component="div"
-                                        value={minPrice}
-                                        onChange={(e) => setMinPrice(e.target.value)}
-                                        variant="outlined"
-                                        margin="normal"
-                                        InputProps={{
-                                            inputProps: {
-                                                step: 50000, // Đặt bước nhảy khi tăng giảm giá trị (nếu cần)
-                                                style: { appearance: 'textfield' }, // Ẩn các nút tăng giảm giá trị (spinner)
-                                                min: 0,
-                                                max: maxPrice
-                                            },
-                                        }}
-                                        sx={{ width: "100%", marginBottom: "10px" }}
-                                    />
-                                    <TextField
-                                        label="Cao nhất"
-                                        type="number"
-                                        value={maxPrice}
-                                        onChange={(e) => setMaxPrice(e.target.value)}
-                                        variant="outlined"
-                                        margin="normal"
-                                        InputProps={{
-                                            inputProps: {
-                                                step: 50000, // Đặt bước nhảy khi tăng giảm giá trị (nếu cần)
-                                                style: { appearance: 'textfield' }, // Ẩn các nút tăng giảm giá trị (spinner)
-                                                min: minPrice,
-                                                max: 10000000000
-                                            },
-                                        }}
-                                        sx={{ width: "100%" }}
-                                    />
                                     <div style={{ display: "flex", justifyContent: 'space-between', marginBottom: "100px" }}>
                                         <Button variant="contained" sx={{
                                             background: "white", color: "black", "&:hover": {
@@ -447,14 +411,6 @@ export default function ProductsContent() {
                                             }
                                         }} onClick={filterProducts}>
                                             Áp dụng
-                                        </Button>
-                                        <Button variant="contained" sx={{
-                                            background: "black", color: "white", "&:hover": {
-                                                background: "black",
-                                                color: "white"
-                                            }
-                                        }} onClick={handleToggleFilter}>
-                                            Lọc
                                         </Button>
                                     </div>
                                 </div>
@@ -552,54 +508,6 @@ export default function ProductsContent() {
                                                                     : ""
                                                             }
                                                         </div>
-                                                        <br />
-
-                                                        <Typography component='div' variant="h5" >Giá tiền</Typography>
-                                                        <div>
-                                                            <TextField
-                                                                label="Thấp nhất"
-                                                                type="number"
-                                                                component="div"
-                                                                value={minPrice}
-                                                                onChange={(e) => setMinPrice(e.target.value)}
-                                                                variant="outlined"
-                                                                margin="normal"
-                                                                InputProps={{
-                                                                    inputProps: {
-                                                                        step: 50000, // Đặt bước nhảy khi tăng giảm giá trị (nếu cần)
-                                                                        style: { appearance: 'textfield' }, // Ẩn các nút tăng giảm giá trị (spinner)
-                                                                        min: 0,
-                                                                        max: maxPrice
-                                                                    },
-                                                                }}
-                                                                sx={{ width: "100%", marginBottom: "10px" }}
-                                                            />
-                                                            <TextField
-                                                                label="Cao nhất"
-                                                                type="number"
-                                                                value={maxPrice}
-                                                                onChange={(e) => setMaxPrice(e.target.value)}
-                                                                variant="outlined"
-                                                                margin="normal"
-                                                                InputProps={{
-                                                                    inputProps: {
-                                                                        step: 50000, // Đặt bước nhảy khi tăng giảm giá trị (nếu cần)
-                                                                        style: { appearance: 'textfield' }, // Ẩn các nút tăng giảm giá trị (spinner)
-                                                                        min: minPrice,
-                                                                        max: 10000000000
-                                                                    },
-                                                                }}
-                                                                sx={{ width: "100%" }}
-                                                            />
-                                                            <Button variant="contained" sx={{
-                                                                background: "white", color: "black", "&:hover": {
-                                                                    background: "black",
-                                                                    color: "white"
-                                                                }
-                                                            }} onClick={filterProducts}>
-                                                                Áp dụng
-                                                            </Button>
-                                                        </div>
                                                     </AccordionDetails>
                                                 </Accordion>
                                             </StickyBox>
@@ -676,7 +584,6 @@ export default function ProductsContent() {
                                                     <Grid item xs={12} sm={6} md={itemRowDisplay} lg={itemRowDisplay} xl={itemRowDisplay}>
                                                         <Box sx={{ padding: '10px' }}>
                                                             <Card sx={{ cursor: 'pointer', border: '1px solid #f3f3f3' }} className='card'>
-
                                                                 <Skeleton variant="rectangular" animation="wave" width={"100%"} height={"350px"} />
                                                             </Card >
                                                         </Box>
